@@ -104,3 +104,20 @@ footer.site h4{font-family:var(--mono); text-transform:uppercase; letter-spacing
 html.js .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
 html.js .reveal.shown{opacity:1; transform:none}
 @media (prefers-reduced-motion:reduce){html.js .reveal{opacity:1; transform:none}}
+
+
+/* ---------- WebGL print layers (assets/seros-gl.js) ----------
+   Both canvases paint on top of nothing: if the script never runs, the hero
+   is the flat paper and the plain <img> it has always been. */
+.hero{position:relative; isolation:isolate}
+.hero .gl-plate{position:absolute; inset:0; width:100%; height:100%; display:block;
+  z-index:-1; pointer-events:none; opacity:0; transition:opacity 1.4s ease}
+.hero.gl-plate-live .gl-plate{opacity:1}
+.hero figure .gl-print{position:absolute; inset:0; width:100%; height:100%; display:block;
+  pointer-events:none; opacity:0; transition:opacity .9s ease;
+  filter:drop-shadow(0 22px 34px rgba(40,48,83,.20))}
+.hero figure.gl-print-live .gl-print{opacity:1}
+.hero figure.gl-print-live img{visibility:hidden}
+@media (prefers-reduced-motion:reduce){
+  .hero .gl-plate, .hero figure .gl-print{transition:none}
+}
