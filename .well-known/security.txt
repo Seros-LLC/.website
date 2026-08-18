@@ -1,0 +1,10 @@
+# Seros, LLC vulnerability disclosure
+# Full policy: https://seros.dev/security.html
+Contact: mailto:security@seros.dev
+Contact: https://github.com/Seros-LLC/.github/security/advisories/new
+Expires: 2027-08-17T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://seros.dev/.well-known/security.txt
+Policy: https://seros.dev/security.html
+Acknowledgments: https://seros.dev/security.html#acknowledgements
+# No PGP key is published. If you need an encrypted channel, say so and we will arrange one.
