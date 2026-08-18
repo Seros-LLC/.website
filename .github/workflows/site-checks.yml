@@ -1,0 +1,62 @@
+name: site checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install renderer
+        run: pip install markdown
+
+      - name: Report unresolved legal placeholders
+        run: python3 tools/build.py --check
+
+      - name: Generated pages are up to date
+        run: |
+          python3 tools/build.py
+          if ! git diff --quiet -- '*.html'; then
+            echo "::error::Generated legal pages are stale. Run tools/build.py and commit."
+            git --no-pager diff --stat -- '*.html'
+            exit 1
+          fi
+
+      - name: HTML sanity
+        run: |
+          fail=0
+          for f in $(git ls-files '*.html'); do
+            grep -q '<title>' "$f" || { echo "::error file=$f::missing <title>"; fail=1; }
+            grep -q 'name="viewport"' "$f" || { echo "::error file=$f::missing viewport"; fail=1; }
+            grep -q 'name="description"' "$f" || { echo "::error file=$f::missing meta description"; fail=1; }
+          done
+          exit $fail
+
+      - name: Internal links resolve
+        run: |
+          fail=0
+          for f in $(git ls-files '*.html'); do
+            for href in $(grep -o 'href="/[^"#]*"' "$f" | sed 's/href="//;s/"//' | sort -u); do
+              target=".${href}"
+              if [ ! -e "$target" ]; then
+                echo "::error file=$f::broken internal link $href"
+                fail=1
+              fi
+            done
+          done
+          exit $fail
+
+      - name: No secrets in tree
+        run: |
+          if grep -rInE '(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16})' --exclude-dir=.git . ; then
+            echo "::error::possible secret committed"; exit 1
+          fi

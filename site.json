@@ -1,0 +1,13 @@
+{
+  "LEGAL_NAME": "Seros, LLC",
+  "STATE_OF_FORMATION": "Georgia",
+  "ENTITY_ADDRESS": "TBD \u2014 fill before publishing",
+  "CONTACT_EMAIL": "legal@seros.dev",
+  "PRIVACY_EMAIL": "privacy@seros.dev",
+  "SUPPORT_EMAIL": "hello@seros.dev",
+  "SECURITY_EMAIL": "security@seros.dev",
+  "WEBSITE_URL": "https://seros.dev",
+  "EFFECTIVE_DATE": "TBD",
+  "DPO_OR_REP": "Not appointed",
+  "draft": true
+}
