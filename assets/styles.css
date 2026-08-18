@@ -1,7 +1,13 @@
 /* Seros, LLC — site styles. Palette + type from the brand board. */
 :root{
-  --sky:#B8DAFF; --steel:#608ACD; --seros:#0009AD; --ink:#283053;
-  --paper:#EDE7DE; --grey:#E8E8E9; --white:#FBFAF7;
+  /* Canonical brand tokens — names match ../business/BRAND-GUIDE.md */
+  --seros-blue:#0009AD; --seros-ink:#283053; --seros-steel:#608ACD;
+  --seros-sky:#B8DAFF; --seros-paper:#EDE7DE; --seros-grey:#E8E8E9;
+  --seros-white:#FBFAF7;
+  /* Short aliases used throughout this stylesheet */
+  --seros:var(--seros-blue); --ink:var(--seros-ink); --steel:var(--seros-steel);
+  --sky:var(--seros-sky); --paper:var(--seros-paper); --grey:var(--seros-grey);
+  --white:var(--seros-white);
   --rule:rgba(40,48,83,.18);
   --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
   --mono:"Courier New",Courier,ui-monospace,monospace;
