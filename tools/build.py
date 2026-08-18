@@ -122,7 +122,14 @@ def main():
         if not p.exists():
             print(f"skip (missing source): {src}")
             continue
-        text, missing = substitute(p.read_text())
+        raw = p.read_text()
+        # Drop the source file's own DRAFT blockquote: the rendered page states its
+        # status in the banner instead, and the blockquote mentions [[DOUBLE_BRACKETS]]
+        # literally, which is documentation rather than a real placeholder.
+        lines = raw.splitlines()
+        while lines and (lines[0].startswith(">") or not lines[0].strip()):
+            lines.pop(0)
+        text, missing = substitute("\n".join(lines) + "\n")
         if missing:
             all_missing[src] = sorted(missing)
         html = markdown.markdown(text, extensions=["tables", "toc", "sane_lists", "attr_list"])

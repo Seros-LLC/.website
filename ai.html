@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Seros uses AI — Seros, LLC</title>
+<meta name="description" content="Plain-language explanation of how Seros uses AI models and what happens to your data.">
+<link rel="canonical" href="https://seros.dev/ai.html">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="How Seros uses AI — Seros, LLC">
+<meta property="og:description" content="Plain-language explanation of how Seros uses AI models and what happens to your data.">
+<meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
+<link rel="icon" href="/assets/icon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#EDE7DE">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
+    <nav class="site">
+        <a href="/#product">Product</a>
+        <a href="/#how">How it works</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/security.html">Security</a>
+        <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap doc">
+<p class="banner"><strong>Draft.</strong> This document has not yet been reviewed by counsel and is not in force. It is published here for review only. Bracketed tokens mark facts that still have to be filled in.</p>
+<h1 id="how-seros-uses-ai">How Seros Uses AI</h1>
+<p>Effective date: [[EFFECTIVE_DATE]]</p>
+<p>This is the short, plain version of how Seros uses AI. The binding terms are in Section 7
+of the <a href="TERMS-OF-SERVICE.md">Terms of Service</a>, the <a href="PRIVACY-POLICY.md">Privacy Policy</a> and
+the <a href="DPA.md">DPA</a>.</p>
+<h2 id="what-the-product-does-with-ai">What the product does with AI</h2>
+<p>Seros reads the work you connect — messages, tickets, documents, calendar entries — and
+uses large language models to draft tasks, suggest who should do them, set out what "done"
+looks like, and summarise status. It proposes. Your people decide.</p>
+<h2 id="what-data-goes-to-model-providers">What data goes to model providers</h2>
+<p>To generate something, we send the model provider the parts of your content that the
+feature needs: the text of the message or document being turned into a task, related task
+records, and the names and roles of the people involved so it can suggest an assignee. We
+do not send your whole workspace, and we do not send content from features you are not
+using.</p>
+<p>The model providers we use are listed in <a href="SUBPROCESSORS.md">SUBPROCESSORS.md</a>, with where
+they process data.</p>
+<h2 id="training">Training</h2>
+<ul>
+<li>We do not use your content to train our own general-purpose models.</li>
+<li>We do not permit our model providers to train their models on your content. Our aim is to
+  use enterprise or API terms where training is off by default, and where prompts and
+  outputs are retained only briefly for abuse monitoring, or not at all. The exact retention
+  window per provider is [[AI_PROVIDER_RETENTION]] and must be confirmed against each
+  provider's current terms.</li>
+<li>We may use aggregated statistics that cannot identify you or any individual — for example
+  "tasks generated per week" or error rates — to run and improve the Service.</li>
+<li>If we ever want to use customer content to improve our own models, we will ask for
+  opt-in consent first, in writing, per customer. Silence will not count as consent.</li>
+</ul>
+<h2 id="human-oversight">Human oversight</h2>
+<ul>
+<li>Everything the model produces is a draft until a person accepts it.</li>
+<li>You must review output before acting on it, and you must not use the Service to make
+  decisions with legal or similarly significant effects about a person without meaningful
+  human review. That is a rule in the <a href="ACCEPTABLE-USE-POLICY.md">Acceptable Use Policy</a>, not
+  a suggestion.</li>
+<li>Administrators can control which integrations are connected and what data is in scope.</li>
+</ul>
+<h2 id="limitations-stated-plainly">Limitations, stated plainly</h2>
+<ul>
+<li>The models are probabilistic. They can be wrong, out of date, or confidently invent
+  detail that is not in your data.</li>
+<li>They can reflect bias in their training data, including in suggestions about who should
+  do what. Watch for that in assignment recommendations.</li>
+<li>The same input can produce different output on different runs.</li>
+<li>Output is not legal, tax, medical, financial or other professional advice.</li>
+<li>Similar inputs from different customers can produce similar output. Output is not unique
+  to you.</li>
+<li>Model providers change their models. Behaviour can change without an announcement from us.</li>
+</ul>
+<h2 id="your-controls">Your controls</h2>
+<ul>
+<li>Choose which systems to connect, and the scope of each connection.</li>
+<li>Turn AI features off for a workspace: [[AI_OPT_OUT_AVAILABLE]] — confirm whether this is
+  actually possible in the product before publishing.</li>
+<li>Delete generated content the same way you delete any other content.</li>
+<li>Ask us what was sent to a provider for a given generation: [[AI_AUDIT_LOG_AVAILABLE]].</li>
+</ul>
+<p>Questions: privacy@seros.dev.</p>
+<h2 id="what-i-need-from-you">What I need from you</h2>
+<ol>
+<li>Confirm the training and retention position against each provider's live terms, and note
+   whether it requires a specific plan or a signed addendum.</li>
+<li>Confirm whether AI features can genuinely be switched off, and whether a per-generation
+   audit log exists.</li>
+<li>Keep this page in sync with the model providers listed in SUBPROCESSORS.md.</li>
+</ol>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p class="fineprint">&copy; 2026 Seros, LLC &middot;
+      <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot;
+      <a href="/acceptable-use.html">Acceptable use</a> &middot; <a href="/dpa.html">DPA</a> &middot;
+      <a href="/subprocessors.html">Subprocessors</a> &middot; <a href="/security.html">Security</a><br>
+      Nothing on this site is legal, tax, or professional advice.</p>
+  </div>
+</footer>
+</body>
+</html>

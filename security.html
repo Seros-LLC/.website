@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Security — Seros, LLC</title>
+<meta name="description" content="How Seros, LLC protects data, and how to report a vulnerability.">
+<link rel="canonical" href="https://seros.dev/security.html">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Security — Seros, LLC">
+<meta property="og:description" content="How Seros, LLC protects data, and how to report a vulnerability.">
+<meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
+<link rel="icon" href="/assets/icon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#EDE7DE">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
+    <nav class="site">
+        <a href="/#product">Product</a>
+        <a href="/#how">How it works</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/security.html">Security</a>
+        <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap doc">
+<p class="banner"><strong>Draft.</strong> This document has not yet been reviewed by counsel and is not in force. It is published here for review only. Bracketed tokens mark facts that still have to be filled in.</p>
+<h1 id="security-and-vulnerability-disclosure">Security and Vulnerability Disclosure</h1>
+<p>Effective date: [[EFFECTIVE_DATE]]</p>
+<p>This page describes how we protect the Service, and how to report a vulnerability. It is
+written for customers, prospects and security researchers.</p>
+<h2 id="1-no-certification-is-claimed">1. No certification is claimed</h2>
+<p>Seros, LLC does not hold SOC 2 Type I or Type II, ISO/IEC 27001, PCI DSS, HITRUST, or
+any other security certification or attestation. We do not claim compliance with any of
+them. If that changes, this page will say so and the report will be available under NDA.</p>
+<p>We also do not currently offer a HIPAA Business Associate Agreement. Do not send protected
+health information to the Service.</p>
+<p>Saying this plainly is deliberate. A security page that implies certifications the company
+does not have is a misrepresentation, and enterprise security reviewers check.</p>
+<h2 id="2-how-the-service-is-built-and-run">2. How the Service is built and run</h2>
+<p>The statements below must be verified against reality before this page is published. Where
+a control is not yet in place, delete the line or mark it as planned with a date. Do not
+publish an aspiration as a fact.</p>
+<p><strong>Architecture</strong>
+- Multi-tenant cloud application hosted in the United States with [[TBD_VENDOR]].
+- Logical separation between tenants, enforced at the application and data layers:
+  [[TOM_TENANT_ISOLATION]].
+- Production environments are separate from development and test environments, and
+  production data is not copied into them: [[TOM_ENV_SEPARATION]].</p>
+<p><strong>Encryption</strong>
+- TLS 1.2 or higher for all connections to the Service: [[TOM_TLS]].
+- Encryption at rest for databases, object storage and backups: [[TOM_ENCRYPTION_AT_REST]].
+- Secrets and keys are managed in [[TOM_KEY_MANAGEMENT]] and are not stored in source
+  control.</p>
+<p><strong>Access control</strong>
+- Least-privilege access for staff, reviewed at least quarterly.
+- Multi-factor authentication required for administrative and production access:
+  [[TOM_MFA]].
+- Customer-side controls: role-based permissions, and single sign-on where supported:
+  [[TOM_CUSTOMER_SSO]].
+- Passwords are stored using a modern password hashing function: [[TOM_CREDENTIALS]].</p>
+<p><strong>Development</strong>
+- Code review before merge and automated tests in the pipeline:
+  [[TOM_CHANGE_MANAGEMENT]].
+- Dependency and vulnerability scanning: [[TOM_VULN_SCANNING]].
+- Penetration testing: [[TOM_PENTEST]].</p>
+<p><strong>Monitoring and response</strong>
+- Centralised logging, alerting and retention of security logs for
+  12 months: [[TOM_LOGGING]].
+- Documented incident response process with defined roles and a customer notification path:
+  [[TOM_INCIDENT_RESPONSE]].
+- Backups with a tested restore procedure: [[TOM_BACKUP_RPO_RTO]].</p>
+<p><strong>Vendors</strong>
+- Subprocessors are listed at <a href="SUBPROCESSORS.md">SUBPROCESSORS.md</a>, each under a written
+  contract with data protection terms.</p>
+<p><strong>AI providers</strong>
+- Customer content sent to AI model providers is limited to what a feature needs, and our
+  provider terms are intended to prohibit training on it. Details in
+  <a href="AI-DISCLOSURE.md">AI-DISCLOSURE.md</a>.</p>
+<h2 id="3-customer-responsibilities">3. Customer responsibilities</h2>
+<p>Security is shared. You are responsible for:</p>
+<ul>
+<li>Who you invite, what role you give them, and removing people who leave.</li>
+<li>Protecting credentials and API keys, and rotating them if exposed.</li>
+<li>Enabling multi-factor authentication or single sign-on for your users.</li>
+<li>Deciding which systems to connect and what scope to grant.</li>
+<li>Not putting prohibited data into the Service (see the
+  <a href="ACCEPTABLE-USE-POLICY.md">Acceptable Use Policy</a>).</li>
+<li>Reviewing AI output before acting on it.</li>
+</ul>
+<h2 id="4-incident-notification">4. Incident notification</h2>
+<p>If we become aware of a security incident affecting your data, we will notify you without
+undue delay and within 72 hours, with what we know at the time, and
+will update you as the investigation progresses. The contractual detail is in Section 9 of
+the <a href="DPA.md">DPA</a>.</p>
+<h2 id="5-vulnerability-disclosure-policy">5. Vulnerability disclosure policy</h2>
+<p>We want to hear about security problems. This section is our commitment to researchers who
+act in good faith.</p>
+<h3 id="51-how-to-report">5.1 How to report</h3>
+<p>Email security@seros.dev with:</p>
+<ul>
+<li>A description of the issue and its impact.</li>
+<li>Steps to reproduce, ideally with a proof of concept.</li>
+<li>The URLs, endpoints, accounts and timestamps involved.</li>
+<li>Your name or handle, if you want credit.</li>
+</ul>
+<p>Encrypt if you prefer: not published; email in plain text and we will arrange an encrypted channel if needed. Use one report per issue. We will publish a
+<code>/.well-known/security.txt</code> file pointing at this policy: https://seros.dev/.well-known/security.txt.</p>
+<h3 id="52-what-we-commit-to">5.2 What we commit to</h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acknowledge receipt</td>
+<td>72 business hours</td>
+</tr>
+<tr>
+<td>Initial assessment and severity</td>
+<td>10 business days</td>
+</tr>
+<tr>
+<td>Status update cadence</td>
+<td>Every 14 days until closed</td>
+</tr>
+<tr>
+<td>Fix for critical issues</td>
+<td>30 days, target</td>
+</tr>
+<tr>
+<td>Fix for high and medium issues</td>
+<td>90 days, target</td>
+</tr>
+</tbody>
+</table>
+<p>These are targets, not contractual commitments, unless a signed agreement says otherwise.</p>
+<h3 id="53-safe-harbour">5.3 Safe harbour</h3>
+<p>If you make a good-faith effort to comply with this policy during your research, we will:</p>
+<ul>
+<li>Consider your research authorised under the Computer Fraud and Abuse Act, applicable
+  Georgia computer crime law, and any anti-circumvention provisions of the DMCA, to the
+  extent those laws allow us to authorise it;</li>
+<li>Not pursue or support civil or criminal action against you for that research;</li>
+<li>Waive any claim that your research breached our Terms of Service or Acceptable Use Policy;
+  and</li>
+<li>If a third party brings action against you for research conducted in accordance with this
+  policy, make it known that your activity was authorised.</li>
+</ul>
+<p>This authorisation extends only to us. We cannot authorise testing of systems owned by our
+subprocessors or by other third parties; report those to their owners. If legal action is
+initiated by a third party and you complied with this policy, we will make that clear.</p>
+<p>If you are unsure whether something is in scope, ask first at security@seros.dev.</p>
+<h3 id="54-scope">5.4 Scope</h3>
+<p><strong>In scope</strong>
+- https://seros.dev and its subdomains that we operate.
+- The Seros web application and public API.
+- Our official mobile or desktop clients, if any exist.</p>
+<p><strong>Out of scope</strong>
+- Third-party services and infrastructure we do not control, including our hosting,
+  payment, email and AI model providers.
+- Denial-of-service and volumetric testing.
+- Social engineering of staff, customers or vendors, and physical security testing.
+- Automated scanning that generates significant traffic, without written permission.
+- Reports generated solely by an automated tool with no analysis or demonstrated impact.
+- Findings that are configuration opinions rather than exploitable issues: missing security
+  headers with no demonstrated impact, SPF/DMARC policy preferences, TLS cipher preferences,
+  version disclosure, clickjacking on pages with no sensitive action, missing rate limits
+  with no demonstrated abuse, self-XSS, and issues requiring a rooted device, a physically
+  present attacker or an already-compromised account.</p>
+<h3 id="55-rules">5.5 Rules</h3>
+<ul>
+<li>Only test accounts and data you own or have explicit permission to test.</li>
+<li>Never access, modify, exfiltrate or delete another party's data. If you encounter
+  personal data, stop, do not save it, and tell us in the report.</li>
+<li>Stop as soon as you have confirmed the vulnerability.</li>
+<li>Do not disclose publicly until we have fixed the issue, or until
+  90 days after your report, whichever comes first, and coordinate
+  the wording with us.</li>
+<li>Do not demand payment in exchange for withholding a report. That is extortion, not
+  research, and the safe harbour does not apply to it.</li>
+</ul>
+<h3 id="56-rewards">5.6 Rewards</h3>
+<p>We do not currently operate a paid bug bounty. We will credit researchers by name or handle
+in an acknowledgements list at https://seros.dev/security.html#acknowledgements if they want it. Whether a bounty is
+introduced is no paid bounty at this stage; credit offered instead.</p>
+<h2 id="what-i-need-from-you">What I need from you</h2>
+<ol>
+<li>Delete or correct every control statement in Section 2 that is not true today.</li>
+<li>Set up security@seros.dev as a monitored inbox before publishing this page.</li>
+<li>Fill the response targets. Do not promise a 24-hour acknowledgement you cannot meet on a
+   weekend.</li>
+<li>Have counsel review the safe harbour wording. The intent is standard, but the CFAA and
+   DMCA references should be checked.</li>
+<li>Publish <code>security.txt</code> at the well-known path once the email exists.</li>
+</ol>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p class="fineprint">&copy; 2026 Seros, LLC &middot;
+      <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot;
+      <a href="/acceptable-use.html">Acceptable use</a> &middot; <a href="/dpa.html">DPA</a> &middot;
+      <a href="/subprocessors.html">Subprocessors</a> &middot; <a href="/security.html">Security</a><br>
+      Nothing on this site is legal, tax, or professional advice.</p>
+  </div>
+</footer>
+</body>
+</html>
