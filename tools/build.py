@@ -80,7 +80,7 @@ def shell(title, desc, canonical, body):
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#EDE7DE">
-<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css?v=3">
 </head>
 <body>
 <header class="site">

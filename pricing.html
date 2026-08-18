@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#EDE7DE">
-<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css?v=3">
 </head>
 <body>
 <header class="site">
@@ -32,19 +32,19 @@
   </div>
 </header>
 
-<section class="wrap doc" style="max-width:1000px">
+<section class="wrap doc doc-wide">
   <p class="eyebrow">Pricing &middot; planned</p>
   <h1>Priced per seat. Predictable per month.</h1>
   <p class="lede">Seros is pre-launch, so these are the tiers we are building toward, published
   early because hiding a price wastes everyone's afternoon. Early-access customers keep
   founding pricing when we open properly.</p>
 
-  <div class="cards" style="margin-top:34px">
+  <div class="cards price-grid stagger" data-tilt>
     <div class="card">
-      <p class="eyebrow" style="margin-bottom:.4rem">Starter</p>
-      <h3 style="font-size:1.9rem;margin:0">$19<span style="font-size:.8rem;font-family:var(--mono)"> /seat /mo</span></h3>
-      <p style="margin:.4rem 0 1rem;font-size:.8rem;color:var(--steel)">3 seats minimum &middot; $190/seat billed yearly</p>
-      <ul class="ticks" style="font-size:.86rem">
+      <p class="eyebrow tier-name">Starter</p>
+      <h3 class="tier-price">$19<span class="tier-unit"> /seat /mo</span></h3>
+      <p class="tier-terms">3 seats minimum &middot; $190/seat billed yearly</p>
+      <ul class="ticks tier-list">
         <li>One source, one tracker, one workspace</li>
         <li>150 AI actions per seat per month, pooled</li>
         <li>Task drafting and round-robin assignment</li>
@@ -52,11 +52,11 @@
         <li>Email support, two business days</li>
       </ul>
     </div>
-    <div class="card" style="border-color:var(--seros);border-width:2px">
-      <p class="eyebrow" style="margin-bottom:.4rem;color:var(--seros)">Team &middot; most teams start here</p>
-      <h3 style="font-size:1.9rem;margin:0">$39<span style="font-size:.8rem;font-family:var(--mono)"> /seat /mo</span></h3>
-      <p style="margin:.4rem 0 1rem;font-size:.8rem;color:var(--steel)">5 seats minimum &middot; $390/seat billed yearly</p>
-      <ul class="ticks" style="font-size:.86rem">
+    <div class="card is-featured">
+      <p class="eyebrow tier-name is-featured">Team &middot; most teams start here</p>
+      <h3 class="tier-price">$39<span class="tier-unit"> /seat /mo</span></h3>
+      <p class="tier-terms">5 seats minimum &middot; $390/seat billed yearly</p>
+      <ul class="ticks tier-list">
         <li>Unlimited sources, 3 trackers, 10 workspaces</li>
         <li>350 AI actions per seat per month, pooled</li>
         <li>Smart routing: skills, load, and history</li>
@@ -65,10 +65,10 @@
       </ul>
     </div>
     <div class="card">
-      <p class="eyebrow" style="margin-bottom:.4rem">Scale</p>
-      <h3 style="font-size:1.9rem;margin:0">$79<span style="font-size:.8rem;font-family:var(--mono)"> /seat /mo</span></h3>
-      <p style="margin:.4rem 0 1rem;font-size:.8rem;color:var(--steel)">10 seats minimum &middot; $790/seat billed yearly</p>
-      <ul class="ticks" style="font-size:.86rem">
+      <p class="eyebrow tier-name">Scale</p>
+      <h3 class="tier-price">$79<span class="tier-unit"> /seat /mo</span></h3>
+      <p class="tier-terms">10 seats minimum &middot; $790/seat billed yearly</p>
+      <ul class="ticks tier-list">
         <li>Unlimited trackers and workspaces</li>
         <li>700 AI actions per seat per month, pooled</li>
         <li>SSO (SAML/OIDC), SCIM, custom roles</li>
@@ -120,8 +120,8 @@
   <div class="wrap">
     <div class="cols">
       <div>
-        <a class="brand" href="/" style="margin-bottom:10px"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
-        <p style="font-size:.82rem;max-width:34ch;opacity:.8">Making task delegation light work.</p>
+        <a class="brand foot-brand" href="/"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
+        <p class="foot-blurb">Making task delegation light work.</p>
       </div>
       <div><h4>Product</h4>
         <a href="/#product">Overview</a><a href="/#how">How it works</a><a href="/pricing.html">Pricing</a></div>
@@ -141,5 +141,6 @@ document.querySelectorAll('.reveal').forEach(function(el){
   new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('shown');o.unobserve(e.target);}});},{threshold:.12}).observe(el);
 });
 </script>
+<script src="/assets/seros-ui.js?v=3" defer></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#EDE7DE">
-<link rel="stylesheet" href="/assets/styles.css?v=2">
+<link rel="stylesheet" href="/assets/styles.css?v=3">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -46,9 +46,9 @@
           <a class="btn primary" href="#contact">Request early access</a>
           <a class="btn ghost" href="#how">See how it works</a>
         </div>
-        <p class="tagline" style="margin-top:22px">Delegation is a discipline. We made it a system.</p>
+        <p class="tagline">Delegation is a discipline. We made it a system.</p>
       </div>
-      <figure data-impression>
+      <figure data-sheet>
         <img src="/assets/seros-hero.png" alt="Classical engraving of a discus thrower, poised mid-throw, with a small bird at his feet.">
       </figure>
     </div>
@@ -61,7 +61,7 @@
   <p>Every small team loses hours in the same places: a request buried in a thread, a task
   nobody owns, a status nobody can find, the same instructions typed again for the third time.
   Project tools assume the work is already defined. The expensive part is defining it.</p>
-  <div class="cards">
+  <div class="cards stagger" data-tilt>
     <div class="card"><span class="num">01</span><h3>Requests get lost</h3>
       <p>Asks arrive in chat, email, calls, and tickets. Most never become a task at all.</p></div>
     <div class="card"><span class="num">02</span><h3>Ownership is vague</h3>
@@ -71,22 +71,25 @@
   </div>
 </section>
 
-<section id="how" class="wrap reveal">
-  <p class="eyebrow">How it works</p>
-  <h2>Capture. Draft. Assign. Track.</h2>
-  <div class="cards">
-    <div class="card"><span class="num">1</span><h3>Capture</h3>
-      <p>Connect the places work is asked for. Seros reads the request, not just the words.</p></div>
-    <div class="card"><span class="num">2</span><h3>Draft</h3>
-      <p>It writes the task: outcome, context, acceptance criteria, effort, and a first pass at priority.</p></div>
-    <div class="card"><span class="num">3</span><h3>Assign</h3>
-      <p>It proposes an owner based on skills, load, and history. A human confirms &mdash; always.</p></div>
-    <div class="card"><span class="num">4</span><h3>Track</h3>
-      <p>Nudges, status roll-ups, and a weekly view of what actually moved.</p></div>
+<section id="how" class="wrap reveal steps" data-deck>
+  <div class="steps-copy">
+    <p class="eyebrow">How it works</p>
+    <h2>Capture. Draft. Assign. Track.</h2>
+    <p class="steps-note"><strong>A human approves every assignment.</strong> Seros drafts and
+    proposes; your team decides. We are not building an autopilot for your business, and we say
+    so in our <a href="/terms.html">terms</a>.</p>
+    <p class="steps-tally" data-tally aria-hidden="true"></p>
   </div>
-  <p><strong>A human approves every assignment.</strong> Seros drafts and proposes; your team decides.
-  We are not building an autopilot for your business, and we say so in our
-  <a href="/terms.html">terms</a>.</p>
+  <ol class="deck">
+    <li class="card step"><span class="num">1</span><h3>Capture</h3>
+      <p>Connect the places work is asked for. Seros reads the request, not just the words.</p></li>
+    <li class="card step"><span class="num">2</span><h3>Draft</h3>
+      <p>It writes the task: outcome, context, acceptance criteria, effort, and a first pass at priority.</p></li>
+    <li class="card step"><span class="num">3</span><h3>Assign</h3>
+      <p>It proposes an owner based on skills, load, and history. A human confirms &mdash; always.</p></li>
+    <li class="card step"><span class="num">4</span><h3>Track</h3>
+      <p>Nudges, status roll-ups, and a weekly view of what actually moved.</p></li>
+  </ol>
 </section>
 
 <section class="wrap reveal">
@@ -130,8 +133,8 @@
   <div class="wrap">
     <div class="cols">
       <div>
-        <a class="brand" href="/" style="margin-bottom:10px"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
-        <p style="font-size:.82rem;max-width:34ch;opacity:.8">Making task delegation light work.</p>
+        <a class="brand foot-brand" href="/"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
+        <p class="foot-blurb">Making task delegation light work.</p>
       </div>
       <div><h4>Product</h4>
         <a href="/#product">Overview</a><a href="/#how">How it works</a><a href="/pricing.html">Pricing</a></div>
@@ -146,20 +149,7 @@
     under active development and may change. Nothing on this site is legal, tax, or professional advice.</p>
   </div>
 </footer>
-<script>
-(function(){
-  var els = document.querySelectorAll('.reveal');
-  var show = function(el){ el.classList.add('shown'); };
-  if(!('IntersectionObserver' in window)){ els.forEach(show); return; }
-  els.forEach(function(el){
-    new IntersectionObserver(function(es,o){
-      es.forEach(function(e){ if(e.isIntersecting){ show(e.target); o.unobserve(e.target); } });
-    },{threshold:.08, rootMargin:'0px 0px -5% 0px'}).observe(el);
-  });
-  // Safety net: never leave content hidden if the observer does not fire.
-  setTimeout(function(){ els.forEach(show); }, 1600);
-})();
-</script>
-<script src="/assets/seros-gl.js?v=2" defer></script>
+<script src="/assets/seros-ui.js?v=3" defer></script>
+<script src="/assets/seros-sheet.js?v=3" defer></script>
 </body>
 </html>
