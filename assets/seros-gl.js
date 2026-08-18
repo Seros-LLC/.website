@@ -69,6 +69,24 @@
     return p;
   }
 
+  // Every rule these canvases depend on is set here, in JavaScript, on
+  // purpose. /assets/* is served `immutable` for a year under an unversioned
+  // filename, so a returning reader can arrive with a year-old stylesheet and
+  // today's markup. A layer that needed a new CSS rule to be positioned would
+  // then land in the document flow and shove the page apart. This one cannot.
+  function place(host, canvas, extra) {
+    if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
+    canvas.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;' +
+      'display:block;pointer-events:none;opacity:0;' + (extra || '');
+  }
+
+  function reveal(canvas, seconds) {
+    window.requestAnimationFrame(function () {
+      canvas.style.transition = 'opacity ' + seconds + 's ease';
+      canvas.style.opacity = '1';
+    });
+  }
+
   function brandColor(name, fallback) {
     var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
     var m = /^#([0-9a-f]{6})$/i.exec(v);
@@ -210,8 +228,11 @@
     var sky = brandColor('--seros-sky', [0.722, 0.855, 1.0]);
     var ink = brandColor('--seros-ink', [0.157, 0.188, 0.325]);
 
+    place(host, canvas, 'z-index:-1');
+    host.style.isolation = 'isolate';
     host.insertBefore(canvas, host.firstChild);
     host.classList.add('gl-plate-live');
+    reveal(canvas, 1.4);
 
     var layer = {
       resize: function () {
@@ -353,9 +374,12 @@
       } catch (e) { return; }
       loaded = true;
       host.classList.add('gl-print-live');   // only now is the <img> replaced
+      img.style.visibility = 'hidden';
+      reveal(canvas, 0.9);
       wake();
     }
 
+    place(host, canvas, 'filter:drop-shadow(0 22px 34px rgba(40,48,83,.20))');
     host.appendChild(canvas);
 
     var layer = {
