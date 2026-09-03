@@ -41,9 +41,16 @@ header.site .wrap{display:flex; align-items:center; gap:20px; height:64px}
 .brand{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:700; font-size:1.05rem;
   letter-spacing:.02em; color:var(--ink); text-decoration:none}
 .brand img{width:30px; height:30px; border-radius:6px; box-shadow:0 1px 3px rgba(40,48,83,.25)}
-nav.site{margin-left:auto; display:flex; gap:22px; flex-wrap:wrap}
+nav.site{margin-left:auto; display:flex; gap:22px; flex-wrap:wrap; align-items:center}
 nav.site a{font-family:var(--mono); font-size:.82rem; text-transform:uppercase; letter-spacing:.1em; text-decoration:none; color:var(--ink); opacity:.75}
 nav.site a:hover{opacity:1; color:var(--seros)}
+nav.site a.btn-nav-app{
+  background:var(--seros); color:var(--white); opacity:1; padding:7px 15px; border-radius:3px;
+  border:1px solid var(--seros); font-weight:600; letter-spacing:.08em; margin-left:6px;
+  box-shadow:0 2px 5px rgba(0,9,173,.22); transition:all .15s ease;
+}
+nav.site a.btn-nav-app:hover{background:var(--ink); border-color:var(--ink); color:var(--white); opacity:1}
+nav.site a.btn-nav-app::after{display:none}
 
 /* hero */
 .hero{padding:72px 0 40px}
