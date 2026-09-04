@@ -60,6 +60,9 @@ def substitute(text):
 
 def shell(title, desc, canonical, body):
     nav = "\n        ".join(f'<a href="{h}">{t}</a>' for t, h in NAV)
+    # The app lives on a different origin, so this one is absolute. Every page gets
+    # a way into the product, not just the marketing pages.
+    nav += '\n        <a class="btn-nav-app" href="https://app.seros.dev/demo">Launch App &rarr;</a>' 
     banner = ""
     if DRAFT:
         banner = ('<p class="banner"><strong>Draft.</strong> This document has not yet been '
@@ -80,7 +83,7 @@ def shell(title, desc, canonical, body):
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#EDE7DE">
-<link rel="stylesheet" href="/assets/styles.css?v=3">
+<link rel="stylesheet" href="/assets/styles.css?v=4">
 </head>
 <body>
 <header class="site">

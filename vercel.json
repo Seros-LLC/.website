@@ -1,6 +1,26 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/login", "destination": "https://app.seros.dev/login" },
+    { "source": "/demo", "destination": "https://app.seros.dev/demo" },
+    { "source": "/queue", "destination": "https://app.seros.dev/queue" },
+    { "source": "/tasks", "destination": "https://app.seros.dev/tasks" },
+    { "source": "/ask", "destination": "https://app.seros.dev/ask" },
+    { "source": "/digest", "destination": "https://app.seros.dev/digest" },
+    { "source": "/connect", "destination": "https://app.seros.dev/connect" },
+    { "source": "/connect/(.*)", "destination": "https://app.seros.dev/connect/$1" },
+    { "source": "/channels", "destination": "https://app.seros.dev/channels" },
+    { "source": "/members", "destination": "https://app.seros.dev/members" },
+    { "source": "/members/(.*)", "destination": "https://app.seros.dev/members/$1" },
+    { "source": "/audit", "destination": "https://app.seros.dev/audit" },
+    { "source": "/auth/(.*)", "destination": "https://app.seros.dev/auth/$1" },
+    { "source": "/oauth/(.*)", "destination": "https://app.seros.dev/oauth/$1" },
+    { "source": "/confirm", "destination": "https://app.seros.dev/confirm" },
+    { "source": "/logout", "destination": "https://app.seros.dev/logout" },
+    { "source": "/password", "destination": "https://app.seros.dev/password" },
+    { "source": "/set-password", "destination": "https://app.seros.dev/set-password" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
