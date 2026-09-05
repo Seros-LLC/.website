@@ -46,7 +46,8 @@ jobs:
           fail=0
           for f in $(git ls-files '*.html'); do
             for href in $(grep -o 'href="/[^"#]*"' "$f" | sed 's/href="//;s/"//' | sort -u); do
-              target=".${href}"
+              path="${href%%\?*}"
+              target=".${path}"
               if [ ! -e "$target" ]; then
                 echo "::error file=$f::broken internal link $href"
                 fail=1
