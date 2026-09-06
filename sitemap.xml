@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://seros.dev/</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/pricing.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/security.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/privacy.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/terms.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/acceptable-use.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/dpa.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/subprocessors.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/cookies.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/billing.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://seros.dev/ai.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/pricing</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/security</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/privacy</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/terms</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/acceptable-use</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/dpa</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/subprocessors</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/cookies</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/billing</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/ai</loc><changefreq>monthly</changefreq></url>
 </urlset>

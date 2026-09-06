@@ -48,7 +48,8 @@ jobs:
             for href in $(grep -o 'href="/[^"#]*"' "$f" | sed 's/href="//;s/"//' | sort -u); do
               path="${href%%\?*}"
               target=".${path}"
-              if [ ! -e "$target" ]; then
+              # cleanUrls is on in vercel.json, so /terms is served by ./terms.html
+              if [ ! -e "$target" ] && [ ! -e "${target}.html" ]; then
                 echo "::error file=$f::broken internal link $href"
                 fail=1
               fi

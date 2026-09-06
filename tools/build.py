@@ -62,7 +62,7 @@ def shell(title, desc, canonical, body):
     nav = "\n        ".join(f'<a href="{h}">{t}</a>' for t, h in NAV)
     # The app lives on a different origin, so this one is absolute. Every page gets
     # a way into the product, not just the marketing pages.
-    nav += '\n        <a class="btn-nav-app" href="https://app.seros.dev/demo">Launch App &rarr;</a>' 
+    nav += '\n        <a class="btn-nav-app" href="https://app.seros.dev/login">Launch App &rarr;</a>' 
     banner = ""
     if DRAFT:
         banner = ('<p class="banner"><strong>Draft.</strong> This document has not yet been '
@@ -101,9 +101,9 @@ def shell(title, desc, canonical, body):
 <footer class="site">
   <div class="wrap">
     <p class="fineprint">&copy; 2026 Seros, LLC &middot;
-      <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot;
-      <a href="/acceptable-use.html">Acceptable use</a> &middot; <a href="/dpa.html">DPA</a> &middot;
-      <a href="/subprocessors.html">Subprocessors</a> &middot; <a href="/security.html">Security</a><br>
+      <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a> &middot;
+      <a href="/acceptable-use">Acceptable use</a> &middot; <a href="/dpa">DPA</a> &middot;
+      <a href="/subprocessors">Subprocessors</a> &middot; <a href="/security">Security</a><br>
       Nothing on this site is legal, tax, or professional advice.</p>
   </div>
 </footer>
@@ -137,7 +137,7 @@ def main():
             all_missing[src] = sorted(missing)
         html = markdown.markdown(text, extensions=["tables", "toc", "sane_lists", "attr_list"])
         if not check_only:
-            (ROOT / out).write_text(shell(title, desc, "/" + out, html))
+            (ROOT / out).write_text(shell(title, desc, "/" + out.removesuffix(".html"), html))
         built.append(out)
 
     print(("checked: " if check_only else "built: ") + ", ".join(built))
