@@ -20,6 +20,7 @@ generated from Markdown so the contracts have one source of truth.
 ```bash
 python3 tools/build.py            # render
 python3 tools/build.py --check    # report unresolved [[PLACEHOLDER]] tokens, write nothing
+python3 tools/check-links.py      # fail if generated HTML points at a missing local file
 ```
 
 `site.json` drives substitution. While `"draft": true`:

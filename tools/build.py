@@ -38,6 +38,12 @@ PAGES = [
      "Plain-language explanation of how Seros uses AI models and what happens to your data."),
 ]
 
+# Legal Markdown is the source of truth, but the source files are not deployed.
+# Keep links between published legal pages pointing at the generated HTML files.
+# This is intentionally limited to documents in PAGES: links to internal legal
+# work product must not accidentally become public routes.
+PUBLISHED_LINKS = {src: out for src, out, _title, _desc in PAGES}
+
 NAV = [("Product", "/#product"), ("How it works", "/#how"), ("Pricing", "/pricing.html"),
        ("Security", "/security.html"), ("Contact", "/#contact")]
 
@@ -56,6 +62,18 @@ def substitute(text):
         return str(val)
 
     return TOKEN.sub(repl, text), missing
+
+
+def rewrite_published_links(text):
+    """Map links to published Markdown sources onto their deployed HTML pages."""
+    for source, output in PUBLISHED_LINKS.items():
+        text = re.sub(
+            rf"(\]\()({re.escape(source)})(?=[)#\s])",
+            rf"\g<1>{output}",
+            text,
+            flags=re.IGNORECASE,
+        )
+    return text
 
 
 def shell(title, desc, canonical, body):
@@ -133,6 +151,7 @@ def main():
         while lines and (lines[0].startswith(">") or not lines[0].strip()):
             lines.pop(0)
         text, missing = substitute("\n".join(lines) + "\n")
+        text = rewrite_published_links(text)
         if missing:
             all_missing[src] = sorted(missing)
         html = markdown.markdown(text, extensions=["tables", "toc", "sane_lists", "attr_list"])
