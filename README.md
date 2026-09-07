@@ -51,6 +51,19 @@ no emoji.
 ## Deploy
 
 Static hosting; `vercel.json` sets security headers and long-lived asset caching.
+
+**Production domain note:** `seros.dev` is currently aliased to Vercel project
+`seros-website`, not the similarly named `website` project. A Git push to this repository
+must either be connected to `seros-website` in Vercel, or deployed explicitly from this
+directory:
+
+```bash
+npx vercel link --yes --project seros-website
+npx vercel --prod --yes
+```
+
+After deploying, verify the live home page at `https://seros.dev/`. Do not move the domain
+to the other Vercel project casually: its configuration may not match the production site.
 Point the apex domain at the host once `seros.dev` is registered — see
 `../business/OPERATIONS-CHECKLIST.md`.
 
