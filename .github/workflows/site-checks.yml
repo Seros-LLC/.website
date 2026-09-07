@@ -57,6 +57,9 @@ jobs:
           done
           exit $fail
 
+      - name: Local references and route config
+        run: python3 tools/check-links.py
+
       - name: No secrets in tree
         run: |
           if grep -rInE '(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16})' --exclude-dir=.git . ; then
