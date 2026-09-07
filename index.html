@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Seros — turn Slack commitments into Linear issues</title>
-<meta name="description" content="Run a capture-rate audit to find the Slack commitments that never became Linear issues. Seros drafts the issue. A human confirms every write.">
+<meta name="description" content="Turn Slack commitments into reviewed Linear issues. You choose the channels, review every draft, and confirm every write.">
 <link rel="canonical" href="https://seros.dev/">
 <meta property="og:title" content="What did your team commit to in Slack that never became an issue?">
 <meta property="og:description" content="Seros finds the gap, drafts the Linear issue, and waits for a human confirmation.">
@@ -20,6 +20,7 @@
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
@@ -28,12 +29,12 @@
         <a href="/#how">How it works</a>
         <a href="/pricing">Pricing</a>
         <a href="/security">Security</a>
-        <a href="/#audit">Capture-rate audit</a>
-        <a class="btn-nav-app" href="/login">Launch app &rarr;</a>
+        <a class="btn-nav-app" href="https://app.seros.dev/login">Launch app &rarr;</a>
     </nav>
   </div>
 </header>
 
+<main id="main">
 <section class="hero" data-plate>
   <div class="wrap">
     <div class="grid">
@@ -44,8 +45,8 @@
         commitments in the Slack channels you choose, drafts a Linear issue with the source context,
         and waits for a human to confirm it.</p>
         <div class="cta">
-          <a class="btn primary" href="#audit">Request a capture-rate audit &rarr;</a>
-          <a class="btn ghost" href="/login">Launch app</a>
+          <a class="btn primary" href="https://app.seros.dev/signup">Create an account &rarr;</a>
+          <a class="btn ghost" href="https://app.seros.dev/login">Sign in</a>
         </div>
         <p class="tagline">making task delegation light work</p>
       </div>
@@ -119,20 +120,17 @@
   <a href="/security">Security</a>.</p>
 </section>
 
-<section id="audit" class="wrap reveal">
-  <p class="eyebrow">Capture-rate audit</p>
-  <h2>Start with your own last seven days.</h2>
-  <p>We will scope the audit to the Slack channels you choose and show you two numbers: commitments
-  detected, and the share that became Linear issues. If there is no meaningful gap, Seros is not
-  the right product for your team.</p>
+<section id="start" class="wrap reveal">
+  <p class="eyebrow">Get started</p>
+  <h2>Connect only what you choose.</h2>
+  <p>Create your workspace, connect Slack, and select the channels Seros may read. Review every draft before it creates a Linear issue.</p>
   <div class="cta">
-    <a class="btn primary" href="mailto:hello@seros.dev?subject=Capture-rate%20audit%20request">Request my audit &rarr;</a>
-    <a class="btn ghost" href="/login">Launch app &rarr;</a>
+    <a class="btn primary" href="https://app.seros.dev/signup">Create an account &rarr;</a>
+    <a class="btn ghost" href="https://app.seros.dev/login">Sign in</a>
   </div>
-  <p class="fineprint">Already have an account? <a href="/login">Launch the app</a> to sign in.
-  New here? Request the audit first &mdash; we set up your workspace during it.</p>
 </section>
 
+</main>
 <footer class="site">
   <div class="wrap">
     <div class="cols">
@@ -143,7 +141,7 @@
       <div><h4>Product</h4>
         <a href="/#product">Overview</a><a href="/#how">How it works</a><a href="/pricing">Pricing</a></div>
       <div><h4>Company</h4>
-        <a href="/login">Launch app</a><a href="/#audit">Capture-rate audit</a>
+        <a href="https://app.seros.dev/signup">Create an account</a><a href="https://app.seros.dev/login">Sign in</a>
         <a href="https://github.com/Seros-LLC">GitHub</a><a href="/security">Security</a></div>
       <div><h4>Legal</h4>
         <a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a>

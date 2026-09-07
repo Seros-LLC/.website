@@ -41,9 +41,9 @@ jobs:
           done
           exit $fail
 
-      # Both kinds of internal link are checked in one place: static pages served
-      # from this repo, and app routes served by a vercel.json rewrite.
-      - name: Internal links and app routes resolve
+      # The site owns static pages; stateful app traffic stays at app.seros.dev.
+      # This also checks legacy seros.dev app URLs redirect rather than proxy.
+      - name: Internal links and app handoff resolve
         run: python3 tools/check-links.py
 
       - name: No secrets in tree

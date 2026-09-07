@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pricing — Seros, LLC</title>
-<meta name="description" content="Planned Seros pricing: three per-seat tiers, pooled AI actions, annual is two months free. Early access is open.">
+<meta name="description" content="Seros private early access: permissioned Slack channel selection, a human review queue, and confirmed Linear issue creation.">
 <link rel="canonical" href="https://seros.dev/pricing">
 <meta property="og:title" content="Pricing — Seros, LLC">
-<meta property="og:description" content="Planned Seros pricing: three per-seat tiers, pooled AI actions, annual is two months free. Early access is open.">
+<meta property="og:description" content="Seros private early access: permissioned Slack channel selection, a human review queue, and confirmed Linear issue creation.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://seros.dev/pricing">
 <meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="/assets/styles.css?v=4">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
@@ -27,95 +28,55 @@
         <a href="/#how">How it works</a>
         <a href="/pricing">Pricing</a>
         <a href="/security">Security</a>
-        <a href="/#audit">Capture-rate audit</a>
-        <a class="btn-nav-app" href="/login">Launch app &rarr;</a>
+        <a class="btn-nav-app" href="https://app.seros.dev/login">Launch app &rarr;</a>
     </nav>
   </div>
 </header>
 
-<section class="wrap doc doc-wide">
-  <p class="eyebrow">Pricing &middot; planned</p>
-  <h1>Priced per seat. Predictable per month.</h1>
-  <p class="lede">Seros is pre-launch, so these are the tiers we are building toward, published
-  early because hiding a price wastes everyone's afternoon. Early-access customers keep
-  founding pricing when we open properly.</p>
+<main class="wrap doc doc-wide" id="main">
+  <p class="eyebrow">Early access</p>
+  <h1>Start with a real workflow, not a pricing promise.</h1>
+  <p class="lede">Seros is in private early access. We are working with teams that want to turn Slack commitments into reviewed Linear issues without giving automation permission to write on its own.</p>
 
-  <div class="cards price-grid stagger" data-tilt>
-    <div class="card">
-      <p class="eyebrow tier-name">Starter</p>
-      <h3 class="tier-price">$19<span class="tier-unit"> /seat /mo</span></h3>
-      <p class="tier-terms">3 seats minimum &middot; $190/seat billed yearly</p>
-      <ul class="ticks tier-list">
-        <li>One source, one tracker, one workspace</li>
-        <li>150 AI actions per seat per month, pooled</li>
-        <li>Task drafting and round-robin assignment</li>
-        <li>Basic nudges, 30-day analytics</li>
-        <li>Email support, two business days</li>
-      </ul>
+  <section aria-labelledby="scope-heading">
+    <h2 id="scope-heading">What early access includes today</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Choose the Slack channels</h3>
+        <p>An owner or admin connects Slack, then selects the exact channels Seros may read. Unticked channels stay out of scope.</p>
+      </article>
+      <article class="card">
+        <h3>Review every draft</h3>
+        <p>Seros identifies possible commitments and puts them in a queue. A person can edit, confirm, or reject each one.</p>
+      </article>
+      <article class="card">
+        <h3>Create a Linear issue only after confirmation</h3>
+        <p>No draft becomes tracker work until a permitted person confirms it. The audit log records the outcome without storing message content.</p>
+      </article>
     </div>
-    <div class="card is-featured">
-      <p class="eyebrow tier-name is-featured">Team &middot; most teams start here</p>
-      <h3 class="tier-price">$39<span class="tier-unit"> /seat /mo</span></h3>
-      <p class="tier-terms">5 seats minimum &middot; $390/seat billed yearly</p>
-      <ul class="ticks tier-list">
-        <li>Unlimited sources, 3 trackers, 10 workspaces</li>
-        <li>350 AI actions per seat per month, pooled</li>
-        <li>Smart routing: skills, load, and history</li>
-        <li>Full chase loop, 12-month analytics, read API</li>
-        <li>Email support, one business day, guided onboarding</li>
-      </ul>
-    </div>
-    <div class="card">
-      <p class="eyebrow tier-name">Scale</p>
-      <h3 class="tier-price">$79<span class="tier-unit"> /seat /mo</span></h3>
-      <p class="tier-terms">10 seats minimum &middot; $790/seat billed yearly</p>
-      <ul class="ticks tier-list">
-        <li>Unlimited trackers and workspaces</li>
-        <li>700 AI actions per seat per month, pooled</li>
-        <li>SSO (SAML/OIDC), SCIM, custom roles</li>
-        <li>Read/write API, webhooks, 2-year audit log</li>
-        <li>Priority support in a shared channel</li>
-      </ul>
-    </div>
-  </div>
+  </section>
 
-  <p><strong>Annual is two months free</strong> — pay for ten, get twelve. Viewers are free and
-  unlimited: only people who confirm, own, or receive rollups need a seat.</p>
+  <section aria-labelledby="access-heading">
+    <h2 id="access-heading">How early access works</h2>
+    <ol>
+      <li>Create a workspace for your team.</li>
+      <li>Connect Slack and select the exact channels Seros may read.</li>
+      <li>Review drafts before anything reaches Linear.</li>
+    </ol>
+    <p>Early access is available through account creation. There is no checkout or self-service plan selection yet.</p>
+  </section>
 
-  <h2>What counts as an AI action</h2>
-  <p>One AI action is one model-backed piece of work that produces something you see: a
-  detection pass that finds a task, a task draft or redraft, an owner suggestion, or a
-  generated summary. Actions are pooled across your workspace, so a ten-seat Team account
-  shares 3,500 a month.</p>
-  <p><strong>Not counted:</strong> confirming, editing, or rejecting a suggestion; syncing
-  status with your tracker; reminders and nudges; and retries caused by our own errors or
-  a provider outage. You do not pay for our mistakes.</p>
-
-  <h2>On every tier, including the cheapest</h2>
-  <table>
-    <tr><th>Included everywhere</th><th>Why it is not an upsell</th></tr>
-    <tr><td>Audit log</td><td>Knowing who changed what is not a premium feature.</td></tr>
-    <tr><td>Encryption in transit and at rest</td><td>Baseline, not a differentiator.</td></tr>
-    <tr><td>No model training on your content</td><td>It is your data on every plan.</td></tr>
-    <tr><td>Least-privilege connector scopes</td><td>We ask for the smallest access that works.</td></tr>
-    <tr><td>Export your data</td><td>Leaving should be as easy as arriving.</td></tr>
-  </table>
-
-  <h2>Honest notes</h2>
-  <ul class="ticks">
-    <li>These prices are planned, not live. Nothing is being sold on this page today.</li>
-    <li>Seat minimums exist because a two-person team does not have a delegation problem
-    worth paying for. We would rather say so than take the money.</li>
-    <li>Overage is billed at $0.09, $0.08, and $0.06 per action by tier, or you can choose
-    to throttle instead of pay. You pick which, in advance.</li>
-    <li>Nonprofits and student-run teams: ask. There is a discount.</li>
-  </ul>
+  <section aria-labelledby="future-heading">
+    <h2 id="future-heading">What comes later</h2>
+    <p>We may publish plans, prices, broader integrations, and enterprise controls after we have validated the workflow. They are not available or committed on this page today.</p>
+  </section>
 
   <div class="cta">
-    <a class="btn primary" href="/login">Launch app &rarr;</a>
-    <a class="btn ghost" href="/#audit">Request a capture-rate audit</a>
+    <a class="btn primary" href="https://app.seros.dev/signup">Create an account &rarr;</a>
+    <a class="btn ghost" href="https://app.seros.dev/login">Launch app</a>
   </div>
-</section>
+  <p class="fineprint">Already invited? <a href="https://app.seros.dev/login">Launch app to sign in</a>.</p>
+</main>
 
 <footer class="site">
   <div class="wrap">
@@ -127,7 +88,7 @@
       <div><h4>Product</h4>
         <a href="/#product">Overview</a><a href="/#how">How it works</a><a href="/pricing">Pricing</a></div>
       <div><h4>Company</h4>
-        <a href="https://github.com/Seros-LLC">GitHub</a><a href="/#audit">Capture-rate audit</a><a href="/security">Security</a></div>
+        <a href="https://github.com/Seros-LLC">GitHub</a><a href="/security">Security</a></div>
       <div><h4>Legal</h4>
         <a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a>
         <a href="/acceptable-use">Acceptable Use</a><a href="/dpa">DPA</a><a href="/subprocessors">Subprocessors</a>
