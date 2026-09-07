@@ -44,7 +44,7 @@ PAGES = [
 # work product must not accidentally become public routes.
 PUBLISHED_LINKS = {src: out for src, out, _title, _desc in PAGES}
 
-NAV = [("Product", "/#product"), ("How it works", "/#how"), ("Pricing", "/pricing"),
+NAV = [("Workflow", "/#workflow"), ("Controls", "/#control"), ("Early access", "/pricing"),
        ("Security", "/security")]
 
 TOKEN = re.compile(r"\[\[([A-Z0-9_]+)\]\]")
@@ -100,19 +100,20 @@ def shell(title, desc, canonical, body):
 <meta property="og:image" content="{CFG['WEBSITE_URL']}/assets/og-image.jpg">
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#EDE7DE">
-<link rel="stylesheet" href="/assets/styles.css?v=4">
+<meta name="theme-color" content="#07192c">
+<link rel="stylesheet" href="/assets/styles.css?v=5">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site">
-  <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
-    <nav class="site">
+  <div class="wrap rail-header">
+    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""><span>SEROS</span><small>commitment control</small></a>
+    <nav class="site" aria-label="Primary navigation">
         {nav}
     </nav>
   </div>
 </header>
-<main class="wrap doc">
+<main class="wrap doc" id="main">
 {banner}
 {body}
 </main>

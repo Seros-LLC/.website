@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Seros — turn Slack commitments into Linear issues</title>
-<meta name="description" content="Turn Slack commitments into reviewed Linear issues. You choose the channels, review every draft, and confirm every write.">
+<title>Seros — Slack commitments, reviewed before Linear</title>
+<meta name="description" content="Seros finds commitments in the Slack channels you choose, drafts the Linear work, and waits for a human to confirm every write.">
 <link rel="canonical" href="https://seros.dev/">
-<meta property="og:title" content="What did your team commit to in Slack that never became an issue?">
-<meta property="og:description" content="Seros finds the gap, drafts the Linear issue, and waits for a human confirmation.">
+<meta property="og:title" content="Turn Slack commitments into reviewed Linear work.">
+<meta property="og:description" content="Selected channels. Human confirmation. Traceable Linear work.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://seros.dev/">
 <meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
@@ -15,144 +15,109 @@
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#EDE7DE">
-<link rel="stylesheet" href="/assets/styles.css?v=4">
-<script>document.documentElement.classList.add('js');</script>
+<meta name="theme-color" content="#07192c">
+<link rel="stylesheet" href="/assets/styles.css?v=5">
 </head>
-<body>
+<body class="signal-site">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
-  <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
-    <nav class="site">
-        <a href="/#product">Product</a>
-        <a href="/#how">How it works</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/security">Security</a>
-        <a class="btn-nav-app" href="https://app.seros.dev/login">Launch app &rarr;</a>
+  <div class="wrap rail-header">
+    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""><span>SEROS</span><small>commitment control</small></a>
+    <nav class="site" aria-label="Primary navigation">
+      <a href="#workflow">Workflow</a>
+      <a href="#control">Controls</a>
+      <a href="/pricing">Early access</a>
+      <a href="/security">Security</a>
+      <a class="btn-nav-app" href="https://app.seros.dev/login">Launch app <span aria-hidden="true">→</span></a>
     </nav>
   </div>
 </header>
 
 <main id="main">
-<section class="hero" data-plate>
-  <div class="wrap">
-    <div class="grid">
-      <div>
-        <p class="eyebrow">Slack &rarr; Linear &middot; early access</p>
-        <h1>What did your team commit to in Slack that never became an issue?</h1>
-        <p class="lede">Seros measures the gap between work discussed and work tracked. It finds
-        commitments in the Slack channels you choose, drafts a Linear issue with the source context,
-        and waits for a human to confirm it.</p>
-        <div class="cta">
-          <a class="btn primary" href="https://app.seros.dev/signup">Create an account &rarr;</a>
-          <a class="btn ghost" href="https://app.seros.dev/login">Sign in</a>
-        </div>
-        <p class="tagline">making task delegation light work</p>
+<section class="signal-hero">
+  <div class="wrap hero-layout">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Slack → Linear / human-controlled</p>
+      <h1>Keep the commitments that matter from disappearing in Slack.</h1>
+      <p class="lede">Seros watches only the Slack channels you select, turns supported commitments into a reviewable draft, and writes to Linear only after a person confirms it.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://app.seros.dev/signup">Create an account <span aria-hidden="true">→</span></a>
+        <a class="text-link" href="#workflow">See the control path <span aria-hidden="true">↓</span></a>
       </div>
-      <figure data-sheet>
-        <img src="/assets/seros-hero.png" alt="Classical engraving of a discus thrower, poised mid-throw, with a small bird at his feet.">
-      </figure>
+      <dl class="signal-facts" aria-label="Seros controls">
+        <div><dt>Scope</dt><dd>selected channels</dd></div>
+        <div><dt>Gate</dt><dd>human confirmation</dd></div>
+        <div><dt>Destination</dt><dd>Linear</dd></div>
+      </dl>
     </div>
+
+    <section class="commitment-board" aria-label="Illustrative Seros review board">
+      <div class="board-topline"><span>LIVE REVIEW BOARD</span><span>illustrative workflow</span></div>
+      <div class="board-head"><span>Signal</span><span>Draft</span><span>Review</span></div>
+      <article class="board-row source">
+        <div class="signal-source"><span class="signal-dot"></span><strong>#product-launch</strong><small>Slack · 10:14</small></div>
+        <div class="signal-copy">“I’ll share the migration plan before Thursday.”</div>
+        <span class="board-state detected">Detected</span>
+      </article>
+      <article class="board-row draft-row">
+        <div class="signal-source"><span class="signal-dot"></span><strong>Commitment found</strong><small>context attached</small></div>
+        <div class="signal-copy"><strong>Share migration plan</strong><small>Outcome, owner, due date ready to review</small></div>
+        <span class="board-state review">Needs review</span>
+      </article>
+      <article class="board-row action-row">
+        <div class="signal-source"><span class="signal-dot"></span><strong>Human decision</strong><small>nothing written yet</small></div>
+        <div class="signal-copy"><strong>Review before it reaches Linear</strong></div>
+        <span class="confirm-stamp">Confirm</span>
+      </article>
+      <div class="board-foot"><span>01 commitment in review</span><span>no automatic writes</span></div>
+    </section>
   </div>
 </section>
 
-<section id="product" class="wrap reveal">
-  <p class="eyebrow">The problem</p>
-  <h2>Your tracker cannot track work that never gets entered.</h2>
-  <p>A commitment in Slack is not an issue. Until someone notices it, writes it up, chooses an
-  owner and links the context, your plan is incomplete. Seros makes that gap visible first,
-  then gives a delivery manager a faster way to close it.</p>
-  <div class="cards stagger" data-tilt>
-    <div class="card"><span class="num">01</span><h3>The board is incomplete</h3>
-      <p>Work agreed in Slack is invisible to planning until it becomes an issue.</p></div>
-    <div class="card"><span class="num">02</span><h3>The manager becomes the bridge</h3>
-      <p>Someone has to turn a conversation into a specific, owned piece of work.</p></div>
-    <div class="card"><span class="num">03</span><h3>Context gets lost on the way</h3>
-      <p>The person receiving the issue should not have to reconstruct the thread.</p></div>
+<section id="workflow" class="workflow-band">
+  <div class="wrap">
+    <div class="section-intro">
+      <p class="eyebrow">The control path</p>
+      <h2>One clear route from conversation to accountable work.</h2>
+      <p>Seros makes the hand-off visible rather than silently automating it. The source stays connected to the proposed task all the way through review.</p>
+    </div>
+    <ol class="track-list">
+      <li><span class="track-no">01</span><div><h3>Set the boundary</h3><p>An owner or admin connects Slack, then chooses the exact channels Seros may read.</p></div><span class="track-state scope">Scope set</span></li>
+      <li><span class="track-no">02</span><div><h3>Find the commitment</h3><p>Seros compares what was promised in scope with what actually made it into Linear.</p></div><span class="track-state detected">Signal found</span></li>
+      <li><span class="track-no">03</span><div><h3>Review the draft</h3><p>A person can inspect and edit the proposed outcome, owner, and due date before deciding.</p></div><span class="track-state review">Human gate</span></li>
+      <li><span class="track-no">04</span><div><h3>Confirm the write</h3><p>Only a confirmed draft becomes a Linear issue. The original conversation remains attached.</p></div><span class="track-state confirmed">Tracked</span></li>
+    </ol>
   </div>
 </section>
 
-<section id="how" class="wrap reveal steps" data-deck>
-  <div class="steps-copy">
-    <p class="eyebrow">How it works</p>
-  <h2>Measure. Draft. Confirm. Track.</h2>
-    <p class="steps-note"><strong>A human approves every assignment.</strong> Seros drafts and
-    proposes; your team decides. We are not building an autopilot for your business, and we say
-    so in our <a href="/terms">terms</a>.</p>
-    <p class="steps-tally" data-tally aria-hidden="true"></p>
+<section id="control" class="wrap control-grid">
+  <div class="control-copy">
+    <p class="eyebrow">Control, not autopilot</p>
+    <h2>Your tracker is only as complete as the hand-offs it contains.</h2>
+    <p>Seros is for teams whose work begins in Slack but must be planned in Linear: delivery leads, product teams, technical agencies, and operations leaders who need evidence before a conversation becomes a task.</p>
+    <a class="text-link" href="/security">Read the security posture <span aria-hidden="true">→</span></a>
   </div>
-  <ol class="deck">
-    <li class="card step"><span class="num">1</span><h3>Capture</h3>
-      <p>Choose Slack channels. Seros finds commitments and compares them with what reached Linear.</p></li>
-    <li class="card step"><span class="num">2</span><h3>Draft</h3>
-      <p>It drafts the Linear issue: outcome, context, acceptance criteria and the source link.</p></li>
-    <li class="card step"><span class="num">3</span><h3>Assign</h3>
-      <p>It proposes an owner and due date only when the conversation supports them. A human confirms &mdash; always.</p></li>
-    <li class="card step"><span class="num">4</span><h3>Track</h3>
-      <p>The confirmed issue is created in Linear. The original conversation remains attached.</p></li>
-  </ol>
-</section>
-
-<section class="wrap reveal">
-  <p class="eyebrow">Who it is for</p>
-  <h2>Built first for Slack and Linear teams with a hand-off problem.</h2>
-  <ul class="ticks">
-    <li>Product and delivery teams whose work begins in Slack but is planned in Linear.</li>
-    <li>Technical agencies and dev shops managing several client conversations.</li>
-    <li>Operations leaders who suspect the board shows less work than the team is actually doing.</li>
-    <li>Founders and delivery leads who are still the bottleneck for every hand-off.</li>
-  </ul>
-</section>
-
-<section class="wrap reveal">
-  <p class="eyebrow">Principles</p>
-  <h2>What we will and will not do with your data.</h2>
-  <table>
-    <tr><th>We will</th><th>We will not</th></tr>
-    <tr><td>Process your content only to run the service for you.</td><td>Sell your data, or share it for advertising.</td></tr>
-    <tr><td>Keep a human in the loop on assignment and priority.</td><td>Let a model take consequential action unsupervised.</td></tr>
-    <tr><td>Name every subprocessor, and tell you before we add one.</td><td>Allow model providers to train on your content by default.</td></tr>
-    <tr><td>Let you export and delete your data.</td><td>Claim certifications we do not hold.</td></tr>
-  </table>
-  <p>The long version: <a href="/privacy">Privacy Policy</a>,
-  <a href="/dpa">Data Processing Addendum</a>, <a href="/subprocessors">Subprocessors</a>,
-  <a href="/security">Security</a>.</p>
-</section>
-
-<section id="start" class="wrap reveal">
-  <p class="eyebrow">Get started</p>
-  <h2>Connect only what you choose.</h2>
-  <p>Create your workspace, connect Slack, and select the channels Seros may read. Review every draft before it creates a Linear issue.</p>
-  <div class="cta">
-    <a class="btn primary" href="https://app.seros.dev/signup">Create an account &rarr;</a>
-    <a class="btn ghost" href="https://app.seros.dev/login">Sign in</a>
+  <div class="control-cards">
+    <article><span class="card-index">A</span><h3>Selected-channel reading</h3><p>Unticked channels stay out of scope.</p></article>
+    <article><span class="card-index">B</span><h3>Editable proposals</h3><p>Reviewers can correct a draft before it becomes work.</p></article>
+    <article><span class="card-index">C</span><h3>Human confirmation</h3><p>No consequential tracker write happens on its own.</p></article>
+    <article><span class="card-index">D</span><h3>Auditable outcomes</h3><p>Confirmed work carries a decision behind it.</p></article>
   </div>
 </section>
 
+<section class="close-band">
+  <div class="wrap close-layout">
+    <div><p class="eyebrow">Early access</p><h2>Connect the conversations your plan depends on.</h2><p>Start with a workspace, choose the Slack channels in scope, and review the first draft before anything reaches Linear.</p></div>
+    <div class="close-actions"><a class="btn primary" href="https://app.seros.dev/signup">Create an account <span aria-hidden="true">→</span></a><a class="text-link light" href="https://app.seros.dev/login">Sign in</a></div>
+  </div>
+</section>
 </main>
-<footer class="site">
-  <div class="wrap">
-    <div class="cols">
-      <div>
-        <a class="brand foot-brand" href="/"><img src="/assets/icon-192.png" alt=""> Seros, LLC</a>
-        <p class="foot-blurb">Making task delegation light work.</p>
-      </div>
-      <div><h4>Product</h4>
-        <a href="/#product">Overview</a><a href="/#how">How it works</a><a href="/pricing">Pricing</a></div>
-      <div><h4>Company</h4>
-        <a href="https://app.seros.dev/signup">Create an account</a><a href="https://app.seros.dev/login">Sign in</a>
-        <a href="https://github.com/Seros-LLC">GitHub</a><a href="/security">Security</a></div>
-      <div><h4>Legal</h4>
-        <a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a>
-        <a href="/acceptable-use">Acceptable Use</a><a href="/dpa">DPA</a><a href="/subprocessors">Subprocessors</a>
-        <a href="/cookies">Cookies</a></div>
-    </div>
-    <p class="fineprint">&copy; 2026 Seros, LLC. Seros is in early access; features described on this site are
-    under active development and may change. Nothing on this site is legal, tax, or professional advice.</p>
-  </div>
-</footer>
-<script src="/assets/seros-ui.js?v=3" defer></script>
-<script src="/assets/seros-sheet.js?v=3" defer></script>
+
+<footer class="site"><div class="wrap footer-grid">
+  <div><a class="brand foot-brand" href="/"><img src="/assets/icon-192.png" alt=""><span>SEROS</span></a><p class="foot-blurb">Slack commitments, reviewed before Linear.</p></div>
+  <div><h4>Product</h4><a href="#workflow">Workflow</a><a href="#control">Controls</a><a href="/pricing">Early access</a></div>
+  <div><h4>Trust</h4><a href="/security">Security</a><a href="/privacy">Privacy</a><a href="/subprocessors">Subprocessors</a></div>
+  <div><h4>Legal</h4><a href="/terms">Terms</a><a href="/dpa">DPA</a><a href="/cookies">Cookies</a></div>
+</div><div class="wrap fineprint">© 2026 Seros, LLC. Seros is in early access; features may change. Nothing on this site is legal, tax, or professional advice.</div></footer>
 </body>
 </html>
