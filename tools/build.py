@@ -44,8 +44,8 @@ PAGES = [
 # work product must not accidentally become public routes.
 PUBLISHED_LINKS = {src: out for src, out, _title, _desc in PAGES}
 
-NAV = [("Product", "/#product"), ("How it works", "/#how"), ("Pricing", "/pricing.html"),
-       ("Security", "/security.html"), ("Contact", "/#contact")]
+NAV = [("Product", "/#product"), ("How it works", "/#how"), ("Pricing", "/pricing"),
+       ("Security", "/security"), ("Capture-rate audit", "/#audit")]
 
 TOKEN = re.compile(r"\[\[([A-Z0-9_]+)\]\]")
 
@@ -78,9 +78,9 @@ def rewrite_published_links(text):
 
 def shell(title, desc, canonical, body):
     nav = "\n        ".join(f'<a href="{h}">{t}</a>' for t, h in NAV)
-    # The app lives on a different origin, so this one is absolute. Every page gets
-    # a way into the product, not just the marketing pages.
-    nav += '\n        <a class="btn-nav-app" href="https://app.seros.dev/login">Launch App &rarr;</a>' 
+    # /login is rewritten to the app by vercel.json, so the site keeps one origin
+    # and every page gets the same way into the product.
+    nav += '\n        <a class="btn-nav-app" href="/login">Launch app &rarr;</a>' 
     banner = ""
     if DRAFT:
         banner = ('<p class="banner"><strong>Draft.</strong> This document has not yet been '
