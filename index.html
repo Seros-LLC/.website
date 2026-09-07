@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Seros, LLC — making task delegation light work</title>
-<meta name="description" content="Seros turns scattered requests into clear, assigned, tracked tasks. AI drafts the task and proposes the owner; a human always approves. Early access.">
+<title>Seros — turn Slack commitments into Linear issues</title>
+<meta name="description" content="Run a capture-rate audit to find the Slack commitments that never became Linear issues. Seros drafts the issue. A human confirms every write.">
 <link rel="canonical" href="https://seros.dev/">
-<meta property="og:title" content="Seros, LLC — making task delegation light work">
-<meta property="og:description" content="Seros turns scattered requests into clear, assigned, tracked tasks. AI drafts the task and proposes the owner; a human always approves. Early access.">
+<meta property="og:title" content="What did your team commit to in Slack that never became an issue?">
+<meta property="og:description" content="Seros finds the gap, drafts the Linear issue, and waits for a human confirmation.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://seros.dev/">
 <meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
@@ -28,8 +28,8 @@
         <a href="/#how">How it works</a>
         <a href="/pricing">Pricing</a>
         <a href="/security">Security</a>
-        <a href="/#contact">Contact</a>
-        <a class="btn-nav-app" href="https://app.seros.dev/login">Launch App &rarr;</a>
+        <a href="/#audit">Capture-rate audit</a>
+        <a class="btn-nav-app" href="#audit">Run a capture-rate audit &rarr;</a>
     </nav>
   </div>
 </header>
@@ -38,16 +38,16 @@
   <div class="wrap">
     <div class="grid">
       <div>
-        <p class="eyebrow">Seros, LLC &middot; early access</p>
-        <h1>Making task delegation light&nbsp;work.</h1>
-        <p class="lede">Seros turns the scattered asks in your chat, inbox, and meetings into
-        clear, assigned, tracked tasks &mdash; drafted by AI, owned by a human. Less time deciding
-        who does what. More time doing it.</p>
+        <p class="eyebrow">Slack &rarr; Linear &middot; early access</p>
+        <h1>What did your team commit to in Slack that never became an issue?</h1>
+        <p class="lede">Seros measures the gap between work discussed and work tracked. It finds
+        commitments in the Slack channels you choose, drafts a Linear issue with the source context,
+        and waits for a human to confirm it.</p>
         <div class="cta">
-          <a class="btn primary" href="https://app.seros.dev/login">Sign in &rarr;</a>
-          <a class="btn ghost" href="#contact">Request early access</a>
+          <a class="btn primary" href="#audit">Request a capture-rate audit &rarr;</a>
+          <a class="btn ghost" href="https://app.seros.dev/login">Sign in</a>
         </div>
-        <p class="tagline">Delegation is a discipline. We made it a system.</p>
+        <p class="tagline">making task delegation light work</p>
       </div>
       <figure data-sheet>
         <img src="/assets/seros-hero.png" alt="Classical engraving of a discus thrower, poised mid-throw, with a small bird at his feet.">
@@ -58,24 +58,24 @@
 
 <section id="product" class="wrap reveal">
   <p class="eyebrow">The problem</p>
-  <h2>Work does not stall on effort. It stalls on hand-off.</h2>
-  <p>Every small team loses hours in the same places: a request buried in a thread, a task
-  nobody owns, a status nobody can find, the same instructions typed again for the third time.
-  Project tools assume the work is already defined. The expensive part is defining it.</p>
+  <h2>Your tracker cannot track work that never gets entered.</h2>
+  <p>A commitment in Slack is not an issue. Until someone notices it, writes it up, chooses an
+  owner and links the context, your plan is incomplete. Seros makes that gap visible first,
+  then gives a delivery manager a faster way to close it.</p>
   <div class="cards stagger" data-tilt>
-    <div class="card"><span class="num">01</span><h3>Requests get lost</h3>
-      <p>Asks arrive in chat, email, calls, and tickets. Most never become a task at all.</p></div>
-    <div class="card"><span class="num">02</span><h3>Ownership is vague</h3>
-      <p>&ldquo;Someone should&hellip;&rdquo; is not an assignment. Work without an owner does not move.</p></div>
-    <div class="card"><span class="num">03</span><h3>Context is retyped</h3>
-      <p>The person doing the work rebuilds the background every single time.</p></div>
+    <div class="card"><span class="num">01</span><h3>The board is incomplete</h3>
+      <p>Work agreed in Slack is invisible to planning until it becomes an issue.</p></div>
+    <div class="card"><span class="num">02</span><h3>The manager becomes the bridge</h3>
+      <p>Someone has to turn a conversation into a specific, owned piece of work.</p></div>
+    <div class="card"><span class="num">03</span><h3>Context gets lost on the way</h3>
+      <p>The person receiving the issue should not have to reconstruct the thread.</p></div>
   </div>
 </section>
 
 <section id="how" class="wrap reveal steps" data-deck>
   <div class="steps-copy">
     <p class="eyebrow">How it works</p>
-    <h2>Capture. Draft. Assign. Track.</h2>
+  <h2>Measure. Draft. Confirm. Track.</h2>
     <p class="steps-note"><strong>A human approves every assignment.</strong> Seros drafts and
     proposes; your team decides. We are not building an autopilot for your business, and we say
     so in our <a href="/terms">terms</a>.</p>
@@ -83,24 +83,24 @@
   </div>
   <ol class="deck">
     <li class="card step"><span class="num">1</span><h3>Capture</h3>
-      <p>Connect the places work is asked for. Seros reads the request, not just the words.</p></li>
+      <p>Choose Slack channels. Seros finds commitments and compares them with what reached Linear.</p></li>
     <li class="card step"><span class="num">2</span><h3>Draft</h3>
-      <p>It writes the task: outcome, context, acceptance criteria, effort, and a first pass at priority.</p></li>
+      <p>It drafts the Linear issue: outcome, context, acceptance criteria and the source link.</p></li>
     <li class="card step"><span class="num">3</span><h3>Assign</h3>
-      <p>It proposes an owner based on skills, load, and history. A human confirms &mdash; always.</p></li>
+      <p>It proposes an owner and due date only when the conversation supports them. A human confirms &mdash; always.</p></li>
     <li class="card step"><span class="num">4</span><h3>Track</h3>
-      <p>Nudges, status roll-ups, and a weekly view of what actually moved.</p></li>
+      <p>The confirmed issue is created in Linear. The original conversation remains attached.</p></li>
   </ol>
 </section>
 
 <section class="wrap reveal">
   <p class="eyebrow">Who it is for</p>
-  <h2>Built for teams of 10 to 200 who run on hand-offs.</h2>
+  <h2>Built first for Slack and Linear teams with a hand-off problem.</h2>
   <ul class="ticks">
-    <li>Agencies and studios juggling client requests across a dozen channels.</li>
-    <li>Managed service and IT teams where intake quality decides the week.</li>
-    <li>Operations, finance, and back-office teams drowning in recurring asks.</li>
-    <li>Founders who are still the bottleneck for every decision about who does what.</li>
+    <li>Product and delivery teams whose work begins in Slack but is planned in Linear.</li>
+    <li>Technical agencies and dev shops managing several client conversations.</li>
+    <li>Operations leaders who suspect the board shows less work than the team is actually doing.</li>
+    <li>Founders and delivery leads who are still the bottleneck for every hand-off.</li>
   </ul>
 </section>
 
@@ -119,13 +119,14 @@
   <a href="/security">Security</a>.</p>
 </section>
 
-<section id="contact" class="wrap reveal">
-  <p class="eyebrow">Early access</p>
-  <h2>We are onboarding a small first group.</h2>
-  <p>Seros is pre-launch. If your team loses time to hand-offs, tell us how the work arrives today
-  and we will show you what Seros would have done with it.</p>
+<section id="audit" class="wrap reveal">
+  <p class="eyebrow">Capture-rate audit</p>
+  <h2>Start with your own last seven days.</h2>
+  <p>We will scope the audit to the Slack channels you choose and show you two numbers: commitments
+  detected, and the share that became Linear issues. If there is no meaningful gap, Seros is not
+  the right product for your team.</p>
   <div class="cta">
-    <a class="btn primary" href="mailto:hello@seros.dev?subject=Seros%20early%20access">hello@seros.dev</a>
+    <a class="btn primary" href="mailto:hello@seros.dev?subject=Capture-rate%20audit%20request">Request my audit &rarr;</a>
     <a class="btn ghost" href="https://github.com/Seros-LLC">Seros on GitHub</a>
   </div>
 </section>
@@ -140,7 +141,7 @@
       <div><h4>Product</h4>
         <a href="/#product">Overview</a><a href="/#how">How it works</a><a href="/pricing">Pricing</a></div>
       <div><h4>Company</h4>
-        <a href="https://github.com/Seros-LLC">GitHub</a><a href="/#contact">Contact</a><a href="/security">Security</a></div>
+        <a href="https://github.com/Seros-LLC">GitHub</a><a href="/#audit">Capture-rate audit</a><a href="/security">Security</a></div>
       <div><h4>Legal</h4>
         <a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a>
         <a href="/acceptable-use">Acceptable Use</a><a href="/dpa">DPA</a><a href="/subprocessors">Subprocessors</a>
