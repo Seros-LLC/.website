@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Fail when a deployed HTML page references a missing local file."""
+"""Fail on missing local HTML references or an obsolete demo rewrite."""
+import json
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
@@ -21,6 +22,12 @@ class References(HTMLParser):
 def main():
     failures = []
     checked = 0
+
+    config = json.loads((ROOT / "vercel.json").read_text(encoding="utf8"))
+    demo_rewrites = [r for r in config.get("rewrites", []) if r.get("source") == "/demo"]
+    if demo_rewrites:
+        failures.append("vercel.json: obsolete /demo rewrite is configured")
+
     for page in sorted(ROOT.glob("*.html")):
         parser = References()
         parser.feed(page.read_text(encoding="utf8"))

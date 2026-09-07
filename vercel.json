@@ -3,7 +3,6 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/login", "destination": "https://app.seros.dev/login" },
-    { "source": "/demo", "destination": "https://app.seros.dev/login" },
     { "source": "/queue", "destination": "https://app.seros.dev/queue" },
     { "source": "/tasks", "destination": "https://app.seros.dev/tasks" },
     { "source": "/ask", "destination": "https://app.seros.dev/ask" },
