@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-08T01:39:00.682393+00:00",
+  "title": "Design System: Seros Oath Gate",
+  "extensions": {
+    "colorMeta": {
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Cobalt Authority",
+        "canonical": "#183bd1",
+        "tonalRamp": [
+          "#06124a",
+          "#0a1f78",
+          "#10279a",
+          "#183bd1",
+          "#4f70dd",
+          "#9bb4f2",
+          "#dce9ff",
+          "#f6f7fb"
+        ]
+      },
+      "cobalt-deep": {
+        "role": "primary",
+        "displayName": "Deep Cobalt",
+        "canonical": "#10279a",
+        "tonalRamp": [
+          "#06124a",
+          "#0a1f78",
+          "#10279a",
+          "#183bd1",
+          "#4f70dd",
+          "#9bb4f2",
+          "#dce9ff",
+          "#f6f7fb"
+        ]
+      },
+      "midnight": {
+        "role": "neutral",
+        "displayName": "Midnight Threshold",
+        "canonical": "#091c81",
+        "tonalRamp": [
+          "#040d3d",
+          "#06124a",
+          "#091c81",
+          "#10279a",
+          "#2848bd",
+          "#7d99e5",
+          "#c7d5fa",
+          "#f6f7fb"
+        ]
+      },
+      "vellum": {
+        "role": "neutral",
+        "displayName": "Vellum Record",
+        "canonical": "#f3efe2",
+        "tonalRamp": [
+          "#443f30",
+          "#6c6652",
+          "#938c73",
+          "#bcb499",
+          "#d8d0b8",
+          "#e8e2d0",
+          "#f3efe2",
+          "#fdfbf5"
+        ]
+      },
+      "gold": {
+        "role": "tertiary",
+        "displayName": "Tidal Aqua",
+        "canonical": "#45e7d5",
+        "tonalRamp": [
+          "#063e4a",
+          "#086273",
+          "#078a99",
+          "#00bed5",
+          "#45e7d5",
+          "#86f4e7",
+          "#b9fff5",
+          "#edfffc"
+        ]
+      },
+      "mint": {
+        "role": "tertiary",
+        "displayName": "Human Confirmation Mint",
+        "canonical": "#73e5bd",
+        "tonalRamp": [
+          "#0c4937",
+          "#126b4d",
+          "#208c68",
+          "#44ba91",
+          "#73e5bd",
+          "#a8f0d5",
+          "#cdf8e7",
+          "#effff7"
+        ]
+      },
+      "amber": {
+        "role": "tertiary",
+        "displayName": "Review Amber",
+        "canonical": "#ffd166",
+        "tonalRamp": [
+          "#4d3700",
+          "#7b5900",
+          "#a98100",
+          "#d7aa2a",
+          "#ffd166",
+          "#ffe28c",
+          "#ffefba",
+          "#fff9e6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Monumental Declaration",
+        "purpose": "Hero commitments and maximal editorial statements."
+      },
+      "headline": {
+        "displayName": "Editorial Headline",
+        "purpose": "Section and legal-page hierarchy."
+      },
+      "body": {
+        "displayName": "Readable Evidence",
+        "purpose": "Product explanation and long-form reading."
+      },
+      "label": {
+        "displayName": "Record Label",
+        "purpose": "State, metadata, navigation, and timestamps."
+      }
+    },
+    "shadows": [
+      {
+        "name": "witness-lift",
+        "value": "0 24px 44px rgba(0,0,0,.27)",
+        "purpose": "Reserve for the Oath Gate review artifact or an equivalently consequential human decision object."
+      }
+    ],
+    "motion": [
+      {
+        "name": "artifact-in",
+        "value": "0.8s cubic-bezier(.2,.8,.2,1)",
+        "purpose": "One-time review-artifact arrival."
+      },
+      {
+        "name": "oath-route",
+        "value": "2.4s cubic-bezier(.2,.8,.2,1)",
+        "purpose": "A celestial route resolving toward a human threshold."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "650px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The principal action on a cobalt field.",
+      "html": "<button class=\"ds-btn-primary\">CREATE AN ACCOUNT <span aria-hidden=\"true\">\u2192</span></button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:.75rem; min-height:3.45rem; padding:1rem 1.3rem; border:1px solid #e8c76d; border-radius:.2rem; background:#fff; color:#10279a; font:700 .78rem/1 Georgia, serif; letter-spacing:.035em; text-transform:uppercase; transition:color .2s ease, background .2s ease, transform .2s ease; } .ds-btn-primary:hover { background:transparent; color:#fff; transform:translateY(-3px); } .ds-btn-primary:focus-visible { outline:3px solid #ffd166; outline-offset:5px; }"
+    },
+    {
+      "name": "Launch Navigation Action",
+      "kind": "nav",
+      "refersTo": "button-nav",
+      "description": "The compact high-priority application launch action.",
+      "html": "<a class=\"ds-nav-action\" href=\"#\">LAUNCH APP <span aria-hidden=\"true\">\u2192</span></a>",
+      "css": ".ds-nav-action { display:inline-flex; gap:.5rem; align-items:center; padding:.62rem .85rem; border:1px solid #e8c76d; border-radius:.2rem; background:#e8c76d; color:#091c81; font:700 .72rem/1 Georgia, serif; letter-spacing:.045em; text-decoration:none; text-transform:uppercase; transition:color .2s ease, background .2s ease, transform .2s ease; } .ds-nav-action:hover { background:transparent; color:#e8c76d; transform:translateY(-2px); } .ds-nav-action:focus-visible { outline:3px solid #ffd166; outline-offset:5px; }"
+    },
+    {
+      "name": "Text Route Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "A secondary action that reads as an underlined route.",
+      "html": "<a class=\"ds-route-link\" href=\"#\">SEE THE CONTROL PATH <span aria-hidden=\"true\">\u2193</span></a>",
+      "css": ".ds-route-link { display:inline-block; padding-bottom:.24rem; border-bottom:1px solid currentColor; color:#fff; font:700 .75rem/1.2 Georgia, serif; letter-spacing:.04em; text-decoration:none; text-transform:uppercase; } .ds-route-link:hover { color:#73e5bd; } .ds-route-link:focus-visible { outline:3px solid #ffd166; outline-offset:5px; }"
+    },
+    {
+      "name": "Workflow State",
+      "kind": "chip",
+      "refersTo": "workflow-state",
+      "description": "A compact record state, not a soft category tag.",
+      "html": "<span class=\"ds-state\">NEEDS REVIEW</span>",
+      "css": ".ds-state { display:inline-block; width:max-content; padding:.34rem .4rem; border:1px solid currentColor; color:#865800; background:#fff0bf; font:700 .72rem/1 \"Courier New\", monospace; letter-spacing:.045em; text-transform:uppercase; }"
+    },
+    {
+      "name": "Human Confirmation Stamp",
+      "kind": "custom",
+      "refersTo": "confirmation-stamp",
+      "description": "The irreversible visible point of human witness.",
+      "html": "<span class=\"ds-stamp\">CONFIRMED</span>",
+      "css": ".ds-stamp { display:inline-block; width:max-content; padding:.44rem .48rem; border:2px solid currentColor; color:#0e6e50; font:800 .72rem/1 \"Courier New\", monospace; letter-spacing:.08em; text-transform:uppercase; transform:rotate(-5deg); }"
+    },
+    {
+      "name": "Oath Gate Artifact",
+      "kind": "card",
+      "refersTo": "commitment-board",
+      "description": "The field-log review object used to show scope, draft, and human confirmation.",
+      "html": "<article class=\"ds-oath-gate\"><p class=\"ds-kicker\">HUMAN WITNESS REQUIRED</p><p class=\"ds-label\">OATH GATE</p><h3>Share migration plan</h3><p>Outcome, owner, and due date ready to review.</p><span class=\"ds-stamp\">CONFIRMED</span></article>",
+      "css": ".ds-oath-gate { width:20rem; padding:1.25rem; border-radius:.2rem; background:#f6f7fb; color:#10279a; box-shadow:0 24px 44px rgba(0,0,0,.27); font-family:Georgia, serif; } .ds-kicker { display:inline-block; margin:-2.35rem 0 1rem; padding:.37rem .7rem; background:#e8c76d; color:#091c81; font:700 .72rem/1 \"Courier New\", monospace; letter-spacing:.12em; } .ds-label { border-bottom:1px solid rgba(7,19,92,.2); padding-bottom:.7rem; font:700 .7rem/1.2 \"Courier New\", monospace; letter-spacing:.06em; } .ds-oath-gate h3 { margin:1rem 0 .35rem; font-size:1.1rem; text-transform:uppercase; } .ds-oath-gate p { line-height:1.35; } .ds-stamp { display:inline-block; padding:.44rem .48rem; border:2px solid currentColor; color:#0e6e50; font:800 .72rem/1 \"Courier New\", monospace; letter-spacing:.08em; transform:rotate(-5deg); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Oath Gate",
+    "overview": "Seros presents an accountable hand-off as a modern myth: a classical messenger carries a commitment along a celestial route, while a human witness opens the final threshold. The experience is direct, sober, and operational. Monumental serif declarations make the promise memorable; clear reading copy and mono record labels make the control path inspectable.",
+    "keyCharacteristics": [
+      "Cobalt authority, vellum records, and electric-aqua seals establish the core material vocabulary.",
+      "Large uppercase serif declarations meet compact mono evidence labels.",
+      "Full-bleed editorial fields alternate with document-first reading surfaces.",
+      "Human confirmation has a distinct, persistent visual meaning."
+    ],
+    "rules": [
+      {
+        "name": "State Is Not Ornament",
+        "body": "Mint means confirmed, amber means review or focus, and electric aqua means an Oath Gate or structural seal. Do not use them as interchangeable decorative accents.",
+        "section": "colors"
+      },
+      {
+        "name": "Declaration / Evidence",
+        "body": "Let a display declaration carry the emotional weight. Put the proof, source detail, and state in a smaller mono or ordinary reading line beneath it.",
+        "section": "typography"
+      },
+      {
+        "name": "Witness Lift",
+        "body": "Use an ambient shadow only when a surface represents a consequential human decision or momentary physical artifact. Other sections stay flat and are separated by material, color, and rules.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use cobalt authority, vellum records, and gold seals as the primary material conversation.",
+      "Do make the selected-channel scope, human confirmation, and Linear destination easy to find without relying on imagery.",
+      "Do use the real Seros engraving with enough presence to read as an intentional figure, while preserving copy contrast."
+    ],
+    "donts": [
+      "Don\u2019t portray Seros as autonomous, magical, or able to write tracker work without a human decision.",
+      "Don\u2019t use generic SaaS card grids, rounded pills, stock mythology, cartoon iconography, or colored glow shadows.",
+      "Don\u2019t make mono the default reading voice or hide product proof inside decorative route graphics."
+    ]
+  }
+}
