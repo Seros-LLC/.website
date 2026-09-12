@@ -10,7 +10,8 @@ colors:
   vellum: "#f3efe2"
   paper: "#f6f7fb"
   ink: "#0a1f78"
-  gold: "#45e7d5"
+  gold: "#ffffff"   # Signal White — accent on dark surfaces
+  ink_accent: "#1230b8"   # accent counterpart on light surfaces
   mint: "#73e5bd"
   amber: "#ffd166"
   white: "#fff"
@@ -92,7 +93,9 @@ The palette separates signal, record, review, and confirmation instead of using 
 - **Ice Reading** (`#dce9ff`): Secondary copy on dark fields.
 
 ### Tertiary
-- **Tidal Aqua** (`#45e7d5`): The rare mythic accent for rules, seals, navigation launch control, and the human-witness marker.
+- **Signal White** (`#ffffff`): The accent on dark fields — rules, seals, navigation launch control, the human-witness marker.
+  Because it is a *value* rather than a hue it cannot be read on light surfaces; use **Signal Ink** (`#1230b8`) there
+  (doc banners, inline code, the close band CTA). Picking the wrong one of the pair makes the accent vanish.
 - **Human Confirmation Mint** (`#73e5bd`): Confirmed workflow state and selected high-confidence detail.
 - **Review Amber** (`#ffd166`): Focus visibility and cautious review state only.
 

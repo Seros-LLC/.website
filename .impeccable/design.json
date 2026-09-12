@@ -67,15 +67,15 @@
       "gold": {
         "role": "tertiary",
         "displayName": "Tidal Aqua",
-        "canonical": "#45e7d5",
+        "canonical": "#ffffff",
         "tonalRamp": [
           "#063e4a",
           "#086273",
           "#078a99",
-          "#00bed5",
-          "#45e7d5",
+          "#a8c4ff",
+          "#ffffff",
           "#86f4e7",
-          "#b9fff5",
+          "#dbe6ff",
           "#edfffc"
         ]
       },
@@ -165,7 +165,7 @@
       "refersTo": "button-primary",
       "description": "The principal action on a cobalt field.",
       "html": "<button class=\"ds-btn-primary\">CREATE AN ACCOUNT <span aria-hidden=\"true\">\u2192</span></button>",
-      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:.75rem; min-height:3.45rem; padding:1rem 1.3rem; border:1px solid #e8c76d; border-radius:.2rem; background:#fff; color:#10279a; font:700 .78rem/1 Georgia, serif; letter-spacing:.035em; text-transform:uppercase; transition:color .2s ease, background .2s ease, transform .2s ease; } .ds-btn-primary:hover { background:transparent; color:#fff; transform:translateY(-3px); } .ds-btn-primary:focus-visible { outline:3px solid #ffd166; outline-offset:5px; }"
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:.75rem; min-height:3.45rem; padding:1rem 1.3rem; border:1px solid #ffffff; border-radius:.2rem; background:#fff; color:#10279a; font:700 .78rem/1 Georgia, serif; letter-spacing:.035em; text-transform:uppercase; transition:color .2s ease, background .2s ease, transform .2s ease; } .ds-btn-primary:hover { background:transparent; color:#fff; transform:translateY(-3px); } .ds-btn-primary:focus-visible { outline:3px solid #ffd166; outline-offset:5px; }"
     },
     {
       "name": "Launch Navigation Action",
@@ -173,7 +173,7 @@
       "refersTo": "button-nav",
       "description": "The compact high-priority application launch action.",
       "html": "<a class=\"ds-nav-action\" href=\"#\">LAUNCH APP <span aria-hidden=\"true\">\u2192</span></a>",
-      "css": ".ds-nav-action { display:inline-flex; gap:.5rem; align-items:center; padding:.62rem .85rem; border:1px solid #e8c76d; border-radius:.2rem; background:#e8c76d; color:#091c81; font:700 .72rem/1 Georgia, serif; letter-spacing:.045em; text-decoration:none; text-transform:uppercase; transition:color .2s ease, background .2s ease, transform .2s ease; } .ds-nav-action:hover { background:transparent; color:#e8c76d; transform:translateY(-2px); } .ds-nav-action:focus-visible { outline:3px solid #ffd166; outline-offset:5px; }"
+      "css": ".ds-nav-action { display:inline-flex; gap:.5rem; align-items:center; padding:.62rem .85rem; border:1px solid #ffffff; border-radius:.2rem; background:#ffffff; color:#091c81; font:700 .72rem/1 Georgia, serif; letter-spacing:.045em; text-decoration:none; text-transform:uppercase; transition:color .2s ease, background .2s ease, transform .2s ease; } .ds-nav-action:hover { background:transparent; color:#ffffff; transform:translateY(-2px); } .ds-nav-action:focus-visible { outline:3px solid #ffd166; outline-offset:5px; }"
     },
     {
       "name": "Text Route Link",
@@ -205,7 +205,7 @@
       "refersTo": "commitment-board",
       "description": "The field-log review object used to show scope, draft, and human confirmation.",
       "html": "<article class=\"ds-oath-gate\"><p class=\"ds-kicker\">HUMAN WITNESS REQUIRED</p><p class=\"ds-label\">OATH GATE</p><h3>Share migration plan</h3><p>Outcome, owner, and due date ready to review.</p><span class=\"ds-stamp\">CONFIRMED</span></article>",
-      "css": ".ds-oath-gate { width:20rem; padding:1.25rem; border-radius:.2rem; background:#f6f7fb; color:#10279a; box-shadow:0 24px 44px rgba(0,0,0,.27); font-family:Georgia, serif; } .ds-kicker { display:inline-block; margin:-2.35rem 0 1rem; padding:.37rem .7rem; background:#e8c76d; color:#091c81; font:700 .72rem/1 \"Courier New\", monospace; letter-spacing:.12em; } .ds-label { border-bottom:1px solid rgba(7,19,92,.2); padding-bottom:.7rem; font:700 .7rem/1.2 \"Courier New\", monospace; letter-spacing:.06em; } .ds-oath-gate h3 { margin:1rem 0 .35rem; font-size:1.1rem; text-transform:uppercase; } .ds-oath-gate p { line-height:1.35; } .ds-stamp { display:inline-block; padding:.44rem .48rem; border:2px solid currentColor; color:#0e6e50; font:800 .72rem/1 \"Courier New\", monospace; letter-spacing:.08em; transform:rotate(-5deg); }"
+      "css": ".ds-oath-gate { width:20rem; padding:1.25rem; border-radius:.2rem; background:#f6f7fb; color:#10279a; box-shadow:0 24px 44px rgba(0,0,0,.27); font-family:Georgia, serif; } .ds-kicker { display:inline-block; margin:-2.35rem 0 1rem; padding:.37rem .7rem; background:#ffffff; color:#091c81; font:700 .72rem/1 \"Courier New\", monospace; letter-spacing:.12em; } .ds-label { border-bottom:1px solid rgba(7,19,92,.2); padding-bottom:.7rem; font:700 .7rem/1.2 \"Courier New\", monospace; letter-spacing:.06em; } .ds-oath-gate h3 { margin:1rem 0 .35rem; font-size:1.1rem; text-transform:uppercase; } .ds-oath-gate p { line-height:1.35; } .ds-stamp { display:inline-block; padding:.44rem .48rem; border:2px solid currentColor; color:#0e6e50; font:800 .72rem/1 \"Courier New\", monospace; letter-spacing:.08em; transform:rotate(-5deg); }"
     }
   ],
   "narrative": {
