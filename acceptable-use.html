@@ -33,10 +33,12 @@
 <p class="banner"><strong>Draft.</strong> This document has not yet been reviewed by counsel and is not in force. It is published here for review only. Bracketed tokens mark facts that still have to be filled in.</p>
 <h1 id="acceptable-use-policy">Acceptable Use Policy</h1>
 <p>Effective date: [[EFFECTIVE_DATE]]</p>
-<p>This Acceptable Use Policy (the "AUP") applies to everyone who uses the Seros service,
-including customers, their Authorised Users, and anyone using the API. It is part of the
-<a href="terms.html">Terms of Service</a>. If you break it, we may suspend or terminate
-access under Section 14 of those Terms.</p>
+<p>This Acceptable Use Policy (the "AUP") applies to customers and their Authorised Users
+who use the current Seros web application. It is part of the <a href="terms.html">Terms of Service</a>.
+If you break it, we may suspend or terminate access under Section 14 of those Terms. The
+current product path uses selected Slack channels, AI-assisted drafting, and a configured
+Linear workspace; future connectors and a public API are not included unless expressly made
+available.</p>
 <p>The rule underneath all of the rules: do not use the Service to harm people, to break the
 law, to damage the Service, or to make a machine decide something about a person that a
 person should decide.</p>
@@ -69,8 +71,9 @@ person should decide.</p>
   currently offer a Business Associate Agreement. If you need one, ask before you send
   anything: legal@seros.dev.</li>
 <li><strong>No payment card data.</strong> Do not submit full primary account numbers, magnetic stripe
-  data, card verification values, or anything else within PCI DSS scope. Payments to us are
-  handled by our payment processor, not by the Service.</li>
+  data, card verification values, or anything else within PCI DSS scope. The current product
+  path does not collect payment card data through the Service. If billing is introduced,
+  the applicable payment provider and terms must be documented before launch.</li>
 <li><strong>No government classified or export-controlled technical data</strong>, including ITAR or EAR
   controlled material.</li>
 <li><strong>Be careful with special categories.</strong> Data revealing racial or ethnic origin, political
@@ -124,9 +127,9 @@ must not put us in breach of them. The providers we use are listed in
 </ul>
 <h2 id="6-service-integrity-and-rate-limits">6. Service integrity and rate limits</h2>
 <ul>
-<li>The Service does not currently offer a public API. We may publish API documentation and
-  rate limits later; until then, do not automate, scrape, or load-test the Service without
-  our prior written permission.</li>
+<li>The Service does not currently offer a public API. Do not attempt to discover or use
+  undocumented endpoints, and do not automate, scrape, or load-test the Service without our
+  prior written permission.</li>
 <li>Do not attempt to circumvent quotas, throttling, seat counts, or billing.</li>
 <li>Do not run load tests, stress tests, or denial-of-service tests against the Service
   without our prior written consent.</li>

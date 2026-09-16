@@ -47,24 +47,25 @@ customer and you want your data changed or deleted from their workspace, contact
 customer first; we will help them respond.</p>
 <p>Contact: privacy@seros.dev. Postal: [[ENTITY_ADDRESS]].
 EU/UK representative or data protection officer, if appointed: Not appointed.</p>
-<h2 id="assumptions-this-document-is-built-on">Assumptions this document is built on</h2>
-<p>These are assumptions, not verified facts. Correct any that are wrong before publishing.</p>
-<ol>
-<li>Seros, LLC will be a limited liability company formed in Georgia.
-   The entity is not yet confirmed as formed. Nothing here should be read as a statement
-   that it exists.</li>
-<li>The product is a business-to-business subscription service: a web application and API
-   that connects to a customer's own tools (chat, ticketing, documents, calendar) and uses
-   AI models to draft, route, assign and track tasks.</li>
-<li>Pricing is per seat, monthly or annual, with a free trial, sold both self-serve and
-   through sales conversations.</li>
-<li>The service is multi-tenant, hosted in the United States, and uses third-party large
-   language model providers as subprocessors.</li>
-<li>Customer content is processed to provide the service and is not used to train
-   third-party models by default.</li>
-<li>Customers are businesses. The service is not offered to consumers or to children.
-   Business contact details are still personal data under GDPR, UK GDPR and CCPA/CPRA.</li>
-</ol>
+<h2 id="current-product-scope">Current product scope</h2>
+<p>As of the revision date, Seros is an early-access, business-to-business application. The
+implemented workflow is limited to a customer-authorised Slack workspace and selected
+Slack channels: Seros reads messages from those selected channels, creates drafts, and
+waits for a person at the customer to confirm a draft before writing a task to the
+customer's configured Linear workspace. Seros does not currently offer a general chat,
+ticketing, document, or calendar connector.</p>
+<p>The production deployment is designed for Vercel with durable PostgreSQL storage. Local
+SQLite and the deterministic fake provider are development and test modes, not customer
+production services. AI requests use the configured provider chain. The current default
+is local Ollama/Qwen; a hosted HTTP provider is optional and no hosted AI vendor is
+represented as selected by this policy. See <a href="subprocessors.html">SUBPROCESSORS.md</a> for the
+current confirmed and conditional service list.</p>
+<p>Billing, marketing email, product analytics, error-tracking SaaS, SSO, and MFA are not
+represented as implemented Seros features by this policy. If any is added, this policy
+and the related vendor disclosures must be updated before the feature is used in
+production.</p>
+<p>Customers are businesses. The Service is not directed to children, and business contact
+details may still be personal data under GDPR, UK GDPR and US state privacy laws.</p>
 <h2 id="2-what-we-collect-why-and-on-what-legal-basis">2. What we collect, why, and on what legal basis</h2>
 <p>"Legal basis" is a GDPR and UK GDPR concept (Article 6). If you are outside the EU, EEA,
 UK or Switzerland, the "why" column is still the honest answer to what we do.</p>
@@ -81,56 +82,56 @@ UK or Switzerland, the "why" column is still the honest answer to what we do.</p
 <tbody>
 <tr>
 <td>Account data</td>
-<td>Name, work email, password hash, job title, company name, workspace and team membership, role and permissions, authentication events, single sign-on identifiers</td>
+<td>Name, work email, password hash, company name, workspace and team membership, role and permissions, authentication events and session-security data</td>
 <td>Create and secure your account, authenticate you, apply permissions, provide support</td>
 <td>Art. 6(1)(b) performance of a contract; Art. 6(1)(f) legitimate interests in account security</td>
 <td>Life of the account, then for the life of the account, then 30 days after closure</td>
 </tr>
 <tr>
 <td>Billing data</td>
-<td>Billing contact, billing address, tax identifiers, plan and seat count, invoices, payment status, partial card details and payment tokens held by our payment processor</td>
-<td>Take payment, prevent fraud, meet tax and accounting duties</td>
+<td>Billing contact, billing address, tax identifiers, plan and seat count, invoices and payment status, if billing is enabled for your account</td>
+<td>Administer a commercial relationship and meet tax and accounting duties</td>
 <td>Art. 6(1)(b) contract; Art. 6(1)(c) legal obligation for tax and accounting records</td>
-<td>Financial records kept for 7 years as required by law</td>
+<td>Not collected or used for the current no-billing product path; if billing is enabled, retain only as required by law</td>
 </tr>
 <tr>
-<td>Usage and telemetry</td>
-<td>Pages and features used, API endpoints called, timestamps, request volumes, latency, device and browser type, operating system, approximate location derived from IP address, IP address, crash and error reports, session identifiers</td>
-<td>Operate the Service, diagnose faults, measure reliability, prevent abuse, decide what to build</td>
-<td>Art. 6(1)(f) legitimate interests in running, securing and improving the Service</td>
+<td>Usage and security telemetry</td>
+<td>Sign-in attempts, request timestamps, request volumes, rate-limit and replay-protection events, latency, and security/audit events; device or IP data where the deployed edge or browser supplies it</td>
+<td>Operate the Service, diagnose faults, prevent abuse, and investigate security incidents</td>
+<td>Art. 6(1)(f) legitimate interests in running and securing the Service</td>
 <td>13 months, aggregated after 90 days</td>
 </tr>
 <tr>
 <td>Customer content</td>
-<td>Messages, documents, tickets, calendar entries, task descriptions, comments, files and the connected-tool data the customer chooses to bring in, together with the AI-generated tasks, summaries and routing suggestions derived from it</td>
-<td>Deliver the delegation features the customer asked for</td>
+<td>Selected Slack messages, channel metadata, task drafts, confirmations, configured Linear task data, comments and AI-generated text derived from them</td>
+<td>Deliver the Slack-to-Linear workflow the customer asked for</td>
 <td>Processed on the customer's instructions under the DPA. The customer determines its own legal basis</td>
 <td>For the life of the workspace; deleted on the schedule in Section 5</td>
 </tr>
 <tr>
 <td>Support communications</td>
-<td>Emails, in-app messages, support tickets, call notes, screenshots and logs you send us</td>
+<td>Emails and support messages you send us, if support is provided</td>
 <td>Answer your question, reproduce and fix bugs, keep a record of what was agreed</td>
 <td>Art. 6(1)(b) contract; Art. 6(1)(f) legitimate interests in support quality</td>
 <td>24 months</td>
 </tr>
 <tr>
 <td>Marketing and prospect data</td>
-<td>Work contact details you give us, event and demo requests, email open and click events, marketing preferences</td>
-<td>Reply to enquiries, send service and product email you asked for</td>
+<td>Work contact details you give us, event and demo requests, marketing preferences, if marketing is provided</td>
+<td>Reply to enquiries and send service or product email you asked for</td>
 <td>Art. 6(1)(a) consent where consent is required; otherwise Art. 6(1)(f) legitimate interests in business-to-business marketing</td>
-<td>Until you opt out, then a suppression record kept indefinitely so we do not email you again</td>
+<td>Until you opt out, then a suppression record kept only as needed to honor the opt-out</td>
 </tr>
 <tr>
 <td>Cookies and similar technologies</td>
-<td>Session cookies, security cookies, preference cookies, and analytics identifiers</td>
-<td>Keep you signed in, remember settings, understand aggregate usage</td>
-<td>Strictly necessary cookies: legitimate interests. All others in the EU, EEA and UK: consent</td>
+<td>The strictly necessary session cookie described in the Cookie Policy</td>
+<td>Keep you signed in and maintain session integrity</td>
+<td>Strictly necessary cookies: legitimate interests</td>
 <td>See the <a href="cookies.html">Cookie Policy</a></td>
 </tr>
 <tr>
 <td>Security and audit logs</td>
-<td>Sign-in attempts, IP addresses, admin actions, permission changes, security alerts</td>
+<td>Sign-in attempts, request timestamps, admin actions, permission changes, security alerts and audit events</td>
 <td>Detect and investigate unauthorised access, meet our security commitments</td>
 <td>Art. 6(1)(f) legitimate interests in security; Art. 6(1)(c) where a law requires it</td>
 <td>12 months</td>
@@ -144,27 +145,36 @@ privacy@seros.dev.</p>
 <ul>
 <li>We do not sell personal information.</li>
 <li>We do not share personal information for cross-context behavioural advertising.</li>
-<li>We do not use customer content to train our own general-purpose models, and we do not
-  permit our AI model providers to train their models on it. See
+<li>We do not use customer content to train our own general-purpose models. The local default
+  does not send customer content to a third-party model provider. If a hosted provider is
+  enabled, its training terms must be verified and disclosed before production use. See
   <a href="ai.html">AI-DISCLOSURE.md</a>.</li>
 <li>We do not make decisions with legal or similarly significant effects about you using
   automated processing alone. The Service produces drafts and suggestions; a person at the
   customer decides.</li>
 </ul>
 <h2 id="3-where-the-information-comes-from">3. Where the information comes from</h2>
-<p>Most of it comes from you or from your employer's administrator. Some comes from the tools
-you connect: when an administrator authorises a connection to a chat, ticketing, document
-or calendar system, we receive the data that connection is scoped to. Some is generated
-automatically when you use the Service, such as logs and telemetry. If we buy or receive
-business contact data from a third-party source for sales outreach, we will say so here and
-name the source: [[TBD_PROSPECT_SOURCE]] or "none" if we do not.</p>
+<p>Most of it comes from you or from your employer's administrator. Some comes from the Slack
+workspace and channels an administrator authorises, and from the Linear workspace where a
+confirmed task is written. Some is generated automatically when you use the Service, such as
+logs, audit events and security telemetry. If we buy or receive business contact data from a
+third-party source for sales outreach, we will say so here and name the source: none unless
+we later identify one.</p>
 <h2 id="4-how-we-use-ai">4. How we use AI</h2>
-<p>The Service sends the parts of customer content that are needed for a given feature to
-third-party AI model providers, which return generated text. Our contracts with those
-providers are intended to prohibit training on the data we send and to require deletion
-within the provider's stated window. The AI-specific detail, including the current stance
-on training and retention, is in <a href="ai.html">AI-DISCLOSURE.md</a>. The identity of the
-providers is in <a href="subprocessors.html">SUBPROCESSORS.md</a>.</p>
+<p>The Service may send the minimum relevant portion of a selected Slack message or workspace
+records to the AI transport configured for the deployment. AI is used for commitment
+classification, short explanations, summaries and workspace questions. AI-generated text
+is advisory: it does not create a task or send an external write by itself. A person must
+review and confirm a draft before Seros writes a task to the customer's configured Linear
+workspace.</p>
+<p>The current default transport is local Ollama/Qwen. A hosted HTTP transport is supported
+by configuration but no hosted AI vendor has been confirmed in the current vendor list.
+When a hosted provider is enabled, the provider, location, training terms and retention
+must be added to <a href="subprocessors.html">SUBPROCESSORS.md</a> before production use. The AI-specific
+detail is in <a href="ai.html">AI-DISCLOSURE.md</a>.</p>
+<p>We do not use customer content to train a general-purpose model, and the local default does
+not send content to a third-party model provider. Do not submit sensitive or regulated data
+unless your agreement and the Acceptable Use Policy expressly permit it.</p>
 <p>AI output can be wrong. Do not rely on it without review. That is a legal point as well as
 a practical one and it is repeated in the Terms of Service.</p>
 <h2 id="5-retention-and-deletion">5. Retention and deletion</h2>

@@ -33,11 +33,40 @@
 <p class="banner"><strong>Draft.</strong> This document has not yet been reviewed by counsel and is not in force. It is published here for review only. Bracketed tokens mark facts that still have to be filled in.</p>
 <h1 id="cookie-policy">Cookie Policy</h1>
 <p>Effective date: [[EFFECTIVE_DATE]]</p>
-<p>This policy explains the cookies and similar technologies used on https://seros.dev and in
-the Seros application. It supplements the <a href="privacy.html">Privacy Policy</a>.</p>
-<p>A cookie is a small file a website stores in your browser. We also use similar
-technologies: local storage, session storage and, in some emails, tracking pixels. This
-policy uses "cookies" to mean all of them.</p>
+<p>This policy explains the cookies and similar technologies currently used on https://seros.dev
+and in the Seros application. It supplements the <a href="privacy.html">Privacy Policy</a>.</p>
+<p>A cookie is a small file a website stores in your browser. Based on the current marketing
+site and application implementation, Seros uses a strictly necessary session cookie for
+authentication and session integrity. We do not currently use product analytics,
+advertising pixels, marketing cookies, or third-party tracking cookies. This policy uses
+"cookies" to include similar browser storage where relevant.</p>
+<h2 id="current-implementation">Current implementation</h2>
+<table>
+<thead>
+<tr>
+<th>Cookie name</th>
+<th>Category</th>
+<th>Provider</th>
+<th>Purpose</th>
+<th>Expiry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>seros_session</code></td>
+<td>Strictly necessary / security</td>
+<td>Seros</td>
+<td>Maintains an authenticated application session and supports session security</td>
+<td>12 hours (<code>Max-Age=43200</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>The table above matches the current application source: <code>seros_session</code> is issued with
+<code>HttpOnly</code>, <code>SameSite=Strict</code>, <code>Max-Age=43200</code>, and <code>Secure</code> in production. If the deployed
+configuration differs, update this table and the Privacy Policy before relying on this
+document.</p>
+<p>No non-essential cookies are currently set. There is therefore no analytics or marketing
+consent choice to make in the current implementation.</p>
 <h2 id="1-categories-we-use">1. Categories we use</h2>
 <table>
 <thead>
@@ -54,107 +83,67 @@ policy uses "cookies" to mean all of them.</p>
 <tr>
 <td>Strictly necessary</td>
 <td>Makes the site and app work</td>
-<td>Keeping you signed in, session integrity, load balancing, remembering your cookie choices, CSRF protection</td>
+<td>Keeping you signed in and maintaining session integrity</td>
 <td>Us</td>
 <td>No</td>
-<td>Session to session, up to 30 days for the login session</td>
+<td>12 hours (<code>Max-Age=43200</code>)</td>
 </tr>
 <tr>
 <td>Security</td>
 <td>Detects and prevents abuse</td>
-<td>Bot and fraud detection, rate limiting, suspicious login detection</td>
-<td>Us and [[TBD_VENDOR]]</td>
+<td>Session security, bot and abuse controls</td>
+<td>Us</td>
 <td>No, where strictly necessary for a service you requested</td>
-<td>12 months</td>
+<td>Session or server-configured security lifetime</td>
 </tr>
 <tr>
 <td>Functional</td>
 <td>Remembers your choices</td>
 <td>Language, timezone, interface preferences, dismissed notices</td>
-<td>Us</td>
-<td>Yes</td>
-<td>12 months</td>
+<td>Not currently used</td>
+<td>Not applicable</td>
+<td>Not applicable</td>
 </tr>
 <tr>
 <td>Analytics</td>
 <td>Tells us how the product is used in aggregate</td>
-<td>Which features are used, where people get stuck, error rates</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Yes</td>
-<td>13 months</td>
+<td>Product usage and error measurement</td>
+<td>Not currently used</td>
+<td>Not applicable</td>
+<td>Not applicable</td>
 </tr>
 <tr>
 <td>Marketing and advertising</td>
 <td>Not used</td>
-<td>We do not run advertising pixels and we do not share data for cross-context behavioural advertising</td>
+<td>We do not run advertising pixels and do not share data for cross-context behavioural advertising</td>
 <td>None</td>
 <td>Not applicable</td>
 <td>Not applicable</td>
 </tr>
 </tbody>
 </table>
-<p>The specific cookie names, providers and lifetimes must be listed before publication. Run a
-scan of the live site and fill in a per-cookie table; a category table alone is not
-sufficient in several EU jurisdictions.</p>
-<table>
-<thead>
-<tr>
-<th>Cookie name</th>
-<th>Category</th>
-<th>Provider</th>
-<th>Purpose</th>
-<th>Expiry</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[[TBD_COOKIE_NAME]]</td>
-<td>[[TBD_CATEGORY]]</td>
-<td>[[TBD_VENDOR]]</td>
-<td>[[TBD_PURPOSE]]</td>
-<td>[[TBD_EXPIRY]]</td>
-</tr>
-</tbody>
-</table>
+<p>Cookie behavior may change as the product changes. We will update this policy and the
+per-cookie table before introducing a non-essential cookie.</p>
 <h2 id="2-how-consent-works">2. How consent works</h2>
-<p><strong>In the EU, EEA and UK</strong>, we ask for consent before setting anything that is not strictly
-necessary. The banner appears on your first visit. Nothing beyond strictly necessary and
-security cookies is set until you choose. Rejecting is as easy as accepting: the banner has
-a "Reject all" control with the same prominence as "Accept all", and there is no
-pre-ticked box.</p>
-<p><strong>Elsewhere</strong>, including the United States, we set functional and analytics cookies by
-default and you can turn them off at any time using the same control.</p>
-<p>We record your choice and re-ask after 12 months, or sooner if the
-purposes change.</p>
-<h2 id="3-how-to-change-or-withdraw-your-choice">3. How to change or withdraw your choice</h2>
-<ul>
-<li>Use the "Cookie settings" link in the footer of https://seros.dev at any time.</li>
-<li>Withdrawing is as easy as giving consent, and takes effect immediately for future
-  processing. It does not undo processing that already happened.</li>
-<li>You can also block or delete cookies in your browser settings. If you block strictly
-  necessary cookies, sign-in will not work.</li>
-<li>Most browsers offer a "Do Not Track" signal. There is no common standard for responding
-  to it and we do not respond to it. We do honour the Global Privacy Control signal where
-  US state law requires it, treating it as an opt-out of sale and sharing, though we do not
-  sell or share personal information in any event.</li>
-</ul>
+<p>Because the current implementation uses only strictly necessary session and security
+cookies, we do not set non-essential cookies that require consent. If non-essential
+cookies are introduced, we will obtain consent where required before setting them and will
+provide a withdrawal control of equal prominence.</p>
+<h2 id="3-how-to-control-cookies">3. How to control cookies</h2>
+<p>You can block or delete cookies in your browser settings. If you block strictly necessary
+cookies, sign-in and other application functions may not work. Questions: privacy@seros.dev.</p>
 <h2 id="4-third-party-cookies">4. Third-party cookies</h2>
-<p>Any cookie set by a provider other than us is listed in the table above and in
-<a href="subprocessors.html">SUBPROCESSORS.md</a>. We do not permit third parties to use cookies on our
-site for their own advertising purposes.</p>
+<p>We do not currently permit third parties to set cookies on the marketing site or in the
+application for their own advertising purposes.</p>
 <h2 id="5-changes">5. Changes</h2>
 <p>We will update this policy when the cookies we use change. The effective date at the top
 shows the current version.</p>
 <p>Questions: privacy@seros.dev.</p>
 <h2 id="what-i-need-from-you">What I need from you</h2>
 <ol>
-<li>Run a cookie scan on the live site and fill the per-cookie table. Do not publish
-   category-only.</li>
-<li>Choose a consent management tool, or build the banner; confirm it blocks scripts before
-   consent rather than only hiding the banner.</li>
-<li>Confirm no advertising or social pixels exist anywhere on the marketing site, including
-   in any embedded form or video.</li>
-<li>Set the consent refresh period.</li>
+<li>Verify the deployed cookie name and server-configured lifetime before publication.</li>
+<li>Update this page before adding analytics, advertising, consent-management, or other
+   non-essential browser storage.</li>
 </ol>
 </main>
 <footer class="site">

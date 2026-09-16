@@ -35,12 +35,25 @@
 <p>Effective date: [[EFFECTIVE_DATE]]</p>
 <p>A subprocessor is a company we use to help run the Service that may process personal data
 on our behalf. This page lists them.</p>
-<p><strong>Every row below is a placeholder.</strong> No vendor has been confirmed. Do not publish this
-page until each <code>[[TBD_VENDOR]]</code> is replaced with the vendor actually in use, and every row
-that does not apply is deleted. Publishing a wrong subprocessor list is a data protection
-problem, not a typo.</p>
+<p>The current product path is Slack-to-Linear task drafting. Development-only providers and
+unused integrations are not subprocessors for production customer data. The production list
+must be completed from the deployed environment and vendor contracts before publication.
+Do not treat a provider as approved merely because its SDK or transport exists in source
+code.</p>
+<p><strong>Rows marked unconfirmed are not a production disclosure.</strong> Delete unused rows and replace
+all remaining placeholders with the vendor actually in use, its legal name, processing
+location, transfer mechanism, and current contract status.</p>
 <p>This list is Annex III to the <a href="dpa.html">Data Processing Addendum</a>.</p>
 <h2 id="current-subprocessors">Current subprocessors</h2>
+<p>No production subprocessor is confirmed in this repository's current vendor record.</p>
+<p>The application source contains a Vercel-compatible deployment path, PostgreSQL support,
+and a local Ollama transport, but source compatibility is not proof that a vendor is used in
+production or that its contractual terms have been reviewed. Before publishing or processing
+customer data in production, add each actual hosting, database, email, AI, logging, support,
+or payment vendor with its legal name, role, location, transfer mechanism, and contract status.</p>
+<p>Do not list local Ollama/Qwen as a third-party subprocessor when it runs inside the deployment
+boundary. If the hosted HTTP transport is enabled, its actual provider must be listed here
+before production use.</p>
 <table>
 <thead>
 <tr>
@@ -55,106 +68,19 @@ problem, not a typo.</p>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Cloud hosting, compute, database and object storage</td>
-<td>All Customer Data and account data at rest and in transit</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>2</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Transactional and notification email delivery</td>
-<td>Recipient name, email address, message content</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>3</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Payment processing and subscription billing</td>
-<td>Billing contact, billing address, tax identifiers, payment tokens, invoice history</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>4</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Product analytics and usage measurement</td>
-<td>User and workspace identifiers, event and page data, IP address, device and browser data</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>5</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Error and crash tracking, performance monitoring</td>
-<td>User identifier, IP address, stack traces and any personal data incidentally captured in an error payload</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>6</td>
-<td>[[TBD_VENDOR]]</td>
-<td>AI model provider — task drafting, routing, summarisation</td>
-<td>Prompts and the Customer Data sent with them, plus generated output</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>7</td>
-<td>[[TBD_VENDOR]]</td>
-<td>AI model provider — secondary or fallback model</td>
-<td>Prompts and the Customer Data sent with them, plus generated output</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>8</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Customer support helpdesk and ticketing</td>
-<td>Name, email, support message content, attachments</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>9</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Customer relationship management and sales email</td>
-<td>Business contact details, correspondence, deal records</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>10</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Logging, metrics and observability</td>
-<td>Log records including IP address and user identifiers</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
-</tr>
-<tr>
-<td>11</td>
-<td>[[TBD_VENDOR]]</td>
-<td>Authentication, single sign-on and identity</td>
-<td>Email address, authentication events, identity provider identifiers</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>Not confirmed</td>
+<td>—</td>
+<td>None confirmed</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Not published</td>
 </tr>
 </tbody>
 </table>
+<p>Payment processing, analytics, error-tracking SaaS, customer-support tooling, SSO/MFA
+identity services, and marketing systems are not confirmed as current production
+subprocessors and must not be represented as active vendors until verified.</p>
 <h2 id="affiliates">Affiliates</h2>
 <p>Seros, LLC has no affiliates at present. If affiliates are formed and they process
 Customer Data, list them here.</p>
@@ -199,7 +125,7 @@ notify promptly afterwards. The objection window then runs from the date of that
 <tbody>
 <tr>
 <td>[[EFFECTIVE_DATE]]</td>
-<td>Initial draft list. No vendors confirmed.</td>
+<td>Reconciled with the current Slack-to-Linear application scope; no production vendors confirmed.</td>
 <td>Not applicable — not yet published</td>
 </tr>
 </tbody>

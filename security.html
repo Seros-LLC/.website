@@ -44,45 +44,42 @@ health information to the Service.</p>
 <p>Saying this plainly is deliberate. A security page that implies certifications the company
 does not have is a misrepresentation, and enterprise security reviewers check.</p>
 <h2 id="2-how-the-service-is-built-and-run">2. How the Service is built and run</h2>
-<p>The statements below must be verified against reality before this page is published. Where
-a control is not yet in place, delete the line or mark it as planned with a date. Do not
-publish an aspiration as a fact.</p>
+<p>The controls below are limited to controls verified in the current application source.
+They are not a security certification or a promise that every underlying hosting-provider
+control is available to every customer.</p>
 <p><strong>Architecture</strong>
-- Multi-tenant cloud application hosted in the United States with [[TBD_VENDOR]].
-- Logical separation between tenants, enforced at the application and data layers:
-  [[TOM_TENANT_ISOLATION]].
-- Production environments are separate from development and test environments, and
-  production data is not copied into them: [[TOM_ENV_SEPARATION]].</p>
-<p><strong>Encryption</strong>
-- TLS 1.2 or higher for all connections to the Service: [[TOM_TLS]].
-- Encryption at rest for databases, object storage and backups: [[TOM_ENCRYPTION_AT_REST]].
-- Secrets and keys are managed in [[TOM_KEY_MANAGEMENT]] and are not stored in source
-  control.</p>
-<p><strong>Access control</strong>
-- Least-privilege access for staff, reviewed at least quarterly.
-- Multi-factor authentication required for administrative and production access:
-  [[TOM_MFA]].
-- Customer-side controls: role-based permissions, and single sign-on where supported:
-  [[TOM_CUSTOMER_SSO]].
-- Passwords are stored using a modern password hashing function: [[TOM_CREDENTIALS]].</p>
-<p><strong>Development</strong>
-- Code review before merge and automated tests in the pipeline:
-  [[TOM_CHANGE_MANAGEMENT]].
-- Dependency and vulnerability scanning: [[TOM_VULN_SCANNING]].
-- Penetration testing: [[TOM_PENTEST]].</p>
-<p><strong>Monitoring and response</strong>
-- Centralised logging, alerting and retention of security logs for
-  12 months: [[TOM_LOGGING]].
-- Documented incident response process with defined roles and a customer notification path:
-  [[TOM_INCIDENT_RESPONSE]].
-- Backups with a tested restore procedure: [[TOM_BACKUP_RPO_RTO]].</p>
-<p><strong>Vendors</strong>
-- Subprocessors are listed at <a href="subprocessors.html">SUBPROCESSORS.md</a>, each under a written
-  contract with data protection terms.</p>
+- The product is designed for a multi-tenant application with tenant-scoped data access.
+- Production deployment uses Vercel-compatible hosting and durable PostgreSQL storage.
+- Local SQLite and fake providers are development and test modes, not production customer
+  services.</p>
+<p><strong>Encryption and credentials</strong>
+- Application secrets are supplied through environment configuration and are not intended to
+  be committed to source control.
+- Passwords are stored as password hashes rather than plaintext.
+- Transport encryption and encryption-at-rest controls supplied by hosting and database
+  providers must be verified against the actual production account before publication.</p>
+<p><strong>Access control and abuse prevention</strong>
+- Customer workspaces and connected integration scopes are enforced in application routes and
+  database access helpers.
+- The application includes rate limiting and replay/idempotency protections for relevant
+  request paths.
+- Session cookies are signed, HttpOnly and SameSite=Strict; production cookies also use Secure.
+  Sessions expire after 12 hours, and password changes supersede older password-versioned
+  sessions.
+- Customer administrators control connected Slack channels, workspace membership and the
+  human confirmation step before a Linear write.
+- SSO and MFA are not currently represented as implemented Seros customer features.</p>
+<p><strong>Development and response</strong>
+- Automated tests and type checks are part of the application verification workflow.
+- Audit events are recorded for relevant security and administrative activity. Retention and
+  operational monitoring must be confirmed against the deployed environment.
+- Subprocessors are listed at <a href="subprocessors.html">SUBPROCESSORS.md</a>, but the list must be
+  populated from actual production vendors and written contracts before publication.</p>
 <p><strong>AI providers</strong>
-- Customer content sent to AI model providers is limited to what a feature needs, and our
-  provider terms are intended to prohibit training on it. Details in
-  <a href="ai.html">AI-DISCLOSURE.md</a>.</p>
+- The default AI transport is local Ollama/Qwen. Customer content is limited to the relevant
+  data needed for a generation, and AI output requires human review.
+- A hosted AI transport is optional. No hosted AI provider or provider-specific security
+  promise is made here until one is selected and added to the subprocessor list.</p>
 <h2 id="3-customer-responsibilities">3. Customer responsibilities</h2>
 <p>Security is shared. You are responsible for:</p>
 <ul>

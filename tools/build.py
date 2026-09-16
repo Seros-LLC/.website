@@ -100,8 +100,8 @@ def shell(title, desc, canonical, body):
 <meta property="og:image" content="{CFG['WEBSITE_URL']}/assets/og-image.jpg">
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#07192c">
-<link rel="stylesheet" href="/assets/styles.css?v=5">
+<meta name="theme-color" content="#183bd1">
+<link rel="stylesheet" href="/assets/styles.css?v=6">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
