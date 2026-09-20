@@ -46,6 +46,10 @@ jobs:
       - name: Internal links and app handoff resolve
         run: python3 tools/check-links.py
 
+      # The pivot from product to studio is easy to undo by accident. This pins it.
+      - name: Studio positioning holds
+        run: python3 tools/check-positioning.py
+
       - name: No secrets in tree
         run: |
           if grep -rInE '(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16})' --exclude-dir=.git . ; then
