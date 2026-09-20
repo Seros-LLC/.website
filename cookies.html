@@ -36,8 +36,10 @@
 <p>This policy explains the cookies and similar technologies currently used on https://seros.dev
 and in the Seros application. It supplements the <a href="privacy.html">Privacy Policy</a>.</p>
 <p>A cookie is a small file a website stores in your browser. Based on the current marketing
-site and application implementation, Seros uses a strictly necessary session cookie for
-authentication and session integrity. We do not currently use product analytics,
+site implementation, the Seros marketing website sets no cookies of its own. Where we host
+an application for a client, it may use a strictly necessary session cookie for
+authentication and session integrity, described below. We do not currently use product
+analytics,
 advertising pixels, marketing cookies, or third-party tracking cookies. This policy uses
 "cookies" to include similar browser storage where relevant.</p>
 <h2 id="current-implementation">Current implementation</h2>
@@ -56,12 +58,14 @@ advertising pixels, marketing cookies, or third-party tracking cookies. This pol
 <td><code>seros_session</code></td>
 <td>Strictly necessary / security</td>
 <td>Seros</td>
-<td>Maintains an authenticated application session and supports session security</td>
+<td>Used only by an application we host that requires sign-in. It maintains an authenticated session and supports session security. It is not set by the marketing website</td>
 <td>12 hours (<code>Max-Age=43200</code>)</td>
 </tr>
 </tbody>
 </table>
-<p>The table above matches the current application source: <code>seros_session</code> is issued with
+<p>The marketing website at https://seros.dev sets none of the above. The table describes the
+cookie used by an application we host that requires sign-in; it matches the application
+source: <code>seros_session</code> is issued with
 <code>HttpOnly</code>, <code>SameSite=Strict</code>, <code>Max-Age=43200</code>, and <code>Secure</code> in production. If the deployed
 configuration differs, update this table and the Privacy Policy before relying on this
 document.</p>
@@ -82,7 +86,7 @@ consent choice to make in the current implementation.</p>
 <tbody>
 <tr>
 <td>Strictly necessary</td>
-<td>Makes the site and app work</td>
+<td>Makes a hosted application work</td>
 <td>Keeping you signed in and maintaining session integrity</td>
 <td>Us</td>
 <td>No</td>
@@ -131,7 +135,8 @@ cookies are introduced, we will obtain consent where required before setting the
 provide a withdrawal control of equal prominence.</p>
 <h2 id="3-how-to-control-cookies">3. How to control cookies</h2>
 <p>You can block or delete cookies in your browser settings. If you block strictly necessary
-cookies, sign-in and other application functions may not work. Questions: privacy@seros.dev.</p>
+cookies, sign-in and other functions of a hosted application may not work. The marketing
+website works with cookies fully disabled. Questions: privacy@seros.dev.</p>
 <h2 id="4-third-party-cookies">4. Third-party cookies</h2>
 <p>We do not currently permit third parties to set cookies on the marketing site or in the
 application for their own advertising purposes.</p>

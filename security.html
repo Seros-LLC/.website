@@ -63,15 +63,15 @@ about infrastructure a client operates themselves after handover.</p>
 - Transport encryption and encryption-at-rest controls supplied by hosting and database
   providers must be verified against the actual production account before publication.</p>
 <p><strong>Access control and abuse prevention</strong>
-- Customer workspaces and connected integration scopes are enforced in application routes and
+- In applications we build, tenant boundaries and connected integration scopes are enforced in application routes and
   database access helpers.
 - The application includes rate limiting and replay/idempotency protections for relevant
   request paths.
 - Session cookies are signed, HttpOnly and SameSite=Strict; production cookies also use Secure.
   Sessions expire after 12 hours, and password changes supersede older password-versioned
   sessions.
-- Customer administrators control connected Slack channels, workspace membership and the
-  human confirmation step before a Linear write.
+- In systems we build, administrators on the client side control which sources are connected,
+  who has access, and the human confirmation step before a consequential write.
 - SSO and MFA are not currently represented as implemented Seros customer features.</p>
 <p><strong>Development and response</strong>
 - Automated tests and type checks are part of the application verification workflow.
@@ -91,7 +91,7 @@ about infrastructure a client operates themselves after handover.</p>
 <li>Protecting credentials and API keys, and rotating them if exposed.</li>
 <li>Enabling multi-factor authentication or single sign-on for your users.</li>
 <li>Deciding which systems to connect and what scope to grant.</li>
-<li>Not putting prohibited data into the Service (see the
+<li>Not putting prohibited data into a system we build or host, or sending it to us (see the
   <a href="acceptable-use.html">Acceptable Use Policy</a>).</li>
 <li>Reviewing AI output before acting on it.</li>
 </ul>

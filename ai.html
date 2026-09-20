@@ -55,11 +55,11 @@ configuration, but no hosted AI vendor is confirmed in the current subprocessor 
 not publish a hosted provider's name or make provider-specific training or retention claims
 until that provider is selected and reviewed.</p>
 <h2 id="what-data-goes-to-model-providers">What data goes to model providers</h2>
-<p>Only the minimum relevant portion of a selected Slack message or workspace record needed for
-the requested generation is sent to the configured AI transport. The local default does not
-send content to a third-party model provider. If a hosted provider is enabled, its identity,
-processing location, retention and training terms must be added to <a href="subprocessors.html">SUBPROCESSORS.md</a>
-before production use.</p>
+<p>Only the minimum portion of material needed for the requested generation is sent to a model
+provider. Before any client material reaches a hosted provider, that provider's identity,
+processing location, retention and training terms are agreed in the statement of work and
+added to <a href="subprocessors.html">SUBPROCESSORS.md</a>. Where a model runs inside our own boundary, or
+inside infrastructure the client controls, no third-party provider receives the content.</p>
 <p>We do not use customer content to train a general-purpose model. This statement does not
 replace provider-specific contractual review when a hosted transport is enabled.</p>
 <h2 id="training">Training</h2>
@@ -71,18 +71,19 @@ replace provider-specific contractual review when a hosted transport is enabled.
   window per provider is [[AI_PROVIDER_RETENTION]] and must be confirmed against each
   provider's current terms.</li>
 <li>We may use aggregated statistics that cannot identify you or any individual — for example
-  "tasks generated per week" or error rates — to run and improve the Service.</li>
-<li>If we ever want to use customer content to improve our own models, we will ask for
-  opt-in consent first, in writing, per customer. Silence will not count as consent.</li>
+  generation counts or error rates — to run and improve our own tooling.</li>
+<li>If we ever want to use client material to improve our own models, we will ask for opt-in
+  consent first, in writing, per client. Silence will not count as consent.</li>
 </ul>
 <h2 id="human-oversight">Human oversight</h2>
 <ul>
 <li>Everything the model produces is a draft until a person accepts it.</li>
-<li>You must review output before acting on it, and you must not use the Service to make
+<li>You must review output before acting on it, and you must not use a system we build to make
   decisions with legal or similarly significant effects about a person without meaningful
   human review. That is a rule in the <a href="acceptable-use.html">Acceptable Use Policy</a>, not
   a suggestion.</li>
-<li>Administrators can control which integrations are connected and what data is in scope.</li>
+<li>Where we build AI features, the human review points are documented in the deliverable, and
+  administrators on your side control which integrations are connected and what is in scope.</li>
 </ul>
 <h2 id="limitations-stated-plainly">Limitations, stated plainly</h2>
 <ul>
@@ -98,12 +99,13 @@ replace provider-specific contractual review when a hosted transport is enabled.
 </ul>
 <h2 id="your-controls">Your controls</h2>
 <ul>
-<li>Choose the Slack workspace and exact channels to connect; confirm the destination Linear workspace and the scope of each connection.</li>
-<li>Administrators control the Slack channels in scope; the product does not currently expose a
-  separate AI opt-out switch. Do not connect channels whose content should not be processed.</li>
-<li>Delete generated content the same way you delete any other content.</li>
-<li>AI calls are metered by workspace, purpose, model and outcome; the current product does not
-  promise a customer-facing per-generation prompt transcript.</li>
+<li>Decide, in the statement of work, whether an engagement uses AI at all, which provider is
+  acceptable, and what categories of your data may reach it.</li>
+<li>Where we build a system for you, choose which sources it connects to and what is in scope.
+  Do not connect a source whose content should not be processed.</li>
+<li>Ask us to run a model inside your own infrastructure where that matters to you; we will say
+  plainly what it costs in quality and money.</li>
+<li>Delete generated content the same way you delete any other content in your systems.</li>
 </ul>
 <p>Questions: privacy@seros.dev.</p>
 <h2 id="what-i-need-from-you">What I need from you</h2>

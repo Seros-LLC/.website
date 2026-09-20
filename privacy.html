@@ -43,31 +43,30 @@ and what rights you have.</p>
 contact and billing details of the people we do business with, and enquiries sent to us. It
 does not cover the content a client provides for an engagement, or the data inside a system
 we build or host for them, about their own staff and clients.
-For that content we act as a processor on the customer's instructions. Our
+For that content we act as a processor on the client's instructions. Our
 <a href="dpa.html">Data Processing Addendum</a> governs that relationship. If you are an employee of a
-customer and you want your data changed or deleted from their workspace, contact that
-customer first; we will help them respond.</p>
+client and you want your data changed or deleted from a system we built or host for them,
+contact that client first; we will help them respond.</p>
 <p>Contact: privacy@seros.dev. Postal: [[ENTITY_ADDRESS]].
 EU/UK representative or data protection officer, if appointed: Not appointed.</p>
-<h2 id="current-product-scope">Current product scope</h2>
-<p>As of the revision date, Seros is an early-access, business-to-business application. The
-implemented workflow is limited to a customer-authorised Slack workspace and selected
-Slack channels: Seros reads messages from those selected channels, creates drafts, and
-waits for a person at the customer to confirm a draft before writing a task to the
-customer's configured Linear workspace. Seros does not currently offer a general chat,
-ticketing, document, or calendar connector.</p>
-<p>The production deployment is designed for Vercel with durable PostgreSQL storage. Local
-SQLite and the deterministic fake provider are development and test modes, not customer
-production services. AI requests use the configured provider chain. The current default
-is local Ollama/Qwen; a hosted HTTP provider is optional and no hosted AI vendor is
-represented as selected by this policy. See <a href="subprocessors.html">SUBPROCESSORS.md</a> for the
-current confirmed and conditional service list.</p>
-<p>Billing, marketing email, product analytics, error-tracking SaaS, SSO, and MFA are not
-represented as implemented Seros features by this policy. If any is added, this policy
-and the related vendor disclosures must be updated before the feature is used in
-production.</p>
-<p>Customers are businesses. The Service is not directed to children, and business contact
-details may still be personal data under GDPR, UK GDPR and US state privacy laws.</p>
+<h2 id="current-business-scope">Current business scope</h2>
+<p>Seros is a solution development company. We scope, build and maintain custom software for
+businesses. Our public presence is a static marketing website with no analytics, no forms
+and no tracking; project enquiries arrive by ordinary email.</p>
+<p><strong>We do not currently operate a hosted customer-facing application.</strong> Systems we build are
+normally deployed to infrastructure the client owns and controls, in which case the client
+is the controller of the data inside them and we are not a processor of it once the
+engagement ends. Where a client asks us to host or operate a system under a care plan, we
+act as their processor and the <a href="dpa.html">DPA</a> governs that relationship.</p>
+<p>An earlier in-house Slack-to-tracker application is paused and is not deployed, so it is not
+processing anyone's data. See <a href="subprocessors.html">SUBPROCESSORS.md</a> for the vendors it used
+and their current status.</p>
+<p>Marketing email, product analytics, error-tracking, and third-party identity services are
+not in use. If any is added, this policy and the related vendor disclosures must be updated
+before it processes personal data.</p>
+<p>Our clients are businesses. This website and our services are not directed to children, and
+business contact details may still be personal data under GDPR, UK GDPR and US state privacy
+laws.</p>
 <h2 id="2-what-we-collect-why-and-on-what-legal-basis">2. What we collect, why, and on what legal basis</h2>
 <p>"Legal basis" is a GDPR and UK GDPR concept (Article 6). If you are outside the EU, EEA,
 UK or Switzerland, the "why" column is still the honest answer to what we do.</p>
@@ -83,57 +82,57 @@ UK or Switzerland, the "why" column is still the honest answer to what we do.</p
 </thead>
 <tbody>
 <tr>
-<td>Account data</td>
-<td>Name, work email, password hash, company name, workspace and team membership, role and permissions, authentication events and session-security data</td>
-<td>Create and secure your account, authenticate you, apply permissions, provide support</td>
-<td>Art. 6(1)(b) performance of a contract; Art. 6(1)(f) legitimate interests in account security</td>
-<td>Life of the account, then for the life of the account, then 30 days after closure</td>
+<td>Client and contact data</td>
+<td>Name, work email, company name, job title, and the contact details of the people we deal with at a client or prospect</td>
+<td>Discuss and perform an engagement, and keep a record of who agreed what</td>
+<td>Art. 6(1)(b) performance of a contract; Art. 6(1)(f) legitimate interests in business correspondence</td>
+<td>Life of the relationship, then for the life of the account, then 30 days</td>
 </tr>
 <tr>
 <td>Billing data</td>
-<td>Billing contact, billing address, tax identifiers, plan and seat count, invoices and payment status, if billing is enabled for your account</td>
+<td>Billing contact, billing address, tax identifiers, purchase order references, invoices and payment status</td>
 <td>Administer a commercial relationship and meet tax and accounting duties</td>
 <td>Art. 6(1)(b) contract; Art. 6(1)(c) legal obligation for tax and accounting records</td>
-<td>Not collected or used for the current no-billing product path; if billing is enabled, retain only as required by law</td>
+<td>7 years</td>
 </tr>
 <tr>
-<td>Usage and security telemetry</td>
-<td>Sign-in attempts, request timestamps, request volumes, rate-limit and replay-protection events, latency, and security/audit events; device or IP data where the deployed edge or browser supplies it</td>
-<td>Operate the Service, diagnose faults, prevent abuse, and investigate security incidents</td>
-<td>Art. 6(1)(f) legitimate interests in running and securing the Service</td>
-<td>13 months, aggregated after 90 days</td>
+<td>Website and security logs</td>
+<td>Request timestamps, request volumes, and security events for our website; device or IP data where the host supplies it. Where we host a system for a client, its equivalent operational logs</td>
+<td>Serve and secure the website, diagnose faults, prevent abuse, investigate security incidents</td>
+<td>Art. 6(1)(f) legitimate interests in running and securing our systems</td>
+<td>12 months</td>
 </tr>
 <tr>
-<td>Customer content</td>
-<td>Selected Slack messages, channel metadata, task drafts, confirmations, configured Linear task data, comments and AI-generated text derived from them</td>
-<td>Deliver the Slack-to-Linear workflow the customer asked for</td>
-<td>Processed on the customer's instructions under the DPA. The customer determines its own legal basis</td>
-<td>For the life of the workspace; deleted on the schedule in Section 5</td>
+<td>Client materials</td>
+<td>Documents, system access, data and other content a client provides so we can perform an engagement, and the contents of a system we build or host for them</td>
+<td>Perform the Services stated in the statement of work</td>
+<td>Processed on the client's instructions under the DPA. The client determines its own legal basis</td>
+<td>For the duration of the engagement; deleted on the schedule in Section 5 and in Section 15.5 of the Terms</td>
 </tr>
 <tr>
-<td>Support communications</td>
-<td>Emails and support messages you send us, if support is provided</td>
-<td>Answer your question, reproduce and fix bugs, keep a record of what was agreed</td>
-<td>Art. 6(1)(b) contract; Art. 6(1)(f) legitimate interests in support quality</td>
+<td>Enquiries and correspondence</td>
+<td>Emails you send us, including project enquiries sent to our published addresses</td>
+<td>Answer your question, scope an engagement, keep a record of what was agreed</td>
+<td>Art. 6(1)(b) contract and pre-contract steps; Art. 6(1)(f) legitimate interests in business correspondence</td>
 <td>24 months</td>
 </tr>
 <tr>
 <td>Marketing and prospect data</td>
-<td>Work contact details you give us, event and demo requests, marketing preferences, if marketing is provided</td>
-<td>Reply to enquiries and send service or product email you asked for</td>
+<td>Work contact details you give us and any marketing preferences, if marketing is provided</td>
+<td>Reply to enquiries and send email you asked for</td>
 <td>Art. 6(1)(a) consent where consent is required; otherwise Art. 6(1)(f) legitimate interests in business-to-business marketing</td>
-<td>Until you opt out, then a suppression record kept only as needed to honor the opt-out</td>
+<td>Until you opt out, then a suppression record kept only as needed to honour the opt-out</td>
 </tr>
 <tr>
 <td>Cookies and similar technologies</td>
-<td>The strictly necessary session cookie described in the Cookie Policy</td>
-<td>Keep you signed in and maintain session integrity</td>
+<td>See the Cookie Policy. Our marketing website sets no analytics or advertising cookies</td>
+<td>Serve the website</td>
 <td>Strictly necessary cookies: legitimate interests</td>
 <td>See the <a href="cookies.html">Cookie Policy</a></td>
 </tr>
 <tr>
 <td>Security and audit logs</td>
-<td>Sign-in attempts, request timestamps, admin actions, permission changes, security alerts and audit events</td>
+<td>Where we host or operate a system for a client: sign-in attempts, admin actions, permission changes, security alerts and audit events</td>
 <td>Detect and investigate unauthorised access, meet our security commitments</td>
 <td>Art. 6(1)(f) legitimate interests in security; Art. 6(1)(c) where a law requires it</td>
 <td>12 months</td>
@@ -147,28 +146,27 @@ privacy@seros.dev.</p>
 <ul>
 <li>We do not sell personal information.</li>
 <li>We do not share personal information for cross-context behavioural advertising.</li>
-<li>We do not use customer content to train our own general-purpose models. The local default
-  does not send customer content to a third-party model provider. If a hosted provider is
-  enabled, its training terms must be verified and disclosed before production use. See
-  <a href="ai.html">AI-DISCLOSURE.md</a>.</li>
+<li>We do not use client materials to train our own general-purpose models, and we do not
+  provide them to a third-party model provider whose training terms have not been verified
+  and disclosed to the client. See <a href="ai.html">AI-DISCLOSURE.md</a>.</li>
 <li>We do not make decisions with legal or similarly significant effects about you using
   automated processing alone. The Service produces drafts and suggestions; a person at the
   customer decides.</li>
 </ul>
 <h2 id="3-where-the-information-comes-from">3. Where the information comes from</h2>
-<p>Most of it comes from you or from your employer's administrator. Some comes from the Slack
-workspace and channels an administrator authorises, and from the Linear workspace where a
-confirmed task is written. Some is generated automatically when you use the Service, such as
-logs, audit events and security telemetry. If we buy or receive business contact data from a
-third-party source for sales outreach, we will say so here and name the source: none unless
-we later identify one.</p>
+<p>Most of it comes from you directly — an email you send us, or the details agreed when we set
+up an engagement. Some comes from a client who gives us access to their systems or materials
+so we can do the work. Some is generated automatically when you visit our website or use a
+system we host, such as request logs and security events. If we buy or receive business
+contact data from a third-party source for sales outreach, we will say so here and name the
+source: none unless we later identify one.</p>
 <h2 id="4-how-we-use-ai">4. How we use AI</h2>
-<p>The Service may send the minimum relevant portion of a selected Slack message or workspace
-records to the AI transport configured for the deployment. AI is used for commitment
-classification, short explanations, summaries and workspace questions. AI-generated text
-is advisory: it does not create a task or send an external write by itself. A person must
-review and confirm a draft before Seros writes a task to the customer's configured Linear
-workspace.</p>
+<p>We use AI models as a tool when we build software, and we may build AI features into a
+system for a client. Where an engagement involves sending client material to an AI provider,
+the provider and the data it receives are agreed in the statement of work and recorded in
+<a href="subprocessors.html">SUBPROCESSORS.md</a> before any client data reaches it. AI output is
+advisory: a person reviews it before it becomes a deliverable, and systems we build require
+a human confirmation before a consequential action. See <a href="ai.html">AI-DISCLOSURE.md</a>.</p>
 <p>The current default transport is local Ollama/Qwen. A hosted HTTP transport is supported
 by configuration but no hosted AI vendor has been confirmed in the current vendor list.
 When a hosted provider is enabled, the provider, location, training terms and retention
@@ -183,10 +181,11 @@ a practical one and it is repeated in the Terms of Service.</p>
 <p>We keep personal information only as long as we need it for the purpose it was collected
 for, plus any period a law requires.</p>
 <ul>
-<li>Customer content is retained while the workspace is active. On termination, the customer
-  may export it during a window of 30 days. After that window we delete
-  or irreversibly anonymise it within 30 days, except where law requires
-  us to keep it.</li>
+<li>Client materials are retained for the duration of the engagement. Afterwards the client
+  may export them during a window of 30 days. After that window we delete
+  or irreversibly anonymise them within 30 days, except for the archival
+  copy of deliverables and engagement records permitted by Section 15.5 of the Terms, and
+  except where law requires us to keep something.</li>
 <li>Backups roll off on their own cycle. Deleted data can persist in encrypted backups for up
   to 35 days before being overwritten.</li>
 <li>Financial records are kept for 7 years because tax and accounting rules
@@ -200,8 +199,8 @@ for, plus any period a law requires.</p>
   error tracking, AI model providers and support tooling. The current list, with each
   vendor's purpose and location, is in <a href="subprocessors.html">SUBPROCESSORS.md</a>. Each is bound
   by a written contract that limits use to providing the service to us.</li>
-<li><strong>Your organisation.</strong> If you use a work account, your workspace administrator can see
-  your account details, your activity in the workspace, and the content you create there.</li>
+<li><strong>Your organisation.</strong> If you use a system we built or host for your employer, your
+  employer's administrator can see your activity in it and the content you create there.</li>
 <li><strong>Professional advisers</strong> — lawyers, accountants, auditors and insurers, under duties of
   confidence.</li>
 <li><strong>Authorities</strong>, where we are legally required to disclose. Where we are permitted to, we
@@ -212,10 +211,10 @@ for, plus any period a law requires.</p>
 </ul>
 <p>We do not disclose customer content to anyone else without the customer's instruction.</p>
 <h2 id="7-international-transfers">7. International transfers</h2>
-<p>We are based in the United States and the Service is hosted in the United States. If you
-are in the EEA, the UK or Switzerland, your personal information will be transferred to a
-country that those laws do not treat as providing an equivalent level of protection by
-default.</p>
+<p>We are based in the United States, and our website and any system we host are hosted in the
+United States. If you are in the EEA, the UK or Switzerland, your personal information will
+be transferred to a country that those laws do not treat as providing an equivalent level of
+protection by default.</p>
 <p>For those transfers we rely on the European Commission's Standard Contractual Clauses
 (Decision 2021/914), Module Two (controller to processor) or Module Three (processor to
 processor) as applicable, together with the UK International Data Transfer Addendum for UK
@@ -263,22 +262,21 @@ through the same process. Some states allow you to appeal a refusal; if we refus
 request you can appeal by replying to our decision email, and we will respond within the
 period your state's law allows.</p>
 <h3 id="how-to-exercise-a-right">How to exercise a right</h3>
-<p>Email privacy@seros.dev with the request and the account or workspace it relates to. We
-will verify your identity, usually by confirming control of the email address on the
-account, or by asking for additional detail if the request is broad. We respond within 30
+<p>Email privacy@seros.dev with the request and the engagement or system it relates to. We
+will verify your identity, usually by confirming control of the email address we hold, or by
+asking for additional detail if the request is broad. We respond within 30
 days, or within 45 days where a US state law allows, and we will tell you if we need an
 extension. You may use an authorised agent; we will ask for proof of authority.</p>
-<p>If your request concerns content inside a customer's workspace, we will forward it to that
-customer and assist them, because they decide.</p>
+<p>If your request concerns content inside a system we built or host for a client, we will
+forward it to that client and assist them, because they decide.</p>
 <h2 id="10-children">10. Children</h2>
 <p>The Service is for businesses. It is not directed to children, and we do not knowingly
-collect personal information from anyone under 18. Users must be at least 18 to hold an
-account. Where local law sets a lower digital-consent age, we still do not permit anyone
-under 16 to use the Service. If you believe a minor has given us personal information,
+collect personal information from anyone under 18. Our services are sold to businesses and
+are not directed to children. If you believe a minor has given us personal information,
 email privacy@seros.dev and we will delete it.</p>
 <h2 id="11-changes-to-this-policy">11. Changes to this policy</h2>
-<p>We will update this policy when the Service or the law changes. If a change is material we
-will give notice by email to account administrators or by a notice in the Service at least
+<p>We will update this policy when our business or the law changes. If a change is material we
+will give notice by email to our clients, or by a notice on our website, at least
 30 days before it takes effect, unless a shorter period is
 required by law. The effective date at the top always reflects the current version. Prior
 versions are available on request.</p>
