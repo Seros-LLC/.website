@@ -19,13 +19,13 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <div class="wrap rail-header">
-    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""><span>SEROS</span><small>commitment control</small></a>
+    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""><span>SEROS</span><small>solution development</small></a>
     <nav class="site" aria-label="Primary navigation">
-        <a href="/#workflow">Workflow</a>
-        <a href="/#control">Controls</a>
-        <a href="/pricing">Early access</a>
+        <a href="/services">Services</a>
+        <a href="/work">Work</a>
+        <a href="/pricing">Engagements</a>
         <a href="/security">Security</a>
-        <a class="btn-nav-app" href="https://app.seros.dev/login">Launch app &rarr;</a>
+        <a class="btn-nav-app" href="/contact">Start a project &rarr;</a>
     </nav>
   </div>
 </header>
@@ -35,25 +35,20 @@
 <p>Effective date: [[EFFECTIVE_DATE]]</p>
 <p>A subprocessor is a company we use to help run the Service that may process personal data
 on our behalf. This page lists them.</p>
-<p>The current product path is Slack-to-Linear task drafting. Development-only providers and
-unused integrations are not subprocessors for production customer data. The production list
-must be completed from the deployed environment and vendor contracts before publication.
-Do not treat a provider as approved merely because its SDK or transport exists in source
-code.</p>
-<p><strong>Rows marked unconfirmed are not a production disclosure.</strong> Delete unused rows and replace
-all remaining placeholders with the vendor actually in use, its legal name, processing
-location, transfer mechanism, and current contract status.</p>
+<p><strong>Draft — the vendors below are the real production stack, but the list is not yet
+publishable.</strong> Each vendor is genuinely in use (verified against the app and product-docs
+repos), but for every row the full legal entity name, the registered address, the location
+of processing, the cross-border transfer mechanism, and a signed, filed DPA are still
+founder inputs. Do not publish this page until each <code>[[TBD_LOCATION]]</code> and
+<code>[[TBD_TRANSFER_MECHANISM]]</code> is confirmed against the vendor's live terms, a DPA is signed
+with each vendor, and Georgia counsel has reviewed it. Publishing a wrong or incomplete
+subprocessor list is a data protection problem, not a typo.</p>
 <p>This list is Annex III to the <a href="dpa.html">Data Processing Addendum</a>.</p>
 <h2 id="current-subprocessors">Current subprocessors</h2>
-<p>No production subprocessor is confirmed in this repository's current vendor record.</p>
-<p>The application source contains a Vercel-compatible deployment path, PostgreSQL support,
-and a local Ollama transport, but source compatibility is not proof that a vendor is used in
-production or that its contractual terms have been reviewed. Before publishing or processing
-customer data in production, add each actual hosting, database, email, AI, logging, support,
-or payment vendor with its legal name, role, location, transfer mechanism, and contract status.</p>
-<p>Do not list local Ollama/Qwen as a third-party subprocessor when it runs inside the deployment
-boundary. If the hosted HTTP transport is enabled, its actual provider must be listed here
-before production use.</p>
+<p>The vendors below are the stack the application actually integrates with (verified in the
+app and product-docs repos). Do not list local Ollama/Qwen as a third-party subprocessor
+when it runs inside the deployment boundary; if the hosted HTTP AI transport is enabled, its
+actual provider must be listed here before production use.</p>
 <table>
 <thead>
 <tr>
@@ -68,19 +63,63 @@ before production use.</p>
 </thead>
 <tbody>
 <tr>
-<td>—</td>
-<td>None confirmed</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>Not published</td>
+<td>1</td>
+<td>Vercel *</td>
+<td>Application hosting: serverless compute, edge network, TLS termination and request routing for <code>app.seros.dev</code>, and the platform through which the production Postgres database is provisioned. Also processes application, access and request logs.</td>
+<td>All Customer Personal Data and account data in transit and transiently in compute; request and access logs including IP address, user identifiers, and device and browser data</td>
+<td>[[TBD_LOCATION]]</td>
+<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>In use; vendor DPA not yet signed or filed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Neon * (production Postgres, provisioned through Vercel)</td>
+<td>Durable primary database: stores all application data at rest, including source content ingested from connected integrations, accounts, tasks and audit logs, plus automated backups</td>
+<td>All Customer Personal Data and account data at rest — identification and contact data, communications content ingested from connected sources, task and workflow data, and authentication and technical/log data</td>
+<td>[[TBD_LOCATION]]</td>
+<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>In use; vendor DPA not yet signed or filed</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Slack *</td>
+<td>Source integration: the Service reads messages and events from the Slack workspaces the customer authorises, to detect commitments and draft tasks</td>
+<td>Message content, author name/handle and role, channel and workspace identifiers, timestamps, and any personal data contained in the messages ingested</td>
+<td>[[TBD_LOCATION]]</td>
+<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>In use; vendor DPA not yet signed or filed</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Linear *</td>
+<td>Task-tracker integration: the Service creates and updates issues/tasks in the customer's Linear workspace</td>
+<td>Task title and description (which may contain personal data drawn from source content), assignee identity, and team and workspace identifiers</td>
+<td>[[TBD_LOCATION]]</td>
+<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>In use; vendor DPA not yet signed or filed</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Google — Gemini API, accessed via the OpenAI-compatible endpoint *</td>
+<td>AI model provider: task detection and drafting, assignee suggestions and summarisation</td>
+<td>The parts of Customer Content a feature needs — the text of the message or document being turned into a task, related task records, and the names and roles of the people involved so it can suggest an assignee — plus the generated output</td>
+<td>[[TBD_LOCATION]]</td>
+<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>In use; provider data-retention/no-training terms and DPA not yet confirmed (see <a href="ai.html">AI-DISCLOSURE.md</a>)</td>
 </tr>
 </tbody>
 </table>
-<p>Payment processing, analytics, error-tracking SaaS, customer-support tooling, SSO/MFA
-identity services, and marketing systems are not confirmed as current production
-subprocessors and must not be represented as active vendors until verified.</p>
+<p>* Product/company names are shown for identification. The full legal entity name, registered
+address, the vendor's own subprocessors, the location where data is actually processed, the
+cross-border transfer mechanism, and the URL of the signed DPA are <strong>founder inputs</strong> for
+every row — they could not be sourced from the repository and must not be guessed. See
+"Notes for filling this in" below.</p>
+<p><strong>Not yet applicable — no subprocessor in use.</strong> The product has no email-delivery,
+payment/billing, product-analytics, error-tracking, customer-support, CRM, third-party
+observability or external SSO/identity vendor at this stage (billing is expected to be
+manual invoicing initially; authentication is email-based in-app, with SSO/SCIM parked as a
+later roadmap item). The placeholder rows for those categories have been removed rather than
+left blank. Add a row here — and sign a DPA — before any such vendor touches Customer Data.</p>
 <h2 id="affiliates">Affiliates</h2>
 <p>Seros, LLC has no affiliates at present. If affiliates are formed and they process
 Customer Data, list them here.</p>
@@ -125,7 +164,7 @@ notify promptly afterwards. The objection window then runs from the date of that
 <tbody>
 <tr>
 <td>[[EFFECTIVE_DATE]]</td>
-<td>Reconciled with the current Slack-to-Linear application scope; no production vendors confirmed.</td>
+<td>Initial draft list. Real production stack recorded — Vercel, Neon, Slack, Linear, Google/Gemini — from the app and product-docs repos. Legal entities, processing locations, transfer mechanisms and signed DPAs still outstanding.</td>
 <td>Not applicable — not yet published</td>
 </tr>
 </tbody>

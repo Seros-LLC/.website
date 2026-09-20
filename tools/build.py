@@ -44,7 +44,7 @@ PAGES = [
 # work product must not accidentally become public routes.
 PUBLISHED_LINKS = {src: out for src, out, _title, _desc in PAGES}
 
-NAV = [("Workflow", "/#workflow"), ("Controls", "/#control"), ("Early access", "/pricing"),
+NAV = [("Services", "/services"), ("Work", "/work"), ("Engagements", "/pricing"),
        ("Security", "/security")]
 
 TOKEN = re.compile(r"\[\[([A-Z0-9_]+)\]\]")
@@ -78,9 +78,9 @@ def rewrite_published_links(text):
 
 def shell(title, desc, canonical, body):
     nav = "\n        ".join(f'<a href="{h}">{t}</a>' for t, h in NAV)
-    # The app owns its own origin. OAuth state and callback cookies are host-only,
-    # so proxying this link through the marketing domain would split the OAuth flow.
-    nav += '\n        <a class="btn-nav-app" href="https://app.seros.dev/login">Launch app &rarr;</a>'
+    # The studio sells engagements, not seats: the primary action is an enquiry,
+    # and it stays on this origin so no cross-host flow is implied.
+    nav += '\n        <a class="btn-nav-app" href="/contact">Start a project &rarr;</a>'
     banner = ""
     if DRAFT:
         banner = ('<p class="banner"><strong>Draft.</strong> This document has not yet been '
@@ -107,7 +107,7 @@ def shell(title, desc, canonical, body):
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <div class="wrap rail-header">
-    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""><span>SEROS</span><small>commitment control</small></a>
+    <a class="brand" href="/"><img src="/assets/icon-192.png" alt=""><span>SEROS</span><small>solution development</small></a>
     <nav class="site" aria-label="Primary navigation">
         {nav}
     </nav>
