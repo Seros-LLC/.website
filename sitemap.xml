@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://seros.dev/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/services</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/work</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://seros.dev/pricing</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://seros.dev/contact</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://seros.dev/security</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://seros.dev/privacy</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://seros.dev/terms</loc><changefreq>monthly</changefreq></url>
