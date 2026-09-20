@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>How Seros uses AI — Seros, LLC</title>
-<meta name="description" content="Plain-language explanation of how Seros uses AI models and what happens to your data.">
+<meta name="description" content="Plain-language explanation of how Seros, LLC uses AI models in its work and in what it builds.">
 <link rel="canonical" href="https://seros.dev/ai">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="How Seros uses AI — Seros, LLC">
-<meta property="og:description" content="Plain-language explanation of how Seros uses AI models and what happens to your data.">
+<meta property="og:description" content="Plain-language explanation of how Seros, LLC uses AI models in its work and in what it builds.">
 <meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -36,12 +36,20 @@
 <p>This is the short, plain version of how Seros uses AI. The binding terms are in Section 7
 of the <a href="terms.html">Terms of Service</a>, the <a href="privacy.html">Privacy Policy</a> and
 the <a href="dpa.html">DPA</a>.</p>
-<h2 id="what-the-product-does-with-ai">What the product does with AI</h2>
-<p>The current workflow is limited to customer-authorised Slack channels and a configured
-Linear workspace. Seros uses AI for commitment classification, short explanations,
-summaries and workspace questions. It creates drafts; a person at the customer must review
-and confirm a draft before Seros writes a task to Linear. Seros does not currently include
-chat, ticketing, document or calendar connectors.</p>
+<h2 id="two-different-things">Two different things</h2>
+<p><strong>How we use AI in our own work.</strong> We use AI models as a tool when we build software —
+drafting code, tests and documentation, and reviewing our own work. A person on our side
+reviews everything before it becomes a deliverable, and we are accountable for it either
+way. Where a deliverable was produced with material AI assistance, we say so.</p>
+<p><strong>AI features we build for you.</strong> Where an engagement includes AI functionality, we build it
+so a model proposes and a person decides: consequential actions require human confirmation,
+and the decision is recorded. The model provider, what data reaches it, and where the human
+review points sit are agreed in the Statement of Work and documented in the deliverable.</p>
+<h2 id="the-paused-in-house-product">The paused in-house product</h2>
+<p>Our first build was an in-house Slack-to-tracker application. It used AI to classify
+commitments and draft tracker work, and never wrote to a tracker without a person confirming
+the draft. That application is paused and is not deployed, so it is not processing anyone's
+data today. It remains the clearest worked example of how we build AI with review.</p>
 <p>The default AI transport is local Ollama/Qwen. A hosted HTTP transport is supported by
 configuration, but no hosted AI vendor is confirmed in the current subprocessor list. Do
 not publish a hosted provider's name or make provider-specific training or retention claims

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Terms of Service — Seros, LLC</title>
-<meta name="description" content="The agreement between Seros, LLC and customers of the Seros service.">
+<meta name="description" content="The baseline agreement between Seros, LLC and its clients. Engagements are governed by a signed statement of work.">
 <link rel="canonical" href="https://seros.dev/terms">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Terms of Service — Seros, LLC">
-<meta property="og:description" content="The agreement between Seros, LLC and customers of the Seros service.">
+<meta property="og:description" content="The baseline agreement between Seros, LLC and its clients. Engagements are governed by a signed statement of work.">
 <meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -35,227 +35,233 @@
 <p>Effective date: [[EFFECTIVE_DATE]]</p>
 <h2 id="0-read-this-first">0. Read this first</h2>
 <p>These Terms of Service (the "Terms") are a contract between Seros, LLC ("Seros", "we",
-"us") and the business that subscribes to the Service ("Customer", "you"). By signing an
-Order Form, clicking to accept, or using the Service, you agree to them. If you are
-accepting on behalf of a company, you confirm you have authority to bind it.</p>
-<p>If we have signed a separate written agreement with you, that agreement governs and these
-Terms fill the gaps.</p>
-<h2 id="current-product-scope">Current product scope</h2>
-<p>Seros is an early-access, business-to-business web application. The current workflow
-connects a customer's Slack workspace, reads only channels selected by that customer's
-owner or administrator, creates task drafts, and waits for a person to confirm each draft.
-Only after confirmation does Seros write a task to the customer's configured Linear
-workspace. The current Service does not include general chat, ticketing, document, or
-calendar connectors.</p>
-<p>The production architecture is designed for Vercel and durable PostgreSQL storage. Local
-SQLite and the deterministic fake provider are development and test modes. AI features use
-the configured provider chain; the default is local Ollama/Qwen. A hosted HTTP provider is
-optional, and no hosted AI vendor is confirmed by these Terms. Any hosted vendor used in
-production must first be identified in <a href="subprocessors.html">SUBPROCESSORS.md</a>.</p>
-<p>Any reference in these Terms to a feature, connector, billing flow, SSO, MFA, SLA, or
-support level means only that feature or service actually made available to you in the
-Service or an Order Form. Preview, planned, or disabled functionality is not included.</p>
-<p>The current product path does not include a public API, customer-facing billing flow,
-SSO, MFA, analytics, or a service-level commitment unless we expressly add one in a
-signed order or published amendment.</p>
-<p>For clarity, these Terms do not by themselves activate any paid plan, trial, automatic
-renewal, service-level commitment, or payment-processing relationship. Those apply only if
-actually made available in the Service or stated in an Order Form.</p>
+"us") and the business that engages us or uses this website ("Customer", "you"). By signing
+a Statement of Work, instructing us to begin work, or using this website, you agree to them.
+If you are accepting on behalf of a company, you confirm you have authority to bind it.</p>
+<p><strong>These Terms are the baseline, not the deal.</strong> Client work is governed by the
+<strong>Master Services Agreement</strong> ("MSA") and a signed
+<strong>Statement of Work</strong> ("SOW"). Where a signed MSA or SOW says
+something different from these Terms, that document wins.</p>
+<h2 id="current-business-scope">Current business scope</h2>
+<p>Seros is a solution development company. We scope, build, and maintain custom software for
+businesses. A typical engagement is a fixed-fee discovery sprint that produces a written
+specification, a fixed-fee build quoted from that specification, and an optional monthly
+care plan after delivery.</p>
+<p><strong>Seros does not currently operate a subscription software service.</strong> There is no seat,
+plan, trial, self-service sign-up, automatic renewal, or customer-facing billing flow. An
+earlier Slack-to-tracker application was built in-house and is paused: it is not deployed,
+not offered, and not sold. Nothing in these Terms offers it to you.</p>
+<p>Any reference in these Terms to a deliverable, service level, or support commitment means
+only what is actually stated in a signed SOW. Proposals, estimates, marketing copy, and
+conversations do not create an obligation.</p>
 <h2 id="1-definitions">1. Definitions</h2>
 <ul>
-<li><strong>Service</strong> — the Seros web application, API, documentation, integrations and any
-  related support we make available at https://seros.dev.</li>
-<li><strong>Order Form</strong> — an ordering document or online checkout that identifies the plan, seat
-  count, term and fees.</li>
-<li><strong>Subscription Term</strong> — the period stated in the Order Form, including renewals.</li>
-<li><strong>Authorised User</strong> — an individual you permit to use the Service under your account,
-  including your employees, contractors and agents.</li>
-<li><strong>Customer Data</strong> — all data, text, messages, channel metadata, task drafts, confirmations,
-  Linear task data and other content that you or your Authorised Users submit to the Service,
-  or that the Service ingests from Slack or writes to the configured Linear workspace.</li>
-<li><strong>Output</strong> — text, task descriptions, assignments, routings, summaries and other
-  material generated by AI models in response to Customer Data or prompts.</li>
-<li><strong>Documentation</strong> — the usage guides and technical documentation we publish.</li>
-<li><strong>AUP</strong> — the <a href="acceptable-use.html">Acceptable Use Policy</a>, incorporated into these
-  Terms by reference.</li>
-<li><strong>DPA</strong> — the <a href="dpa.html">Data Processing Addendum</a>, incorporated by reference where
-  personal data is processed.</li>
+<li><strong>Services</strong> — the development, integration, advisory and maintenance work we perform for
+  you under a signed SOW.</li>
+<li><strong>Site</strong> — the Seros website at https://seros.dev and its content.</li>
+<li><strong>MSA</strong> — the <strong>Master Services Agreement</strong>.</li>
+<li><strong>SOW</strong> — a <strong>Statement of Work</strong> signed by both parties,
+  which sets the scope, deliverables, fees, and schedule for one engagement.</li>
+<li><strong>Deliverables</strong> — the software, configuration, documentation and written materials we
+  create specifically for you under a SOW.</li>
+<li><strong>Customer Materials</strong> — data, systems access, credentials, documents and other content
+  you provide to us, or that we access on your instruction, so that we can perform the
+  Services.</li>
+<li><strong>Output</strong> — text, code, designs, summaries and other material generated by AI models in
+  the course of performing the Services.</li>
+<li><strong>AUP</strong> — the <a href="acceptable-use.html">Acceptable Use Policy</a>, which governs use of the
+  Site and of anything we host for you.</li>
+<li><strong>DPA</strong> — the <a href="dpa.html">Data Processing Addendum</a>, incorporated by reference where we
+  process personal data on your behalf.</li>
 </ul>
-<h2 id="2-account-and-eligibility">2. Account and eligibility</h2>
-<p>2.1 You must be a business or other organisation, and each Authorised User must be at
-least 18 years old. The Service is not offered to consumers.</p>
-<p>2.2 You are responsible for the accuracy of your account details, for the security of
-credentials and API keys, for the acts and omissions of your Authorised Users, and for
-configuring permissions inside your workspace. Tell us at hello@seros.dev as soon as you
-suspect unauthorised access.</p>
-<p>2.3 Seats are per named individual. A seat may be reassigned when someone leaves; seats
-may not be shared concurrently.</p>
-<p>2.4 You are responsible for obtaining any consents, notices or authorisations your own
-staff, clients or applicable law require before you connect a system or submit Customer
-Data to the Service.</p>
-<h2 id="3-subscriptions-trials-and-renewal">3. Subscriptions, trials and renewal</h2>
-<p>3.1 <strong>Trials.</strong> We may offer a free or discounted trial. Trials are provided as-is, with
-no warranties, no service commitment and no support obligation, and we may change or end a
-trial at any time. Unless you subscribe before the trial ends, your workspace and its data
-may be deleted after 30 days.</p>
-<p>3.2 <strong>Term.</strong> The Subscription Term begins on the start date in the Order Form and runs
-for the period stated there.</p>
-<p>3.3 <strong>Automatic renewal.</strong> Unless the Order Form says otherwise, the subscription renews
-automatically for successive periods equal to the previous term, at the then-current list
-price, unless either party gives notice of non-renewal at least 30
-days before the end of the current term. Monthly plans may be cancelled with effect from
-the end of the current monthly period. We will give at least
-60 days' notice before a renewal at an increased price.</p>
-<p>3.4 <strong>Adding seats.</strong> Seats added mid-term are charged pro rata for the remainder of the
-term and renew with the rest of the subscription. Seats cannot be reduced mid-term unless
-the Order Form says otherwise.</p>
-<p>3.5 Billing detail, including refunds and cancellation mechanics, is in the
-<a href="billing.html">Refund and Billing Policy</a>.</p>
-<h2 id="4-fees-taxes-and-late-payment">4. Fees, taxes and late payment</h2>
-<p>4.1 Fees are as stated in the Order Form, in US dollars (USD), and are payable in advance.</p>
-<p>4.2 Except where the Refund and Billing Policy or applicable law says otherwise, fees are
-non-refundable and payments are not cancellable once made.</p>
-<p>4.3 Fees exclude sales, use, VAT, GST and similar taxes. You are responsible for those,
-other than taxes on our net income. Whether the Service is subject to sales tax in a given
+<h2 id="2-engaging-us">2. Engaging us</h2>
+<p>2.1 You must be a business or other organisation. The Services are not offered to consumers.</p>
+<p>2.2 <strong>How an engagement starts.</strong> We agree scope in writing before work begins. No work is
+chargeable, and no deliverable is owed, until both parties sign a SOW. A quotation, estimate,
+or proposal is an invitation to discuss and is not binding until it is incorporated into a
+signed SOW.</p>
+<p>2.3 <strong>Your sponsor.</strong> You will name one person empowered to make decisions about the work.
+Our schedule and any fixed fee assume that person responds to blocking questions within the
+time stated in the SOW.</p>
+<p>2.4 <strong>Access and authority.</strong> Where the Services require access to your systems, you are
+responsible for granting it, for the security of the credentials you issue us, and for
+confirming that you are permitted to grant that access. You are responsible for obtaining
+any consents, notices or authorisations your own staff, clients or applicable law require
+before you give us access to a system or provide Customer Materials.</p>
+<h2 id="3-scope-change-control-and-acceptance">3. Scope, change control and acceptance</h2>
+<p>3.1 <strong>Scope is what the SOW says.</strong> Anything not written in the SOW is out of scope,
+whatever was discussed.</p>
+<p>3.2 <strong>Change control.</strong> A change to scope, schedule or fees takes effect only in a written
+change order signed by both parties. We will not perform out-of-scope work on an informal
+request, and you are not liable for out-of-scope work performed without a signed change
+order.</p>
+<p>3.3 <strong>Acceptance.</strong> Unless the SOW says otherwise, you have the acceptance window stated in
+the SOW to accept a deliverable or give written notice of a specific failure to meet the
+agreed scope. Silence past that window is acceptance. On notice of a genuine failure, we
+will correct the deliverable within 30 days at no additional charge.</p>
+<p>3.4 <strong>Dependencies.</strong> Delay caused by you — late access, late decisions, unavailable staff,
+or a change of direction — moves the schedule and may change the fee by written change order.</p>
+<h2 id="4-fees-invoicing-and-late-payment">4. Fees, invoicing and late payment</h2>
+<p>4.1 Fees are as stated in the SOW, in US dollars (USD). Engagements are quoted as a fixed fee
+wherever the scope allows. Work outside an agreed scope, and work quoted as time and
+materials, is charged at $150 per hour.</p>
+<p>4.2 <strong>Invoicing.</strong> We invoice on the schedule stated in the SOW. Undisputed invoices are due
+within 30 days of the invoice date.</p>
+<p>4.3 <strong>Expenses.</strong> Travel, third-party licences, cloud and infrastructure costs incurred for
+your engagement are passed through at cost with receipts, and are pre-approved in writing
+above the threshold stated in the SOW.</p>
+<p>4.4 Fees exclude sales, use, VAT, GST and similar taxes. You are responsible for those,
+other than taxes on our net income. Whether the Services are subject to sales tax in a given
 jurisdiction is a question for our advisers and yours; see [[VERIFY_WITH_CPA]] in the
 formation checklist. If you are exempt, give us a valid exemption certificate.</p>
-<p>4.4 Undisputed invoices are due within 30 days of the invoice date.
-Late amounts may accrue interest at the lower of 1.0% per month, or the maximum the law allows, whichever is lower per month or the
-maximum rate permitted by law, plus reasonable costs of collection. We may suspend the
-Service for non-payment after giving at least 7 days' written
+<p>4.5 Late amounts may accrue interest at the lower of 1.0% per month, or the maximum the law allows, whichever is lower per month or the
+maximum rate permitted by law, plus reasonable costs of collection. We may suspend work on
+an engagement for non-payment after giving at least 7 days' written
 notice and a chance to cure.</p>
-<p>4.5 If you dispute an invoice in good faith, tell us in writing before the due date with
-the reason. We will not suspend for the disputed portion while we work it out, and you
+<p>4.6 If you dispute an invoice in good faith, tell us in writing before the due date with the
+reason. We will not suspend work over the disputed portion while we work it out, and you
 must pay the undisputed portion on time.</p>
+<p>4.7 <strong>Deposits and cancellation.</strong> Where a SOW requires a deposit, it is payable before work
+begins. If you cancel an engagement after work has started, you are liable for work performed
+and non-cancellable commitments made up to the date of cancellation. Refund treatment is in
+the <a href="billing.html">Billing and Payment Policy</a>.</p>
 <h2 id="5-acceptable-use">5. Acceptable use</h2>
-<p>You and your Authorised Users must comply with the AUP. We may suspend access under
-Section 14 if use of the Service threatens the security, integrity or availability of the
-Service, or breaches the AUP.</p>
-<h2 id="6-customer-data">6. Customer Data</h2>
-<p>6.1 <strong>Ownership.</strong> As between the parties, you own all right, title and interest in
-Customer Data. We claim no ownership of it.</p>
+<p>You must comply with the AUP when you use the Site and anything we host for you. We may
+suspend access under Section 14 if use threatens the security, integrity or availability of
+our systems or of a third party's, or breaches the AUP.</p>
+<h2 id="6-customer-materials">6. Customer Materials</h2>
+<p>6.1 <strong>Ownership.</strong> As between the parties, you own all right, title and interest in Customer
+Materials. We claim no ownership of them.</p>
 <p>6.2 <strong>Licence to us.</strong> You grant us a non-exclusive, worldwide, royalty-free licence to
-host, copy, transmit, display, process and create derived representations of Customer Data
-solely to provide, secure, support and maintain the Service for you, and to comply with
-law. The licence ends when the data is deleted under Section 15.</p>
-<p>6.3 <strong>What we will not do.</strong> We will not use Customer Data to train our own
- general-purpose models. The local default AI transport does not send Customer Data to a
- third-party model provider. If a hosted provider is enabled, its training terms must be
- verified and disclosed before production use. We may generate and use aggregated,
- de-identified statistics that cannot reasonably be used to identify you, your Authorised
- Users or any individual, for capacity planning, reliability work and product decisions.</p>
+host, copy, transmit, display and process Customer Materials solely to perform the Services
+for you and to comply with law. The licence ends when the material is returned or deleted
+under Section 15.</p>
+<p>6.3 <strong>What we will not do.</strong> We will not use Customer Materials to train our own
+general-purpose models, and we will not provide them to a third-party model provider whose
+training terms have not been verified and disclosed to you. We may generate and use
+aggregated, de-identified statistics that cannot reasonably be used to identify you or any
+individual, for capacity planning and internal improvement.</p>
 <p>6.4 <strong>Your responsibility.</strong> You represent that you have the rights and the lawful basis to
-submit Customer Data and to have it processed as described here and in the DPA.</p>
-<p>6.5 <strong>Personal data.</strong> Where Customer Data includes personal data, the DPA applies and we
-process it as your processor on your documented instructions.</p>
+provide Customer Materials and to have them processed as described here and in the DPA.</p>
+<p>6.5 <strong>Personal data.</strong> Where Customer Materials include personal data, the DPA applies and
+we process it as your processor on your documented instructions.</p>
 <h2 id="7-ai-output-read-this-section-carefully">7. AI output — read this section carefully</h2>
-<p>7.1 <strong>No guarantee of accuracy.</strong> The Service uses probabilistic AI models. Output can be
-incomplete, out of date, biased, or plainly wrong, and can appear confident while being
-wrong. We do not warrant that Output is accurate, complete, current, non-infringing or fit
-for any purpose.</p>
-<p>7.2 <strong>Human review is required.</strong> You must have a competent person review Output before
-relying on it, acting on it, sending it to a third party, or letting it drive a decision
-that matters. You must not use the Service to make decisions that produce legal or
-similarly significant effects about a person without meaningful human review.</p>
-<p>7.3 <strong>Not professional advice.</strong> Output is not legal, tax, accounting, medical, financial,
-employment, safety or other professional advice, and using the Service does not create a
-professional relationship of any kind.</p>
-<p>7.4 <strong>Similar output for others.</strong> Generative models can produce similar or identical
-Output for different customers from similar inputs. We make no claim that Output is unique
-to you.</p>
-<p>7.5 <strong>Ownership of Output.</strong> As between the parties, and to the extent Output is capable of
-ownership, we assign to you our rights in Output generated for you, subject to your payment
-of fees and to Section 7.4. We may need to reproduce similar material for other customers,
-and nothing in this section limits that. Output may not be protectable by copyright in
-every jurisdiction; we make no representation about protectability.</p>
-<p>7.6 <strong>No training of competing models.</strong> You may not use the Service, Output, or any
-material derived from either, to develop, train, fine-tune, evaluate against, or improve a
-machine learning model or service that competes with the Service, and you may not permit a
-third party to do so. Systematic extraction of Output for that purpose is a material
-breach.</p>
+<p>7.1 <strong>We use AI models in our work, and we tell you where.</strong> Where a deliverable is produced
+with material assistance from an AI model, we will say so. See
+<a href="ai.html">How Seros uses AI</a>.</p>
+<p>7.2 <strong>No guarantee of accuracy.</strong> AI models are probabilistic. Output can be incomplete, out
+of date, biased, or plainly wrong, and can appear confident while being wrong. We do not
+warrant that Output is accurate, complete, current, non-infringing or fit for any purpose.
+Our warranty is the one in Section 12.2, and it attaches to the Deliverables we accept
+responsibility for, not to raw Output.</p>
+<p>7.3 <strong>Human review.</strong> A competent person reviews Output before it becomes a Deliverable. On
+your side, you must have a competent person review any Output we hand over before relying on
+it, acting on it, sending it to a third party, or letting it drive a decision that matters.</p>
+<p>7.4 <strong>Where we build AI features for you.</strong> Where a Deliverable includes AI functionality,
+you are responsible for how it is used in your business after handover, including keeping a
+human decision-maker in the loop for consequential actions. We will document the intended
+review points in the Deliverable's documentation.</p>
+<p>7.5 <strong>Not professional advice.</strong> Output is not legal, tax, accounting, medical, financial,
+employment, safety or other professional advice, and engaging us does not create a
+professional relationship of any kind beyond the Services.</p>
+<p>7.6 <strong>Similar output for others.</strong> Generative models can produce similar or identical
+material for different customers from similar inputs. We make no claim that Output is unique
+to you, and nothing here prevents us from performing similar work for others.</p>
 <p>7.7 <strong>Provider terms.</strong> Our AI model providers impose their own use restrictions. You must
-not use the Service in a way that would breach the published usage policies of the
-providers listed in <a href="subprocessors.html">SUBPROCESSORS.md</a>, and we may pass through changes
-those providers require.</p>
+not use a Deliverable in a way that would breach the published usage policies of the
+providers listed in <a href="subprocessors.html">SUBPROCESSORS.md</a>, where those providers are used in
+the Deliverable.</p>
 <h2 id="8-third-party-services">8. Third-party services</h2>
-<p>8.1 The current Service connects to a Slack workspace and a configured Linear workspace.
-Those systems are controlled by their providers, not by us. Your use of them is governed by
-your agreement with them. Additional connectors may be shown in documentation or preview
-materials but are not included unless actually enabled for your account.</p>
+<p>8.1 A Deliverable may connect to third-party systems you already use. Those systems are
+controlled by their providers, not by us. Your use of them is governed by your agreement
+with them, and you are responsible for their fees.</p>
 <p>8.2 When you authorise a connection, you instruct us to access, retrieve and write data in
-that system within the scope of the authorisation you grant. You are responsible for
-whether you are permitted to do that.</p>
+that system within the scope of the authorisation you grant. You are responsible for whether
+you are permitted to do that.</p>
 <p>8.3 We are not responsible for a third-party service's availability, security, accuracy, or
-changes to its API. If a third party changes or withdraws access, we may need to change or
-discontinue the corresponding feature, and that alone is not a breach of these Terms.</p>
+changes to its API. If a third party changes or withdraws access after handover, correcting
+the affected Deliverable is new work under a change order or a care plan, unless the failure
+is a breach of the warranty in Section 12.2.</p>
 <h2 id="9-intellectual-property">9. Intellectual property</h2>
-<p>9.1 We and our licensors own the Service, the software, the models we build, the
-Documentation, and all improvements to them. Except for the limited right to use the
-Service during the Subscription Term, no rights are granted to you.</p>
-<p>9.2 You must not copy, modify, translate, reverse engineer, decompile or disassemble the
-Service, except to the extent that restriction is unenforceable under applicable law; must
-not resell, sublicense, timeshare or provide the Service as a service bureau unless an
-Order Form permits it; must not remove proprietary notices; and must not use the Service to
-build a competing product.</p>
-<p>9.3 <strong>Trademarks.</strong> Neither party may use the other's name or marks publicly without prior
-written consent, except that we may identify you as a customer in a list of customers if
-the Order Form permits it. [[LOGO_RIGHTS_DECISION]] — decide whether to ask for logo rights
-by default or by opt-in.</p>
+<p>9.1 <strong>Deliverables are yours.</strong> On payment in full of all fees due under the applicable SOW,
+we assign to you all right, title and interest in the Deliverables created specifically for
+you under that SOW. The assignment is stated in full in the SOW.</p>
+<p>9.2 <strong>Our pre-existing materials.</strong> We retain ownership of our pre-existing materials,
+tools, libraries, templates, know-how, and anything of general application developed in the
+course of the Services that is not specific to you. Where those are embedded in a
+Deliverable, you receive a perpetual, worldwide, non-exclusive, royalty-free licence to use,
+modify and maintain them as part of that Deliverable.</p>
+<p>9.3 <strong>Open source.</strong> Deliverables may include third-party open-source components, which
+remain under their own licences. We will list them in the SOW or the Deliverable's
+documentation.</p>
+<p>9.4 <strong>Residual knowledge.</strong> Nothing restricts our right to use the general skills, knowledge
+and experience our people acquire in performing the Services, provided we do not use or
+disclose your Confidential Information.</p>
+<p>9.5 <strong>The Site.</strong> We and our licensors own the Site and its content. No rights in the Site
+are granted to you beyond viewing it.</p>
+<p>9.6 <strong>Trademarks and publicity.</strong> Neither party may use the other's name or marks publicly
+without prior written consent. [[LOGO_RIGHTS_DECISION]] — decide whether a client reference
+or logo right is requested by default or by opt-in in the SOW.</p>
 <h2 id="10-feedback">10. Feedback</h2>
-<p>If you give us suggestions, feature requests, bug reports or other feedback, you grant us a
-perpetual, irrevocable, worldwide, royalty-free licence to use it without restriction or
-obligation. We will not identify you as the source publicly without your consent. You are
-not obliged to give feedback.</p>
+<p>If you give us suggestions, process observations or other feedback about how we work, you
+grant us a perpetual, irrevocable, worldwide, royalty-free licence to use it without
+restriction or obligation. We will not identify you as the source publicly without your
+consent. You are not obliged to give feedback.</p>
 <h2 id="11-confidentiality">11. Confidentiality</h2>
 <p>11.1 "Confidential Information" means non-public information disclosed by one party to the
 other that is marked confidential or that a reasonable person would understand to be
-confidential, including Customer Data, our non-public product, pricing and security
-information, and the terms of any Order Form.</p>
-<p>11.2 The receiving party will use the other's Confidential Information only to perform
-under these Terms, protect it with at least reasonable care, and disclose it only to
-personnel and advisers who need it and are bound by comparable duties.</p>
+confidential, including Customer Materials, our non-public pricing and methods, and the
+terms of any SOW.</p>
+<p>11.2 The receiving party will use the other's Confidential Information only to perform under
+these Terms, protect it with at least reasonable care, and disclose it only to personnel,
+subcontractors and advisers who need it and are bound by comparable duties.</p>
 <p>11.3 The duty does not apply to information that is or becomes public without breach, was
 already known without duty, is independently developed without use of the other's
 information, or is lawfully received from a third party.</p>
-<p>11.4 If a law or court compels disclosure, the receiving party will give prompt notice
-where legally permitted and disclose only what is required.</p>
+<p>11.4 If a law or court compels disclosure, the receiving party will give prompt notice where
+legally permitted and disclose only what is required.</p>
 <p>11.5 Obligations last for 3 years after disclosure, and indefinitely for trade secrets years after disclosure, and for as long
 as the information remains a trade secret in the case of trade secrets, and for as long as
-we hold it in the case of Customer Data.</p>
+we hold it in the case of Customer Materials.</p>
 <h2 id="12-warranties-and-disclaimers">12. Warranties and disclaimers</h2>
 <p>12.1 Each party warrants that it has the authority to enter into these Terms.</p>
-<p>12.2 We warrant that during the Subscription Term the Service will perform materially in
-accordance with the Documentation, and that we will not materially reduce the security
-protections described in <a href="security.html">SECURITY.md</a> during a paid term. Your exclusive
-remedy for breach of this warranty is for us to use commercially reasonable efforts to
-correct the problem and, if we cannot within 30 days of your written
-notice, for you to terminate the affected subscription and receive a pro-rata refund of
-prepaid, unused fees.</p>
-<p>12.3 <strong>Disclaimer.</strong> Except as expressly stated in Section 12.2, and to the maximum extent
-permitted by law, the Service, Output and all related materials are provided "as is" and
-"as available". We disclaim all other warranties, express, implied or statutory, including
-merchantability, fitness for a particular purpose, title, non-infringement, accuracy, and
-any warranty arising from course of dealing or usage of trade. We do not warrant that the
-Service will be uninterrupted or error free, that defects will be corrected, or that
-Output will be accurate or suitable. Uptime commitments, if any, exist only in a service
-level agreement signed by both parties: [[SLA_DECISION]].</p>
-<p>12.4 Trials, beta features and anything labelled preview or experimental are provided with
-no warranty of any kind and may be changed or withdrawn without notice.</p>
+<p>12.2 <strong>Our warranty.</strong> We warrant that the Services will be performed in a professional and
+workmanlike manner by personnel with the skills reasonably required, and that Deliverables
+will conform materially to the scope stated in the SOW for [[WARRANTY_PERIOD_DAYS]] days
+after acceptance. Your exclusive remedy for breach of this warranty is for us to correct the
+non-conforming work within 30 days of your written notice and, if we
+cannot, for you to terminate the affected SOW and receive a refund of fees paid for the
+non-conforming work.</p>
+<p>12.3 <strong>What the warranty does not cover.</strong> The warranty does not apply to a Deliverable that
+has been modified by anyone other than us, to failures caused by Customer Materials or by a
+third-party system, to use outside the documented purpose, or to work performed under a SOW
+that you directed us to complete over our written objection.</p>
+<p>12.4 <strong>Disclaimer.</strong> Except as expressly stated in Section 12.2, and to the maximum extent
+permitted by law, the Services, Deliverables, Output and the Site are provided "as is". We
+disclaim all other warranties, express, implied or statutory, including merchantability,
+fitness for a particular purpose, title, non-infringement, and any warranty arising from
+course of dealing or usage of trade. We do not warrant that software will be uninterrupted
+or error free, or that every defect will be corrected. Uptime or response-time commitments,
+if any, exist only in a care plan or service level agreement signed by both parties:
+[[SLA_DECISION]].</p>
+<p>12.5 Anything we provide without charge, and anything labelled a spike, prototype, proof of
+concept or experiment, is provided with no warranty of any kind.</p>
 <h2 id="13-indemnities-and-liability">13. Indemnities and liability</h2>
-<p>13.1 <strong>Our indemnity.</strong> We will defend you against a third-party claim that the Service, as
-provided by us and used in accordance with these Terms, infringes that third party's US
-patent, copyright, trademark or trade secret rights, and will pay damages finally awarded
-or amounts we agree in settlement. This does not apply to claims arising from Customer
-Data, from Output, from your combination of the Service with anything we did not supply,
-from modifications not made by us, or from use after we told you to stop. If the Service
-becomes, or we believe it may become, the subject of such a claim, we may procure the right
-to continue, modify the Service, or terminate the affected subscription and refund prepaid,
-unused fees. This section states our entire liability for infringement claims.</p>
-<p>13.2 <strong>Your indemnity.</strong> You will defend us against third-party claims arising from
-Customer Data, from your or your Authorised Users' breach of the AUP or of Section 7, from
-your use of Output including any decision you make on the basis of Output, or from a
-connected third-party system you were not entitled to connect, and will pay damages finally
-awarded or amounts you agree in settlement.</p>
+<p>13.1 <strong>Our indemnity.</strong> We will defend you against a third-party claim that a Deliverable,
+as delivered by us and used in accordance with its documentation, infringes that third
+party's US patent, copyright, trademark or trade secret rights, and will pay damages finally
+awarded or amounts we agree in settlement. This does not apply to claims arising from
+Customer Materials, from Output you directed against our written advice, from your
+combination of a Deliverable with anything we did not supply, from modifications not made by
+us, or from use after we told you to stop. If a Deliverable becomes, or we believe it may
+become, the subject of such a claim, we may procure the right to continue, modify the
+Deliverable, or refund the fees paid for it. This section states our entire liability for
+infringement claims.</p>
+<p>13.2 <strong>Your indemnity.</strong> You will defend us against third-party claims arising from Customer
+Materials, from your breach of the AUP or of Section 7, from your use of a Deliverable or of
+Output including any decision you make on the basis of it, or from a system you instructed
+us to access and were not entitled to, and will pay damages finally awarded or amounts you
+agree in settlement.</p>
 <p>13.3 <strong>Process.</strong> The indemnified party must give prompt written notice, allow the
 indemnifying party sole control of the defence, and provide reasonable cooperation at the
 indemnifying party's expense. No settlement that admits liability or imposes a non-monetary
@@ -264,45 +270,50 @@ obligation on the indemnified party may be made without its consent.</p>
 party is liable for indirect, incidental, special, consequential, exemplary or punitive
 damages, or for lost profits, lost revenue, lost goodwill, or loss or corruption of data
 that could have been avoided by the other party's use of available backup and export
-features, even if advised of the possibility.</p>
+facilities, even if advised of the possibility.</p>
 <p>13.5 <strong>Cap.</strong> To the maximum extent permitted by law, each party's total aggregate liability
-arising out of or relating to these Terms is limited to the fees paid or payable by you to
-us under the applicable Order Form in the twelve months immediately before the event giving
-rise to the liability. For a free trial, the cap is no free tier at launch (for example, one
-hundred US dollars).</p>
+arising out of or relating to these Terms and a given engagement is limited to the fees paid
+or payable by you to us under the applicable SOW in the twelve months immediately before the
+event giving rise to the liability. For use of the Site without a signed SOW, and for any
+work provided without charge, the cap is [[NO_FEE_LIABILITY_CAP]] (for example, one hundred
+US dollars).</p>
 <p>13.6 <strong>Carve-outs.</strong> The cap in 13.5 and the exclusion in 13.4 do not apply to:
 (a) your payment obligations; (b) either party's indemnification obligations under 13.1 or
-13.2; (c) your breach of Section 7.6 or Section 9.2; (d) either party's breach of
-confidentiality obligations other than a breach involving Customer Data handled under the
-DPA, which is subject to [[DPA_LIABILITY_DECISION]]; (e) fraud, wilful misconduct or gross
-negligence; and (f) any liability that cannot be limited by law.</p>
+13.2; (c) your breach of Section 9.2 or 9.5; (d) either party's breach of confidentiality
+obligations other than a breach involving personal data handled under the DPA, which is
+subject to [[DPA_LIABILITY_DECISION]]; (e) fraud, wilful misconduct or gross negligence; and
+(f) any liability that cannot be limited by law.</p>
 <p>13.7 The limitations reflect the allocation of risk that the fees are based on, and survive
 any failure of essential purpose of a limited remedy.</p>
 <h2 id="14-suspension">14. Suspension</h2>
-<p>14.1 We may suspend all or part of the Service, with as much notice as the circumstances
-allow, if: you are in material breach of the AUP; your use presents a security risk to the
-Service or to others; we are required by law; or fees remain unpaid after the notice period
-in Section 4.4.</p>
+<p>14.1 We may suspend work on an engagement, or access to anything we host for you, with as
+much notice as the circumstances allow, if: you are in material breach of the AUP; the use
+presents a security risk to us or to others; we are required by law; or fees remain unpaid
+after the notice period in Section 4.5.</p>
 <p>14.2 Suspension will be limited in scope and duration to what is reasonably necessary. We
-will restore access promptly once the cause is resolved. Suspension for your breach does not
-relieve you of the obligation to pay fees for the suspended period.</p>
-<h2 id="15-term-termination-and-what-happens-to-your-data">15. Term, termination and what happens to your data</h2>
-<p>15.1 These Terms run for as long as any subscription is in effect.</p>
-<p>15.2 Either party may terminate for material breach if the breach is not cured within
+will resume promptly once the cause is resolved. Suspension for your breach does not relieve
+you of the obligation to pay for work already performed.</p>
+<h2 id="15-term-termination-and-what-happens-to-your-material">15. Term, termination and what happens to your material</h2>
+<p>15.1 These Terms run for as long as any SOW is in effect, and govern your use of the Site at
+any time.</p>
+<p>15.2 Either party may terminate a SOW for material breach if the breach is not cured within
 30 days of written notice. Either party may terminate immediately if the
-other becomes insolvent, makes an assignment for the benefit of creditors, or has a
-receiver appointed.</p>
-<p>15.3 We may discontinue the Service entirely on at least 90
-days' notice, with a pro-rata refund of prepaid, unused fees.</p>
-<p>15.4 On termination your right to use the Service ends. You may export Customer Data
-through the Service's export features for 30 days after termination. If
-you cannot use self-service export, ask us at hello@seros.dev within that window and we
-will assist; assistance beyond routine export may be billed at $150 per hour.</p>
-<p>15.5 After the export window we will delete or irreversibly anonymise Customer Data within
-30 days, subject to backup cycles described in the Privacy Policy and to
-any legal retention obligation. We will confirm deletion in writing on request.</p>
+other becomes insolvent, makes an assignment for the benefit of creditors, or has a receiver
+appointed.</p>
+<p>15.3 <strong>Termination for convenience.</strong> Either party may terminate an engagement for
+convenience on the notice period stated in the SOW. On such termination you are liable for
+work performed up to the termination date and for non-cancellable commitments we made in
+reliance on the SOW. We will deliver work in progress in its then-current state.</p>
+<p>15.4 <strong>On termination.</strong> We will hand over the Deliverables paid for, together with
+documentation and credentials in our possession, and will assist with a reasonable transition
+at $150 per hour where the transition work is beyond routine handover.</p>
+<p>15.5 We will return or delete Customer Materials within 30 days of your
+written request after an engagement ends, subject to backup cycles described in the Privacy
+Policy and to any legal retention obligation. We will confirm deletion in writing on request.
+We may retain one archival copy of the Deliverables and engagement records for the period in
+7 years for legal, tax and defence purposes.</p>
 <p>15.6 Sections that by their nature should survive do survive, including 4 (accrued fees),
-6.1, 7, 9, 10, 11, 12.3, 13, 15.4-15.6, 16 and 17.</p>
+6.1, 7, 9, 10, 11, 12.4, 13, 15.4-15.6, 16 and 17.</p>
 <h2 id="16-governing-law-venue-and-dispute-resolution">16. Governing law, venue and dispute resolution</h2>
 <p>16.1 <strong>Governing law.</strong> These Terms are governed by the laws of the State of Georgia,
 without regard to its conflict of laws rules. The UN Convention on Contracts for the
@@ -310,76 +321,80 @@ International Sale of Goods does not apply.</p>
 <p>16.2 <strong>Informal resolution first.</strong> Before starting a formal proceeding, the parties will
 try in good faith to resolve the dispute by sending a written description to the other
 party's notice address and conferring for 30 days.</p>
-<p>16.3 <strong>Binding arbitration.</strong> Any dispute that is not resolved informally will be
-settled by binding arbitration administered by [[ARBITRATION_BODY]] under its commercial
-rules, before one arbitrator, seated in Murray County, Georgia County, Georgia, in English. Judgment
-on the award may be entered in any court of competent jurisdiction. <strong>Each party may bring
-claims only in its individual capacity and not as a plaintiff or class member in any
-purported class, collective, consolidated or representative proceeding, and the arbitrator
-may not consolidate claims or preside over a class proceeding.</strong> If this class-action waiver
-is held unenforceable as to a particular claim, that claim will proceed exclusively in the
-state or federal courts located in Murray County, Georgia County, Georgia, and the rest of this
-section remains in force. Either party may seek injunctive relief in court to protect
-intellectual property or confidential information. Either party may bring an individual
-claim in small claims court if it qualifies. Allocation of arbitration fees:
-[[ARBITRATION_FEE_ALLOCATION]].</p>
+<p>16.3 <strong>Binding arbitration.</strong> Any dispute that is not resolved informally will be settled by
+binding arbitration administered by [[ARBITRATION_BODY]] under its commercial rules, before
+one arbitrator, seated in Murray County, Georgia County, Georgia, in English. Judgment on the award
+may be entered in any court of competent jurisdiction. <strong>Each party may bring claims only in
+its individual capacity and not as a plaintiff or class member in any purported class,
+collective, consolidated or representative proceeding, and the arbitrator may not
+consolidate claims or preside over a class proceeding.</strong> If this class-action waiver is held
+unenforceable as to a particular claim, that claim will proceed exclusively in the state or
+federal courts located in Murray County, Georgia County, Georgia, and the rest of this section remains
+in force. Either party may seek injunctive relief in court to protect intellectual property
+or confidential information. Either party may bring an individual claim in small claims court
+if it qualifies. Allocation of arbitration fees: [[ARBITRATION_FEE_ALLOCATION]].</p>
 <p>This is a business-to-business draft. Counsel must confirm the administering body, fee
 allocation, seat, carve-outs, and applicability before publication.</p>
-<p>16.4 Nothing in this section limits either party's right to seek interim or injunctive
-relief from a court of competent jurisdiction.</p>
+<p>16.4 Nothing in this section limits either party's right to seek interim or injunctive relief
+from a court of competent jurisdiction.</p>
 <h2 id="17-general">17. General</h2>
-<p>17.1 <strong>Force majeure.</strong> Neither party is liable for delay or failure caused by events
-beyond its reasonable control, including natural disaster, war, terrorism, civil unrest,
-labour disturbance, epidemic, government action, internet or utility failure, and failures
-of a third-party provider or infrastructure operator. This does not excuse payment
-obligations for the Service actually provided. If a force majeure event continues for more
-than 30 days, either party may terminate the affected subscription and
-we will refund prepaid, unused fees.</p>
-<p>17.2 <strong>Assignment.</strong> Neither party may assign these Terms without the other's written
+<p>17.1 <strong>Force majeure.</strong> Neither party is liable for delay or failure caused by events beyond
+its reasonable control, including natural disaster, war, terrorism, civil unrest, labour
+disturbance, epidemic, government action, internet or utility failure, and failures of a
+third-party provider or infrastructure operator. This does not excuse payment obligations for
+work actually performed. If a force majeure event continues for more than
+30 days, either party may terminate the affected SOW.</p>
+<p>17.2 <strong>Subcontractors.</strong> We may use subcontractors to perform the Services. We remain
+responsible for their work and for binding them to confidentiality and intellectual property
+obligations at least as protective as these Terms.</p>
+<p>17.3 <strong>Non-solicitation.</strong> During an engagement and for 12 months after it
+ends, neither party will knowingly solicit for employment a person who was directly involved
+in the engagement on the other side. A general advertisement not targeted at that person is
+not a breach.</p>
+<p>17.4 <strong>Assignment.</strong> Neither party may assign these Terms without the other's written
 consent, except that either party may assign to a successor in connection with a merger,
 reorganisation, or sale of all or substantially all assets, on written notice. Any other
 attempted assignment is void.</p>
-<p>17.3 <strong>Notices.</strong> Legal notices to us go to legal@seros.dev and to [[ENTITY_ADDRESS]].
-Notices to you go to the administrative contact on your account and, where you have given
-one, your notice address on the Order Form. Notice is effective on receipt for email during
-business hours, otherwise the next business day; and on delivery for courier. Operational
-notices may be given in the Service.</p>
-<p>17.4 <strong>Independent contractors.</strong> The parties are independent contractors. Nothing creates
-a partnership, joint venture, agency or employment relationship.</p>
-<p>17.5 <strong>No third-party beneficiaries</strong>, except that our affiliates and our AI model providers
-may enforce Sections 7.6, 9.2 and 13.4-13.6 to the extent those sections protect them.</p>
-<p>17.6 <strong>Severability and waiver.</strong> If a provision is unenforceable it will be modified to the
+<p>17.5 <strong>Notices.</strong> Legal notices to us go to legal@seros.dev and to [[ENTITY_ADDRESS]].
+Notices to you go to the contact stated in the SOW. Notice is effective on receipt for email
+during business hours, otherwise the next business day; and on delivery for courier.</p>
+<p>17.6 <strong>Independent contractors.</strong> The parties are independent contractors. Nothing creates a
+partnership, joint venture, agency or employment relationship. We control the manner and
+means by which the Services are performed.</p>
+<p>17.7 <strong>No third-party beneficiaries</strong>, except that our affiliates and our AI model providers
+may enforce Sections 7.7, 9.5 and 13.4-13.6 to the extent those sections protect them.</p>
+<p>17.8 <strong>Severability and waiver.</strong> If a provision is unenforceable it will be modified to the
 minimum extent necessary or severed, and the rest remains in force. A failure to enforce is
 not a waiver.</p>
-<p>17.7 <strong>Export and sanctions.</strong> You represent that you and your Authorised Users are not
-located in, and will not use the Service in, a country or by a person subject to US
-sanctions or export restrictions, and that you will comply with applicable export control
-laws.</p>
-<p>17.8 <strong>US government users.</strong> If you are a US government entity, the Service is commercial
-computer software and commercial computer software documentation, and the government's
-rights are those set out in these Terms.</p>
-<p>17.9 <strong>Entire agreement.</strong> These Terms, the AUP, the DPA, the Privacy Policy, the Refund
-and Billing Policy, and any Order Form form the entire agreement and supersede all prior
-proposals and understandings on the subject. Terms on a purchase order or vendor portal do
-not apply, even if we sign or acknowledge them. In a conflict, the order of precedence is:
-a signed Order Form, then a signed master services agreement, then the DPA, then these
-Terms, then the other policies.</p>
-<p>17.10 <strong>Changes to these Terms.</strong> We may change these Terms. For a material change we will
-give notice by email to account administrators or in the Service at least
-30 days before it takes effect, and the change applies from your
-next renewal for existing paid subscriptions unless the change is required by law or is
-needed for security or legal compliance. Continuing to use the Service after the effective
-date means you accept the change. If you object to a material change, you may terminate
-before it takes effect and receive a pro-rata refund of prepaid, unused fees.</p>
+<p>17.9 <strong>Export and sanctions.</strong> You represent that you are not located in, and will not use
+the Deliverables in, a country or by a person subject to US sanctions or export restrictions,
+and that you will comply with applicable export control laws.</p>
+<p>17.10 <strong>US government users.</strong> If you are a US government entity, any software Deliverable is
+commercial computer software and commercial computer software documentation, and the
+government's rights are those set out in these Terms and the applicable SOW.</p>
+<p>17.11 <strong>Entire agreement.</strong> These Terms, the AUP, the DPA, the Privacy Policy, the Billing
+and Payment Policy, and any signed MSA or SOW form the entire agreement and supersede all
+prior proposals and understandings on the subject. Terms on a purchase order or vendor portal
+do not apply, even if we sign or acknowledge them. In a conflict, the order of precedence is:
+a signed SOW, then a signed MSA, then the DPA, then these Terms, then the other policies.</p>
+<p>17.12 <strong>Changes to these Terms.</strong> We may change these Terms. For a material change we will
+give notice on the Site or by email at least 30 days before it
+takes effect. A change does not apply to an engagement under a SOW signed before the change
+takes effect, unless the change is required by law. Continuing to use the Site after the
+effective date means you accept the change.</p>
 <h2 id="what-i-need-from-you">What I need from you</h2>
 <ol>
-<li>The selected arbitration provision: administering body, fee allocation, seat, carve-outs, and enforceability.</li>
-<li>Numbers for every bracketed period: notice, cure, payment, export, deletion.</li>
-<li>Whether an SLA with uptime credits will be offered, and to whom.</li>
-<li>Whether logo rights are default or opt-in.</li>
-<li>Whether the liability cap for data-protection breaches should be higher than 12 months
-   of fees ([[DPA_LIABILITY_DECISION]]) — enterprise buyers will push on this.</li>
-<li>The currency, payment terms, and late interest rate.</li>
+<li>The selected arbitration provision: administering body, fee allocation, seat, carve-outs,
+   and enforceability.</li>
+<li>Numbers for every bracketed period: notice, cure, warranty period, payment, deletion.</li>
+<li>Whether a care plan will carry a response-time or uptime commitment, and to whom
+   ([[SLA_DECISION]]).</li>
+<li>Whether client reference and logo rights are requested by default or by opt-in
+   ([[LOGO_RIGHTS_DECISION]]).</li>
+<li>Whether the liability cap for data-protection breaches should be higher than 12 months of
+   fees ([[DPA_LIABILITY_DECISION]]) — larger clients will push on this.</li>
+<li>The currency, standard payment terms, deposit policy, and late interest rate.</li>
+<li>Confirmation that the non-solicitation period in 17.3 is enforceable and wanted.</li>
 </ol>
 </main>
 <footer class="site">

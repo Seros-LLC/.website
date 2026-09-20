@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Security — Seros, LLC</title>
-<meta name="description" content="How Seros, LLC protects data, and how to report a vulnerability.">
+<meta name="description" content="How Seros, LLC protects client data and builds securely, and how to report a vulnerability.">
 <link rel="canonical" href="https://seros.dev/security">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Security — Seros, LLC">
-<meta property="og:description" content="How Seros, LLC protects data, and how to report a vulnerability.">
+<meta property="og:description" content="How Seros, LLC protects client data and builds securely, and how to report a vulnerability.">
 <meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -33,20 +33,24 @@
 <p class="banner"><strong>Draft.</strong> This document has not yet been reviewed by counsel and is not in force. It is published here for review only. Bracketed tokens mark facts that still have to be filled in.</p>
 <h1 id="security-and-vulnerability-disclosure">Security and Vulnerability Disclosure</h1>
 <p>Effective date: [[EFFECTIVE_DATE]]</p>
-<p>This page describes how we protect the Service, and how to report a vulnerability. It is
-written for customers, prospects and security researchers.</p>
+<p>This page describes how we protect client data and how we build securely, and how to report
+a vulnerability. It is written for clients, prospects and security researchers.</p>
+<p>Seros is a solution development company. We do not currently operate a hosted customer-facing
+service: our website is static, and systems we build are normally deployed to infrastructure
+the client owns and controls. The controls below describe how we handle client material
+during an engagement, and the engineering practices we apply to what we build.</p>
 <h2 id="1-no-certification-is-claimed">1. No certification is claimed</h2>
 <p>Seros, LLC does not hold SOC 2 Type I or Type II, ISO/IEC 27001, PCI DSS, HITRUST, or
 any other security certification or attestation. We do not claim compliance with any of
 them. If that changes, this page will say so and the report will be available under NDA.</p>
 <p>We also do not currently offer a HIPAA Business Associate Agreement. Do not send protected
-health information to the Service.</p>
+health information to us or put it into a system we host without a separate signed agreement.</p>
 <p>Saying this plainly is deliberate. A security page that implies certifications the company
 does not have is a misrepresentation, and enterprise security reviewers check.</p>
-<h2 id="2-how-the-service-is-built-and-run">2. How the Service is built and run</h2>
-<p>The controls below are limited to controls verified in the current application source.
-They are not a security certification or a promise that every underlying hosting-provider
-control is available to every customer.</p>
+<h2 id="2-how-we-build-and-run-software">2. How we build and run software</h2>
+<p>The controls below are limited to practices verified in our own application source and in
+how we run engagements. They are not a security certification, and they are not a promise
+about infrastructure a client operates themselves after handover.</p>
 <p><strong>Architecture</strong>
 - The product is designed for a multi-tenant application with tenant-scoped data access.
 - Production deployment uses Vercel-compatible hosting and durable PostgreSQL storage.

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Subprocessors — Seros, LLC</title>
-<meta name="description" content="The third parties Seros, LLC uses to deliver the service, and how changes are announced.">
+<meta name="description" content="The third parties that process personal data on behalf of Seros, LLC, and how changes are announced.">
 <link rel="canonical" href="https://seros.dev/subprocessors">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Subprocessors — Seros, LLC">
-<meta property="og:description" content="The third parties Seros, LLC uses to deliver the service, and how changes are announced.">
+<meta property="og:description" content="The third parties that process personal data on behalf of Seros, LLC, and how changes are announced.">
 <meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -33,22 +33,35 @@
 <p class="banner"><strong>Draft.</strong> This document has not yet been reviewed by counsel and is not in force. It is published here for review only. Bracketed tokens mark facts that still have to be filled in.</p>
 <h1 id="subprocessors">Subprocessors</h1>
 <p>Effective date: [[EFFECTIVE_DATE]]</p>
-<p>A subprocessor is a company we use to help run the Service that may process personal data
-on our behalf. This page lists them.</p>
-<p><strong>Draft — the vendors below are the real production stack, but the list is not yet
-publishable.</strong> Each vendor is genuinely in use (verified against the app and product-docs
-repos), but for every row the full legal entity name, the registered address, the location
-of processing, the cross-border transfer mechanism, and a signed, filed DPA are still
-founder inputs. Do not publish this page until each <code>[[TBD_LOCATION]]</code> and
+<p>A subprocessor is a company we use that may process personal data on our behalf. This page
+lists them.</p>
+<p><strong>Seros is a solution development company and does not currently operate a hosted service.</strong>
+Where we build a system for you, it is normally deployed to infrastructure you own and
+control, and the vendors underneath it are yours, not ours, and are recorded in the Statement
+of Work rather than here. This page covers vendors that process personal data on <em>our</em> behalf
+— for our own business and for anything we host or operate for a client.</p>
+<p><strong>Draft — not publishable.</strong> For every row the full legal entity name, the registered
+address, the location of processing, the cross-border transfer mechanism, and a signed, filed
+DPA are still founder inputs. Do not publish this page until each <code>[[TBD_LOCATION]]</code> and
 <code>[[TBD_TRANSFER_MECHANISM]]</code> is confirmed against the vendor's live terms, a DPA is signed
 with each vendor, and Georgia counsel has reviewed it. Publishing a wrong or incomplete
 subprocessor list is a data protection problem, not a typo.</p>
 <p>This list is Annex III to the <a href="dpa.html">Data Processing Addendum</a>.</p>
 <h2 id="current-subprocessors">Current subprocessors</h2>
-<p>The vendors below are the stack the application actually integrates with (verified in the
-app and product-docs repos). Do not list local Ollama/Qwen as a third-party subprocessor
-when it runs inside the deployment boundary; if the hosted HTTP AI transport is enabled, its
-actual provider must be listed here before production use.</p>
+<p>Seros currently operates a marketing website and no hosted customer-facing application, so
+no vendor processes client personal data on our behalf today. The website is statically
+hosted and has no analytics, no forms and no cookies beyond what the host sets to serve the
+files; enquiries arrive by ordinary email.</p>
+<p>Add a row to the table below — and sign a DPA — before any vendor touches client personal
+data, including when we take on hosting or a care plan for a client system. Do not list a
+model that runs inside our own boundary as a third-party subprocessor; if a hosted AI
+provider is used on client data, it must be listed here first.</p>
+<h3 id="paused-the-in-house-product-stack">Paused: the in-house product stack</h3>
+<p>The vendors below were integrated by the in-house Slack-to-tracker application. <strong>That
+application is paused and is not deployed</strong>, so none of these vendors is processing client
+personal data at present. The rows are kept because the deployment can be resumed, and
+because the same diligence will be required if it is. Each must be re-verified, and a DPA
+signed, before any of them processes client data.</p>
 <table>
 <thead>
 <tr>
@@ -69,7 +82,7 @@ actual provider must be listed here before production use.</p>
 <td>All Customer Personal Data and account data in transit and transiently in compute; request and access logs including IP address, user identifiers, and device and browser data</td>
 <td>[[TBD_LOCATION]]</td>
 <td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>In use; vendor DPA not yet signed or filed</td>
+<td>Paused — application not deployed; vendor DPA not signed or filed</td>
 </tr>
 <tr>
 <td>2</td>
@@ -78,7 +91,7 @@ actual provider must be listed here before production use.</p>
 <td>All Customer Personal Data and account data at rest — identification and contact data, communications content ingested from connected sources, task and workflow data, and authentication and technical/log data</td>
 <td>[[TBD_LOCATION]]</td>
 <td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>In use; vendor DPA not yet signed or filed</td>
+<td>Paused — application not deployed; vendor DPA not signed or filed</td>
 </tr>
 <tr>
 <td>3</td>
@@ -87,7 +100,7 @@ actual provider must be listed here before production use.</p>
 <td>Message content, author name/handle and role, channel and workspace identifiers, timestamps, and any personal data contained in the messages ingested</td>
 <td>[[TBD_LOCATION]]</td>
 <td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>In use; vendor DPA not yet signed or filed</td>
+<td>Paused — application not deployed; vendor DPA not signed or filed</td>
 </tr>
 <tr>
 <td>4</td>
@@ -96,7 +109,7 @@ actual provider must be listed here before production use.</p>
 <td>Task title and description (which may contain personal data drawn from source content), assignee identity, and team and workspace identifiers</td>
 <td>[[TBD_LOCATION]]</td>
 <td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>In use; vendor DPA not yet signed or filed</td>
+<td>Paused — application not deployed; vendor DPA not signed or filed</td>
 </tr>
 <tr>
 <td>5</td>
@@ -105,7 +118,7 @@ actual provider must be listed here before production use.</p>
 <td>The parts of Customer Content a feature needs — the text of the message or document being turned into a task, related task records, and the names and roles of the people involved so it can suggest an assignee — plus the generated output</td>
 <td>[[TBD_LOCATION]]</td>
 <td>[[TBD_TRANSFER_MECHANISM]]</td>
-<td>In use; provider data-retention/no-training terms and DPA not yet confirmed (see <a href="ai.html">AI-DISCLOSURE.md</a>)</td>
+<td>Paused — application not deployed; provider data-retention/no-training terms and DPA not confirmed (see <a href="ai.html">AI-DISCLOSURE.md</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -114,12 +127,12 @@ address, the vendor's own subprocessors, the location where data is actually pro
 cross-border transfer mechanism, and the URL of the signed DPA are <strong>founder inputs</strong> for
 every row — they could not be sourced from the repository and must not be guessed. See
 "Notes for filling this in" below.</p>
-<p><strong>Not yet applicable — no subprocessor in use.</strong> The product has no email-delivery,
+<p><strong>Not yet applicable — no subprocessor in use.</strong> We have no email-delivery,
 payment/billing, product-analytics, error-tracking, customer-support, CRM, third-party
-observability or external SSO/identity vendor at this stage (billing is expected to be
-manual invoicing initially; authentication is email-based in-app, with SSO/SCIM parked as a
-later roadmap item). The placeholder rows for those categories have been removed rather than
-left blank. Add a row here — and sign a DPA — before any such vendor touches Customer Data.</p>
+observability or external identity vendor that processes client personal data. Invoicing is
+manual and client correspondence is ordinary business email. The placeholder rows for those
+categories have been removed rather than left blank. Add a row here — and sign a DPA —
+before any such vendor touches client personal data.</p>
 <h2 id="affiliates">Affiliates</h2>
 <p>Seros, LLC has no affiliates at present. If affiliates are formed and they process
 Customer Data, list them here.</p>
