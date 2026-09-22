@@ -101,7 +101,7 @@ def shell(title, desc, canonical, body):
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#183bd1">
-<link rel="stylesheet" href="/assets/styles.css?v=6">
+<link rel="stylesheet" href="/assets/styles.css?v=7">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
