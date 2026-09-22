@@ -40,7 +40,7 @@ REQUIRED = {
     "services.html": ["Discovery sprint", "Care plan", "/contact"],
     "work.html": ["Slack-to-Linear", "in-house product"],
     "pricing.html": ["$150 per hour", "fixed-fee", "/contact"],
-    "contact.html": ["mailto:hello@seros.dev"],
+    "contact.html": ["mailto:team@seros.dev"],
 }
 
 SITEMAP_URLS = [

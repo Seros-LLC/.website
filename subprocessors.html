@@ -42,8 +42,8 @@ of Work rather than here. This page covers vendors that process personal data on
 — for our own business and for anything we host or operate for a client.</p>
 <p><strong>Draft — not publishable.</strong> For every row the full legal entity name, the registered
 address, the location of processing, the cross-border transfer mechanism, and a signed, filed
-DPA are still founder inputs. Do not publish this page until each <code>[[TBD_LOCATION]]</code> and
-<code>[[TBD_TRANSFER_MECHANISM]]</code> is confirmed against the vendor's live terms, a DPA is signed
+DPA are still founder inputs. Do not publish this page until each <code>not applicable — no subprocessor is currently engaged</code> and
+<code>not applicable — no subprocessor is currently engaged</code> is confirmed against the vendor's live terms, a DPA is signed
 with each vendor, and Georgia counsel has reviewed it. Publishing a wrong or incomplete
 subprocessor list is a data protection problem, not a typo.</p>
 <p>This list is Annex III to the <a href="dpa.html">Data Processing Addendum</a>.</p>
@@ -80,8 +80,8 @@ signed, before any of them processes client data.</p>
 <td>Vercel *</td>
 <td>Application hosting: serverless compute, edge network, TLS termination and request routing for <code>app.seros.dev</code>, and the platform through which the production Postgres database is provisioned. Also processes application, access and request logs.</td>
 <td>All Customer Personal Data and account data in transit and transiently in compute; request and access logs including IP address, user identifiers, and device and browser data</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>not applicable — no subprocessor is currently engaged</td>
+<td>not applicable — no subprocessor is currently engaged</td>
 <td>Paused — application not deployed; vendor DPA not signed or filed</td>
 </tr>
 <tr>
@@ -89,8 +89,8 @@ signed, before any of them processes client data.</p>
 <td>Neon * (production Postgres, provisioned through Vercel)</td>
 <td>Durable primary database: stores all application data at rest, including source content ingested from connected integrations, accounts, tasks and audit logs, plus automated backups</td>
 <td>All Customer Personal Data and account data at rest — identification and contact data, communications content ingested from connected sources, task and workflow data, and authentication and technical/log data</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>not applicable — no subprocessor is currently engaged</td>
+<td>not applicable — no subprocessor is currently engaged</td>
 <td>Paused — application not deployed; vendor DPA not signed or filed</td>
 </tr>
 <tr>
@@ -98,8 +98,8 @@ signed, before any of them processes client data.</p>
 <td>Slack *</td>
 <td>Source integration: the Service reads messages and events from the Slack workspaces the customer authorises, to detect commitments and draft tasks</td>
 <td>Message content, author name/handle and role, channel and workspace identifiers, timestamps, and any personal data contained in the messages ingested</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>not applicable — no subprocessor is currently engaged</td>
+<td>not applicable — no subprocessor is currently engaged</td>
 <td>Paused — application not deployed; vendor DPA not signed or filed</td>
 </tr>
 <tr>
@@ -107,8 +107,8 @@ signed, before any of them processes client data.</p>
 <td>Linear *</td>
 <td>Task-tracker integration: the Service creates and updates issues/tasks in the customer's Linear workspace</td>
 <td>Task title and description (which may contain personal data drawn from source content), assignee identity, and team and workspace identifiers</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>not applicable — no subprocessor is currently engaged</td>
+<td>not applicable — no subprocessor is currently engaged</td>
 <td>Paused — application not deployed; vendor DPA not signed or filed</td>
 </tr>
 <tr>
@@ -116,8 +116,8 @@ signed, before any of them processes client data.</p>
 <td>Google — Gemini API, accessed via the OpenAI-compatible endpoint *</td>
 <td>AI model provider: task detection and drafting, assignee suggestions and summarisation</td>
 <td>The parts of Customer Content a feature needs — the text of the message or document being turned into a task, related task records, and the names and roles of the people involved so it can suggest an assignee — plus the generated output</td>
-<td>[[TBD_LOCATION]]</td>
-<td>[[TBD_TRANSFER_MECHANISM]]</td>
+<td>not applicable — no subprocessor is currently engaged</td>
+<td>not applicable — no subprocessor is currently engaged</td>
 <td>Paused — application not deployed; provider data-retention/no-training terms and DPA not confirmed (see <a href="ai.html">AI-DISCLOSURE.md</a>)</td>
 </tr>
 </tbody>
@@ -157,7 +157,7 @@ Customer Data, list them here.</p>
 <h2 id="how-customers-are-told-about-changes">How customers are told about changes</h2>
 <p>Before adding a new subprocessor that will process Customer Personal Data, we give at least
 30 days' notice to everyone subscribed to this list.</p>
-<p><strong>To subscribe:</strong> email privacy@seros.dev with the subject "Subprocessor notifications" and
+<p><strong>To subscribe:</strong> email team@seros.dev with the subject "Subprocessor notifications" and
 the address that should receive them. We keep the list separate from marketing email; there
 is nothing else in it. To unsubscribe, reply and say so.</p>
 <p>A customer may object to a new subprocessor on reasonable data protection grounds within
@@ -182,13 +182,6 @@ notify promptly afterwards. The objection window then runs from the date of that
 </tr>
 </tbody>
 </table>
-<h2 id="what-i-need-from-you">What I need from you</h2>
-<ol>
-<li>The actual vendor for every row, or deletion of the row.</li>
-<li>Signed DPAs from each one, filed somewhere you can find them.</li>
-<li>A decision on the notice and objection windows so they match the DPA.</li>
-<li>A calendar reminder to review this list annually.</li>
-</ol>
 </main>
 <footer class="site">
   <div class="wrap">

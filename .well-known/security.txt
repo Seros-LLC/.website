@@ -1,6 +1,6 @@
 # Seros, LLC vulnerability disclosure
 # Full policy: https://seros.dev/security.html
-Contact: mailto:security@seros.dev
+Contact: mailto:team@seros.dev
 Contact: https://github.com/Seros-LLC/.github/security/advisories/new
 Expires: 2027-08-17T00:00:00.000Z
 Preferred-Languages: en
