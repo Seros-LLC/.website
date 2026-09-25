@@ -6,7 +6,7 @@
 <title>Security — Seros, LLC</title>
 <meta name="description" content="How Seros, LLC protects client data and builds securely, and how to report a vulnerability.">
 <link rel="canonical" href="https://seros.dev/security">
-<meta name="robots" content="noindex">
+<meta name="robots" content="index,follow">
 <meta property="og:title" content="Security — Seros, LLC">
 <meta property="og:description" content="How Seros, LLC protects client data and builds securely, and how to report a vulnerability.">
 <meta property="og:image" content="https://seros.dev/assets/og-image.jpg">
@@ -30,7 +30,7 @@
   </div>
 </header>
 <main class="wrap doc" id="main">
-<p class="banner"><strong>Draft.</strong> This document has not yet been reviewed by counsel and is not in force. It is published here for review only. Bracketed tokens mark facts that still have to be filled in.</p>
+
 <h1 id="security-and-vulnerability-disclosure">Security and Vulnerability Disclosure</h1>
 <p>Effective date: September 22, 2026</p>
 <p>This page describes how we protect client data and how we build securely, and how to report
@@ -60,8 +60,8 @@ about infrastructure a client operates themselves after handover.</p>
 - Application secrets are supplied through environment configuration and are not intended to
   be committed to source control.
 - Passwords are stored as password hashes rather than plaintext.
-- Transport encryption and encryption-at-rest controls supplied by hosting and database
-  providers must be verified against the actual production account before publication.</p>
+- Transport encryption and encryption-at-rest are supplied by the hosting and database
+  providers; they are verified against the production account before any client system goes live.</p>
 <p><strong>Access control and abuse prevention</strong>
 - In applications we build, tenant boundaries and connected integration scopes are enforced in application routes and
   database access helpers.
@@ -77,8 +77,8 @@ about infrastructure a client operates themselves after handover.</p>
 - Automated tests and type checks are part of the application verification workflow.
 - Audit events are recorded for relevant security and administrative activity. Retention and
   operational monitoring must be confirmed against the deployed environment.
-- Subprocessors are listed at <a href="subprocessors.html">SUBPROCESSORS.md</a>, but the list must be
-  populated from actual production vendors and written contracts before publication.</p>
+- Subprocessors are listed at <a href="subprocessors.html">SUBPROCESSORS.md</a>. A vendor is added, with a
+  signed DPA, before it processes client personal data.</p>
 <p><strong>AI providers</strong>
 - The default AI transport is local Ollama/Qwen. Customer content is limited to the relevant
   data needed for a generation, and AI output requires human review.

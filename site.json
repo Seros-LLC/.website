@@ -93,5 +93,5 @@
   "WARRANTY_PERIOD_DAYS": "30",
   "WEBSITE_URL": "https://seros.dev",
   "_note": "Values come from ../legal/RECOMMENDED-DEFAULTS.md. draft=true keeps generated pages noindex and bannered.",
-  "draft": true
+  "draft": false
 }
