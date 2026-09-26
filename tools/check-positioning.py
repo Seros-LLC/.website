@@ -21,6 +21,9 @@ STUDIO_PAGES = ["index.html", "services.html", "work.html", "pricing.html", "con
 
 # Sign-up and product-status language has no place on a services site.
 BANNED_EVERYWHERE = [
+    # Retired headline positioning (2026-09-25: consulting leads, see DECISION-AI-CONSULTING.md).
+    "solution development company",
+    "we build the software your business is missing",
     "launch app",
     "create an account",
     "early access",
@@ -36,10 +39,12 @@ BANNED_EXCEPT_WORK = [
 ]
 
 REQUIRED = {
-    "index.html": ["Solution development for businesses", "/services", "/work", "/pricing", "/contact"],
-    "services.html": ["Discovery sprint", "Care plan", "/contact"],
+    "index.html": ["AI and agentic consulting", "/services", "/work", "/pricing", "/contact"],
+    "services.html": ["AI strategy and readiness assessment", "Advisory retainer",
+                      "Agentic workflow automation", "AI-native custom CRM",
+                      "Custom builds and integrations", "Care plan", "/contact"],
     "work.html": ["Slack-to-Linear", "in-house product"],
-    "pricing.html": ["$150 per hour", "fixed-fee", "/contact"],
+    "pricing.html": ["$150 per hour", "fixed-fee", "Readiness assessment", "Advisory retainer", "/contact"],
     "contact.html": ["mailto:team@seros.dev"],
 }
 
