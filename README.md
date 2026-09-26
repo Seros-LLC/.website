@@ -10,7 +10,7 @@ generated from Markdown so the contracts have one source of truth.
 | `index.html` | Home page (hand-written) |
 | `assets/styles.css` | The whole design system: palette, type scale, components |
 | `assets/seros-hero.png` | Discobolus engraving, ink on transparent, derived from the brand art |
-| `assets/og-image.jpg` | 1200x630 social card |
+| `assets/og-card-2026-09.jpg` | 1200x630 social card (rename on change: assets are cached immutable) |
 | `site.json` | Company facts + `draft` flag used to fill legal placeholders |
 | `tools/build.py` | Renders `../legal/*.md` into themed HTML pages |
 | `privacy.html`, `terms.html`, ... | **Generated. Do not edit by hand.** |
