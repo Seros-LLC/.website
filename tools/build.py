@@ -100,8 +100,9 @@ def shell(title, desc, canonical, body):
 <meta property="og:image" content="{CFG['WEBSITE_URL']}/assets/og-image.jpg">
 <link rel="icon" href="/assets/icon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#183bd1">
-<link rel="stylesheet" href="/assets/styles.css?v=7">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#030620">
+<link rel="stylesheet" href="/assets/styles.css?v=8">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -156,6 +157,18 @@ def main():
         if missing:
             all_missing[src] = sorted(missing)
         html = markdown.markdown(text, extensions=["tables", "toc", "sane_lists", "attr_list"])
+        # A page keeps exactly one <h1>. Sources with further top-level headings (the DPA's
+        # Annexes) are nested one level down from that point on, so the outline stays
+        # valid without editing counsel-reviewed text.
+        second = html.find("<h1", html.find("<h1") + 1)
+        if second != -1:
+            head, tail = html[:second], html[second:]
+            for n in range(5, 0, -1):
+                tail = tail.replace(f"<h{n}", f"<h{n + 1}").replace(f"</h{n}>", f"</h{n + 1}>")
+            html = head + tail
+        # Wide tables scroll inside their own focusable region on phones.
+        html = html.replace("<table>", '<div class="table-scroll" role="region" aria-label="Scrollable table" tabindex="0"><table>')
+        html = html.replace("</table>", "</table></div>")
         if not check_only:
             (ROOT / out).write_text(shell(title, desc, "/" + out.removesuffix(".html"), html))
         built.append(out)

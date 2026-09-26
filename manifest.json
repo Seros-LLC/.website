@@ -3,8 +3,8 @@
   "short_name": "Seros",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#EDE7DE",
-  "theme_color": "#EDE7DE",
+  "background_color": "#030620",
+  "theme_color": "#030620",
   "icons": [
     {
       "src": "/assets/icon-192.png",

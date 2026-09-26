@@ -426,3 +426,52 @@ footer.site { overflow: clip; }
   .track-list.route-arrived::after, .track-list.route-arrived .track-no { animation: none; }
   :is(.btn,.btn-nav-app,.text-link):is(:hover,:focus-visible) span[aria-hidden] { transform: none; }
 }
+
+/* Tables: long legal tables scroll inside their own box on narrow screens instead of
+   shredding words; tools/build.py wraps every generated table in .table-scroll. */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; }
+.table-scroll:focus-visible { outline: 3px solid var(--seros-amber); outline-offset: 3px; }
+.table-scroll > table { margin: 0; }
+
+/* Phones: the header joins the document flow so it can never cover the page title,
+   the brand and the call button share one row, and every link is a real tap target. */
+@media (max-width: 650px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  header.site, body:not(.signal-site) header.site { position: relative; }
+  .rail-header { position: relative; min-height: 0; padding-block: .75rem .35rem; row-gap: .15rem; }
+  .brand { min-height: 44px; }
+  nav.site { flex-wrap: nowrap; justify-content: space-between; gap: .25rem; }
+  nav.site > a:not(.btn-nav-app) { padding-block: .8rem; font-size: .75rem; letter-spacing: .03em; }
+  nav.site > a:not(.btn-nav-app)::after { bottom: .55rem; }
+  nav.site .btn-nav-app { position: absolute; top: .75rem; right: 0; }
+  .signal-hero, .hero-layout { min-height: 0; }
+  .hero-layout { padding-top: 2.75rem; }
+  .doc, body:not(.signal-site) .doc { padding-top: 2.75rem; padding-bottom: 4rem; }
+  /* The later glass layer re-raised the engraving to .5; keep it behind the copy. */
+  .mythic-field img { opacity: .22; }
+  /* Background-position loops repaint every frame; phones get the still version. */
+  .signal-hero::before, .signal-facts, .control-cards { animation: none; }
+  /* Hit areas without changing the drawn underline. */
+  .text-link { position: relative; }
+  .text-link::before { content: ''; position: absolute; inset: -.8rem -.3rem; }
+  footer.site .footer-grid a:not(.brand) { margin: 0; padding-block: .5rem; }
+  .fineprint { font-size: .8rem; line-height: 1.9; }
+  .fineprint a { display: inline-block; padding-block: .2rem; }
+  .track-no, .track-state, .card-index, .footer-grid .footer-label { font-size: .75rem; }
+  .doc td, .doc th { overflow-wrap: normal; hyphens: auto; hyphenate-limit-chars: 7 3 3; padding: .6rem .55rem; }
+  .doc td a, .doc td code { overflow-wrap: anywhere; }
+}
+@media (max-width: 360px) {
+  nav.site > a:not(.btn-nav-app) { font-size: .7rem; letter-spacing: .01em; }
+}
+
+/* Desktop fold: the headline was a narrow 12ch column at up to 131px, so it ran to eight
+   lines and pushed the lede and the booking button below the first screen at every
+   laptop size. Let it run wider and size to viewport height as well as width. */
+@media (min-width: 901px) {
+  .hero-copy { max-width: 60rem; }
+  .hero-copy h1 { max-width: 15ch; font-size: clamp(3.6rem, min(6vw, 9vh), 7.4rem); line-height: .92; }
+  .hero-layout { padding-top: clamp(7.75rem, 16vh, 11rem); padding-bottom: 4rem; }
+  .hero-copy .lede { margin-top: 1.4rem; }
+  .hero-copy .cta { margin-top: 1.6rem; }
+}
